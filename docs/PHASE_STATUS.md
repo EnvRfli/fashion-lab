@@ -81,8 +81,11 @@
 
 ## Blockers
 
-None at bootstrap. The next session is blocked on a project brief, not on
-tooling.
+None from tooling. The project is blocked on a project brief, nothing else.
+
+| # | Problem | Evidence | Impact | Corrective action | Owner |
+| --- | --- | --- | --- | --- | --- |
+| B1 | `/build-site` invoked with empty `$ARGUMENTS` on 2026-11-11, so no brief exists | Phase 0 row above (`No brief received`); `docs/01-product-brief.md` is still a template; `npm run verify:bootstrap` = 35/35 PASSED, so the toolchain is not the cause | Phases 0–8 cannot start; no product, audience, routes, assets, or visual direction may be invented | Supply the brief in chat, as a file path, or as a file under `docs/references/` | Project owner |
 
 ## Resume instructions
 
@@ -95,3 +98,8 @@ tooling.
 ## Next action
 
 Await the project brief. Do not build a website until Phase 0 records one.
+
+Required brief inputs: product, audience, goal, routes and non-goals, content
+provenance (real vs demonstration), brand inputs, mode (`autonomous` default or
+`approval`), and the source of real product photographs. A mockup is a Phase 2
+visual reference, not a substitute for the written brief.
