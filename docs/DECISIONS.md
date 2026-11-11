@@ -194,6 +194,21 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
   `npm run tokens:build -- --require` (78 tokens).
 - **Status:** `[APPROVED]`
 
+### D-014 — URL-driven catalogue state and local-only bag
+
+- **Date:** 2026-11-11
+- **Decision:** Category, stage, search, and sort live in URL search params;
+  the bag lives only in `localStorage` under `fairholt.bag.v1`. There are no
+  network calls, accounts, or server state.
+- **Rationale:** Shareable, back-button-correct filtering with no backend; the
+  brief requires a functional local demonstration cart and excludes real order
+  processing.
+- **Alternatives rejected:** React-only filter state (not shareable, breaks on
+  refresh); session storage (lost between visits); mocked API (implies a
+  backend that does not exist).
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
 ---
 
 Add new entries above this line, keeping the same fields and a sequential ID.

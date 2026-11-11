@@ -1,8 +1,7 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — Phase 4 passed; design system and 78 tokens
-> generated, contrast verified.
+> Last updated: 2026-11-11 — Phase 5 passed; all routes and states specified.
 
 ## Status vocabulary
 
@@ -75,7 +74,7 @@
 | 2 | Visual reference research | PASSED | G2 | `docs/02` with 3 external references + supplied mockup; 6 screenshots inspected; direction A selected | Autonomous (D-012) |
 | 3 | Real image asset sourcing | PASSED | G3 | 8 licensed Pexels photos; 6 products + 2 editorial; `validate:assets --require-assets` 0 errors | Autonomous |
 | 4 | Art direction and design system | PASSED | G4 | `docs/04` tokens; 78 generated; contrast measured AA; D-013 | Autonomous |
-| 5 | Wireframes and page specifications | NOT STARTED | G5 | — | — |
+| 5 | Wireframes and page specifications | PASSED | G5 | `docs/05`: 5 routes, content, assets, 390/768/1440, states, interaction matrix | Autonomous |
 | 6 | Frontend implementation | NOT STARTED | G6 | `site/` not created | — |
 | 7 | Browser-based visual QA | NOT STARTED | G7 | — | — |
 | 8 | Refinement and final validation | NOT STARTED | G8 | — | — |
@@ -156,7 +155,24 @@
 - Typography: Fraunces Variable + Archivo Variable, self-hosted via Fontsource
   (SIL OFL 1.1); fallbacks documented.
 - Components and states specified, including keyboard and reduced-motion rules.
-- Checkpoint: see `phase-4` commit in git log.
+- Checkpoint: `9822a27`.
+
+### G5 — Wireframes and page specifications
+
+- Result: PASSED
+- Output: `docs/05-page-specifications.md`.
+- Routes: `/`, `/shop`, `/shop/:slug`, `/cart`, `*` (404), each with purpose,
+  ASCII wireframe, content inventory, asset slots, responsive table, components,
+  interaction matrix, functionality, and accessibility acceptance.
+- Catalogue: six sample products (shirt, blazer, knit, skirt, trouser, loafer)
+  with categories, stages, sample prices, sizes, and image IDs.
+- Content provenance: all product copy and prices are marked sample; no reviews,
+  school names, delivery promises, or credentials invented.
+- Every image slot maps to one of the eight verified manifest assets.
+- Global states: demo notice, mobile menu, empty search, empty bag, size error,
+  added-to-bag, demo checkout, 404, storage fallback.
+- No visual direction or token changed.
+- Checkpoint: see `phase-5` commit in git log.
 
 ## Approvals
 
@@ -182,6 +198,7 @@ recorded on 2026-11-11.
 
 ## Next action
 
-Phase 5 — wireframes and page specifications for `/`, `/shop`,
-`/shop/:slug`, `/cart`, and the 404 state, with content, assets, responsive
-behaviour, interactions, and accessibility criteria.
+Phase 6 — scaffold the React + TypeScript + Vite + Tailwind application in
+`site/`, implement every specified route and state with the eight verified
+assets and generated tokens, then pass build, lint, typecheck, tests, and asset
+validation.
