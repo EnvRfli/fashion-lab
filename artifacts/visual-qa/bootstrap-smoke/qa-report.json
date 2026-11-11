@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-11-11T11:27:48.272Z",
+  "url": "http://127.0.0.1:4173/qa-page.html",
+  "session": "visual-qa-d1ea2b5d512c",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/bootstrap/qa-smoke/2026-11-11T11-27-37-827Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Visual QA fixture"
+          },
+          {
+            "level": 2,
+            "text": "Panel one"
+          },
+          {
+            "level": 2,
+            "text": "Panel two"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 3,
+        "lang": "en",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "Visual QA fixture",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:4173/qa-page.html",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 58,
+          "incomplete": 0,
+          "passes": 31,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/bootstrap/qa-smoke/2026-11-11T11-27-37-827Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Visual QA fixture"
+          },
+          {
+            "level": 2,
+            "text": "Panel one"
+          },
+          {
+            "level": 2,
+            "text": "Panel two"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 3,
+        "lang": "en",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "Visual QA fixture",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:4173/qa-page.html",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 58,
+          "incomplete": 0,
+          "passes": 31,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/bootstrap/qa-smoke/2026-11-11T11-27-37-827Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Visual QA fixture"
+          },
+          {
+            "level": 2,
+            "text": "Panel one"
+          },
+          {
+            "level": 2,
+            "text": "Panel two"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 3,
+        "lang": "en",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "Visual QA fixture",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:4173/qa-page.html",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 58,
+          "incomplete": 0,
+          "passes": 31,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

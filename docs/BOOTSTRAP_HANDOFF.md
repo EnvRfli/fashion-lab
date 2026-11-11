@@ -86,7 +86,7 @@ Verified end to end:
 | Public page opens | `https://example.com` |
 | DOM/accessibility snapshot | Returned heading and interactive refs; `@e...` refs worked |
 | Form interaction | Filled the test field; clicked the button; read `SMOKE-ACTION-PASSED` |
-| Screenshot | `artifacts/bootstrap/smoke-local.png`, `artifacts/bootstrap/example.com.png` |
+| Screenshot | `artifacts/visual-qa/bootstrap-smoke/agent-browser-smoke.png`, `public-page-example.png` |
 | Console error inspection | `console` returned `[error] SMOKE-CONSOLE-ERROR` |
 | Uncaught page error inspection | `errors` returned `Error: SMOKE-PAGE-ERROR` with line/column |
 | Accessibility audit | `a11y` returned 0 violations on the smoke fixture |
@@ -145,10 +145,19 @@ scripts/
   fixtures/qa-page.html
 
 artifacts/
-  visual-qa/.gitkeep
+  visual-qa/
+    .gitkeep
+    bootstrap-smoke/
+      agent-browser-smoke.png
+      public-page-example.png
+      mobile-390.png
+      tablet-768.png
+      desktop-1440.png
+      qa-report.json
 ```
 
 `artifacts/bootstrap/` contains temporary smoke evidence and is ignored by Git.
+The committed copies are under `artifacts/visual-qa/bootstrap-smoke/`.
 `artifacts/visual-qa/` is tracked for project QA evidence.
 
 No website was built. `site/` is intentionally absent.
@@ -192,6 +201,14 @@ The command:
 8. Produces an evidence-based completion report.
 
 If no brief is supplied, the command must stop and ask for one.
+
+**Fresh-session verification:** on 2026-11-11, a new session with no prior
+conversation expanded `/build-site`, switched to the `build` agent, ran
+`verify:bootstrap` (35/35), and stopped at Phase 0 because the brief was empty.
+It did not invent a project, and it recorded blocker B1 in
+`docs/PHASE_STATUS.md` (commit `16b6921`). The test used the active
+`opencode-go/deepseek-v4.1-flash` model; the project command itself pins no
+model.
 
 ### Mode
 
@@ -251,11 +268,18 @@ temporary browser state, or unlicensed assets.
 8. **OpenCode API location limitation.** The shared server's `/api/skill` and
    `/api/command` responses reflect its own location (the home directory), not
    necessarily this project. Project skills were verified through the session
-   catalog and `skill` tool; the `/build-site` file is verified on disk. In a
-   fresh project session, confirm command discovery in the composer.
-9. **Stock photography licensing is future work.** Phase 3 must verify each
-   source page and license; the bootstrap cannot pre-approve assets.
-10. **No deployment.** Deployment is out of scope unless a later brief explicitly
+   catalog and `skill` tool; `/build-site` was verified in a fresh project
+   session. Do not use `/api/command` as the sole proof of project command
+   discovery.
+9. **Model balance can block a run.** A non-interactive `opencode run` without
+   an explicit model selected the build agent's default `opencode/gemini-4-carbon`
+   and received a provider 402 (insufficient balance). The same command with the
+   active `opencode-go/deepseek-v4.1-flash` succeeded. The repository does not
+   pin a model. If a fresh session inherits an unfunded model, select the funded
+   model in OpenCode or top up the account; this is external to the repository.
+10. **Stock photography licensing is future work.** Phase 3 must verify each
+    source page and license; the bootstrap cannot pre-approve assets.
+11. **No deployment.** Deployment is out of scope unless a later brief explicitly
     adds it and records the target and credentials handling.
 
 ## 7. Exact instructions for the next session
@@ -293,5 +317,6 @@ also written to `docs/PHASE_STATUS.md`.
 | Asset validator self-test | **PASSED — 10/10 cases** |
 | Browser doctor | **7 pass, 1 warning (ffmpeg), 0 fail** |
 | Visual inspection | **PASSED** for smoke and three QA-viewport screenshots on 2026-11-11 |
-| Git checkpoint | Recorded after this document is committed (see `git log`) |
-| Working tree clean | Verify with `git status` after the checkpoint |
+| `/build-site` fresh session | **PASSED** — expanded, ran verification, stopped for missing brief, committed `16b6921` |
+| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record |
+| Working tree clean | Confirm with `git status` after the final documentation commit |

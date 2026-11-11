@@ -1,7 +1,7 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — bootstrap verification complete.
+> Last updated: 2026-11-11 — bootstrap verified; `/build-site` fresh-session check passed.
 
 ## Status vocabulary
 
@@ -20,14 +20,15 @@
 | Skill lock file | PASSED | `skills-lock.json` contains all three, version 2, copy mode |
 | Browser runtime | PASSED | Chrome for Testing `157.0.8103.50` installed |
 | Browser diagnostics | PASSED | `agent-browser doctor`: 7 pass, 1 warning (ffmpeg absent, not needed), 0 fail |
-| Browser smoke: local page | PASSED | `artifacts/bootstrap/smoke-local.png`; snapshot, click, fill, console error, page error verified |
+| Browser smoke: local page | PASSED | `artifacts/visual-qa/bootstrap-smoke/agent-browser-smoke.png`; snapshot, click, fill, console error, page error verified |
 | Browser smoke: public page | PASSED | `https://example.com` opened; snapshot and screenshot captured |
 | Screenshot image inspection | PASSED | Smoke PNG read as image content; burgundy header and `AGENT-BROWSER-SMOKE-OK` observed |
-| QA runner 390/768/1440 | PASSED | `artifacts/bootstrap/qa-smoke/2026-11-11T11-27-37-827Z/`; all three screenshots inspected |
+| QA runner 390/768/1440 | PASSED | `artifacts/visual-qa/bootstrap-smoke/`; all three screenshots inspected |
 | Asset validator self-test | PASSED | 10/10 isolated cases passed |
 | `/build-site` command file | PASSED | `.opencode/commands/build-site.md` exists with `agent: build` and `$ARGUMENTS` |
+| `/build-site` fresh-session behavior | PASSED | Session `ses_e359507ebffeULJMnBmvTB6c0n` expanded the command, ran `verify:bootstrap` (35/35), refused to invent a brief, and recorded blocker B1 |
 | Bootstrap verifier | PASSED | `npm run verify:bootstrap`: 35/35 checks passed |
-| Git checkpoint | PENDING | Commit after final verification |
+| Git checkpoint | PASSED | `fe28235` bootstrap; `16b6921` fresh-session blocker record |
 
 ### Browser smoke evidence
 
@@ -50,6 +51,19 @@
   0 axe violations.
 - Visual inspection: all three screenshots read as images; layout stacked on
   mobile, two-column at tablet/desktop, consistent typography and spacing.
+
+### `/build-site` fresh-session evidence
+
+- A fresh OpenCode session with no conversation history expanded
+  `/build-site` into the full command prompt and switched to the `build` agent.
+- It ran `npm run verify:bootstrap` and received 35/35 checks passed.
+- With empty arguments, it did **not** invent a project; it stopped at Phase 0
+  and asked for the brief.
+- It recorded blocker B1 in this file and committed `16b6921`.
+- The command pins no model or provider. The non-interactive test used the
+  currently active `opencode-go/deepseek-v4.1-flash`; an earlier test with the
+  build agent's unfunded default model failed with a provider 402, which is an
+  account-balance issue, not a command-discovery failure.
 
 ## Project phases
 
