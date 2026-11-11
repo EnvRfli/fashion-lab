@@ -1,8 +1,8 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — Phase 1 passed; product, audience, routes, and
-> content provenance recorded.
+> Last updated: 2026-11-11 — Phase 2 passed; direction A selected with references
+> and screenshots.
 
 ## Status vocabulary
 
@@ -72,7 +72,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 0 | Environment and project brief | PASSED | G0 | `docs/01-product-brief.md`; brief SHA-256 `4dffb2ae…db972`; bootstrap 35/35 | Brief supplied; autonomous mode |
 | 1 | Product and audience discovery | PASSED | G1 | `docs/01` Phase 1 sections: 5 journeys, route inventory, content provenance, constraints | Autonomous |
-| 2 | Visual reference research | NOT STARTED | G2 | — | — |
+| 2 | Visual reference research | PASSED | G2 | `docs/02` with 3 external references + supplied mockup; 6 screenshots inspected; direction A selected | Autonomous (D-012) |
 | 3 | Real image asset sourcing | NOT STARTED | G3 | — | — |
 | 4 | Art direction and design system | NOT STARTED | G4 | — | — |
 | 5 | Wireframes and page specifications | NOT STARTED | G5 | — | — |
@@ -110,7 +110,22 @@
   copy planned for Phase 6.
 - Decisions: `docs/DECISIONS.md` D-009 (brand), D-010 (demo commerce model),
   D-011 (catalogue sized to photography).
-- Checkpoint: see `phase-1` commit in git log.
+- Checkpoint: `55d745c`.
+
+### G2 — Visual reference research
+
+- Result: PASSED
+- References: Stevensons (direct), Folk (adjacent), Daunt Books (non-obvious),
+  plus the supplied mockup. All external references reached 2026-11-11.
+- Screenshots: `artifacts/visual-qa/references/stevensons-{desktop-1440,mobile-390}.png`,
+  `folk-{desktop-1440,mobile-390}.png`, `dauntbooks-{desktop-1440,mobile-390}.png`.
+- Inspection: all six screenshots read as image content. Folk and Daunt mobile
+  captures contain blank lazy-load regions and were not used as mobile evidence;
+  limitation recorded in `docs/02`.
+- Direction options: A The Outfitter's Ledger (selected), B The Term List,
+  C Playground Colour-Block (both rejected with reasons).
+- Decision: D-012. Autonomous mode; no human approval required.
+- Checkpoint: see `phase-2` commit in git log.
 
 ## Approvals
 
@@ -136,6 +151,5 @@ recorded on 2026-11-11.
 
 ## Next action
 
-Phase 2 — visual reference research. Capture at least three verified references
-at desktop and mobile widths, analyse them, and select a direction with rationale
-in `docs/DECISIONS.md`.
+Phase 3 — source real licensed photographs, download and validate them, and
+complete `docs/03-asset-manifest.md` before any high-fidelity design or code.

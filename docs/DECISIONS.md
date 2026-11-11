@@ -157,6 +157,24 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
 - **Approval:** autonomous, recorded 2026-11-11.
 - **Status:** `[APPROVED]`
 
+### D-012 — Visual direction: The Outfitter's Ledger
+
+- **Date:** 2026-11-11
+- **Decision:** Select Option A from `docs/02-visual-references.md`: oxblood and
+  blush brand fields, cool chalk product surfaces, Fraunces display + Archivo
+  text, hairline "ledger" rules, a timetable-like stage rail, and 20px-radius
+  product media. Reject the term-list and playground colour-block directions.
+- **Rationale:** It is the only option that carries the supplied mockup's warm
+  crimson identity while remaining credible for parents and school staff, and
+  its ledger structure comes from the subject (uniform requirement lists) rather
+  than from a generic e-commerce template. It also works with garment-focused
+  stock photography rather than requiring cut-outs.
+- **Alternatives rejected:** Option B (form-like; invites invented uniform
+  requirements); Option C (loud, less trustworthy, requires cut-out photography
+  we may not have).
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
 ---
 
 Add new entries above this line, keeping the same fields and a sequential ID.
