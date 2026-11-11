@@ -35,6 +35,7 @@ Read this file before doing any project work. Then read:
 | `docs/04-design-system.md` | Approved tokens and design decisions (single source of truth). |
 | `docs/05-page-specifications.md` | Routes, wireframes, states, content, responsive behavior. |
 | `docs/06-visual-qa.md` | Browser QA evidence, findings, and sign-off. |
+| `docs/DEPLOY_VERCEL.md` | Vercel deployment settings, SPA rewrites, and checks. |
 | `docs/DECISIONS.md` | Durable decision log for design and architecture. |
 | `docs/references/` | Saved reference images or screenshots, when supplied. |
 | `.opencode/commands/build-site.md` | Project-local `/build-site` command. |

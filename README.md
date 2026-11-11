@@ -36,6 +36,22 @@ npm run verify:bootstrap
 Project status, routes, evidence, and limitations: `docs/PHASE_STATUS.md` and
 `docs/06-visual-qa.md`.
 
+## Deploy to Vercel
+
+The Vercel project root is `site`. Full step-by-step instructions, settings,
+SPA rewrite explanation, and post-deploy checks: `docs/DEPLOY_VERCEL.md`.
+
+Quick settings:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | `site` |
+| Framework Preset | `Vite` |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+| Install Command | `npm install` |
+| Environment Variables | none |
+
 ## Workflow quick start
 
 ```powershell

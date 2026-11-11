@@ -33,6 +33,9 @@ coverage/
 .playwright/
 .puppeteer/
 
+# Vercel local project metadata
+.vercel/
+
 # Bootstrap-only evidence (temporary smoke tests)
 artifacts/bootstrap/
 artifacts/tmp/
