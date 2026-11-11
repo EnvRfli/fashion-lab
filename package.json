@@ -1,0 +1,19 @@
+{
+  "name": "fashion-lab-design-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Design-first, asset-first frontend development workflow for OpenCode",
+  "scripts": {
+    "verify:bootstrap": "node scripts/verify-bootstrap.mjs",
+    "validate:assets": "node scripts/validate-assets.mjs",
+    "qa:visual": "node scripts/visual-qa.mjs",
+    "tokens:build": "node scripts/build-tokens.mjs",
+    "serve:fixture": "node scripts/serve-fixture.mjs"
+  },
+  "devDependencies": {
+    "agent-browser": "0.42.0",
+    "image-size": "2.1.0",
+    "skills": "1.8.1"
+  }
+}

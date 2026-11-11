@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+site/node_modules/
+
+# Frontend build output (framework-agnostic)
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+dist/
+build/
+out/
+coverage/
+.turbo/
+.vercel/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Logs and caches
+*.log
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Browser automation state
+.agent-browser/
+.agent-browser-profile/
+.playwright/
+.puppeteer/
+
+# Bootstrap-only evidence (temporary smoke tests)
+artifacts/bootstrap/
+artifacts/tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

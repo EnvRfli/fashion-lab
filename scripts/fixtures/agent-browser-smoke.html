@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>agent-browser smoke test</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #f5f6f8;
+        color: #16181d;
+      }
+      .band {
+        background: #8f1d2c;
+        color: #fff;
+        padding: 48px 24px;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #d9dde5;
+        border-radius: 12px;
+        padding: 24px;
+      }
+      button {
+        min-height: 44px;
+        padding: 0 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="band">
+      <h1>AGENT-BROWSER-SMOKE-OK</h1>
+      <p>Local fixture for browser verification.</p>
+    </header>
+    <main>
+      <section class="card" aria-labelledby="controls-heading">
+        <h2 id="controls-heading">Smoke controls</h2>
+        <p id="result" role="status">Not clicked yet.</p>
+        <label for="name">Test name</label>
+        <input id="name" name="name" autocomplete="off" />
+        <button id="click-me" type="button">Run smoke action</button>
+        <button id="log-error" type="button">Trigger console error</button>
+        <button id="throw-error" type="button">Trigger page error</button>
+      </section>
+    </main>
+    <script>
+      document.getElementById("click-me").addEventListener("click", () => {
+        document.getElementById("result").textContent = "SMOKE-ACTION-PASSED";
+      });
+      document.getElementById("log-error").addEventListener("click", () => {
+        console.error("SMOKE-CONSOLE-ERROR");
+      });
+      document.getElementById("throw-error").addEventListener("click", () => {
+        setTimeout(() => {
+          throw new Error("SMOKE-PAGE-ERROR");
+        }, 0);
+      });
+    </script>
+  </body>
+</html>
