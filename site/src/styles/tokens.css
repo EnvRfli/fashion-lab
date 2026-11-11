@@ -1,0 +1,87 @@
+/*
+ * GENERATED FILE - do not edit by hand.
+ * Source: docs/04-design-system.md
+ * Design system: Fairholt Schoolwear — The Outfitter's Ledger (status: approved)
+ * Regenerate: npm run tokens:build
+ */
+
+:root {
+  --color-base-oxblood: #7A2230;
+  --color-base-oxblood-deep: #521720;
+  --color-base-blush: #F6E5E3;
+  --color-base-chalk: #FBF9F5;
+  --color-base-paper: #FFFFFF;
+  --color-base-ink: #1E2430;
+  --color-base-ink-muted: #5A6070;
+  --color-base-brass: #B08A4F;
+  --color-base-border: #E2D8D2;
+  --color-base-border-strong: #8C7C74;
+  --color-text-primary: #1E2430;
+  --color-text-secondary: #5A6070;
+  --color-text-inverse: #FBF9F5;
+  --color-text-accent: #7A2230;
+  --color-text-error: #A33131;
+  --color-text-success: #2E6B4F;
+  --color-semantic-success: #2E6B4F;
+  --color-semantic-error: #A33131;
+  --color-semantic-warning: #8A5A12;
+  --color-semantic-info: #2A4A6B;
+  --color-semantic-focus: #7A2230;
+  --typography-family-display: Fraunces Variable, Georgia, serif;
+  --typography-family-body: Archivo Variable, Arial, sans-serif;
+  --typography-size-xs: 0.75rem;
+  --typography-size-sm: 0.875rem;
+  --typography-size-base: 1rem;
+  --typography-size-lg: 1.125rem;
+  --typography-size-xl: 1.375rem;
+  --typography-size-2xl: 1.75rem;
+  --typography-size-3xl: 2.25rem;
+  --typography-size-4xl: 3rem;
+  --typography-size-5xl: 3.75rem;
+  --typography-size-display: clamp(2.75rem, 5.2vw, 4.5rem);
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --typography-line-height-tight: 1.02;
+  --typography-line-height-snug: 1.18;
+  --typography-line-height-normal: 1.5;
+  --typography-line-height-relaxed: 1.65;
+  --typography-measure-narrow: 30rem;
+  --typography-measure-body: 42rem;
+  --typography-measure-wide: 56rem;
+  --typography-tracking-tight: -0.02em;
+  --typography-tracking-normal: 0;
+  --typography-tracking-wide: 0.04em;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --border-hair: 1px;
+  --border-strong: 2px;
+  --shadow-card: 0 18px 40px -30px rgba(30, 36, 48, 0.35);
+  --shadow-menu: 0 24px 60px -32px rgba(30, 36, 48, 0.45);
+  --motion-duration-fast: 140ms;
+  --motion-duration-base: 220ms;
+  --motion-duration-slow: 420ms;
+  --motion-easing-standard: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --motion-easing-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
+  --layout-max-width: 1240px;
+  --layout-gutter: 1.5rem;
+  --layout-gutter-mobile: 1rem;
+  --layout-grid-columns: 12;
+  --layout-header-height: 76px;
+}

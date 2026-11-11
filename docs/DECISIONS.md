@@ -175,6 +175,25 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
 - **Approval:** autonomous, recorded 2026-11-11.
 - **Status:** `[APPROVED]`
 
+### D-013 — Design system: The Outfitter's Ledger tokens
+
+- **Date:** 2026-11-11
+- **Decision:** Adopt the palette, type, layout, shape, motion, and component
+  rules in `docs/04-design-system.md`. Key values: oxblood `#7A2230`, deep
+  oxblood `#521720`, blush `#F6E5E3`, chalk `#FBF9F5`, ink `#1E2430`; Fraunces
+  Variable display + Archivo Variable text; 1240px shell; 20px product media;
+  flat bordered cards; oxblood focus rings; reduced-motion support.
+- **Rationale:** The palette carries the supplied mockup's crimson/blush
+  identity without copying it, while the ledger structure and flat card system
+  avoid generic AI/SaaS patterns and suit the mixed stock photography. All
+  measured text pairs pass WCAG AA.
+- **Alternatives rejected:** Navy/white direct-reference palette (too close to
+  Stevensons); forest/orange and cobalt mosaic (rejected in Phase 2); identical
+  soft-shadow cards (generic; weak hierarchy).
+- **Approval:** autonomous, recorded 2026-11-11. Tokens generated with
+  `npm run tokens:build -- --require` (78 tokens).
+- **Status:** `[APPROVED]`
+
 ---
 
 Add new entries above this line, keeping the same fields and a sequential ID.
