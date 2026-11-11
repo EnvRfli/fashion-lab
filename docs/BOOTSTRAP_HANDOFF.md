@@ -327,5 +327,5 @@ also written to `docs/PHASE_STATUS.md`.
 | Browser doctor | **7 pass, 1 warning (ffmpeg), 0 fail** |
 | Visual inspection | **PASSED** for final Galeri Seragam screenshots at 390/768/1440 on 2026-11-11 |
 | `/build-site` fresh session | **PASSED** — expanded, ran verification, stopped for missing brief, committed `16b6921` |
-| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record; `6444607` evidence and handoff; `ef09a4f` pre-realignment storefront; final realignment commit in git log |
+| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record; `6444607` evidence and handoff; `ef09a4f` pre-realignment storefront; `ec0e678` Galeri Seragam implementation |
 | Working tree clean | Verified after the final realignment commit |

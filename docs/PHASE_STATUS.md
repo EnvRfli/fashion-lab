@@ -18,6 +18,7 @@
 | Execution instruction | `docs/REALIGNMENT_EXECUTION.md` |
 | Approach | **Partial application-layer rebuild** inside the same repository |
 | Baseline checkpoint | `ef09a4f` — pre-realignment fashion storefront preserved |
+| Implementation checkpoint | `ec0e678` — Galeri Seragam implementation, docs, and QA evidence |
 | Frontend | `site/` — React 19 + TypeScript + Vite 8 + Tailwind 4 |
 | Mode | `autonomous` |
 

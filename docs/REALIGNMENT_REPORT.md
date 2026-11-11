@@ -124,5 +124,5 @@ it served the rebuilt `dist` and is recorded in `docs/06`.
 ## 10. Checkpoints
 
 - `ef09a4f` — pre-realignment storefront preserved.
-- Final realignment commit — see `git log --oneline -1` after this report is
-  committed.
+- `ec0e678` — final Galeri Seragam implementation, documentation, and QA
+  evidence.
