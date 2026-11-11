@@ -1,7 +1,8 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — bootstrap verified; `/build-site` fresh-session check passed.
+> Last updated: 2026-11-11 — Phase 0 passed; brief recorded from
+> `docs/PROJECT_BRIEF.md`.
 
 ## Status vocabulary
 
@@ -69,7 +70,7 @@
 
 | Phase | Name | Status | Gate | Evidence | Approval |
 | --- | --- | --- | --- | --- | --- |
-| 0 | Environment and project brief | NOT STARTED | G0 | No brief received | Awaiting brief |
+| 0 | Environment and project brief | PASSED | G0 | `docs/01-product-brief.md`; brief SHA-256 `4dffb2ae…db972`; bootstrap 35/35 | Brief supplied; autonomous mode |
 | 1 | Product and audience discovery | NOT STARTED | G1 | — | — |
 | 2 | Visual reference research | NOT STARTED | G2 | — | — |
 | 3 | Real image asset sourcing | NOT STARTED | G3 | — | — |
@@ -81,11 +82,22 @@
 
 ## Current state
 
-- Project brief: **not received**.
+- Project brief: **received** at `docs/PROJECT_BRIEF.md`; recorded in `docs/01`.
 - Frontend: not scaffolded.
 - Design system: template only; no approved tokens.
 - Assets: manifest empty; no product images.
-- Mode: will be read from the brief; default is autonomous.
+- Mode: `autonomous` (from brief).
+
+### G0 — Environment and brief
+
+- Result: PASSED
+- Command: `npm run verify:bootstrap` → `Summary: 35/35 checks passed.`
+- Brief: `docs/PROJECT_BRIEF.md`, SHA-256 `4dffb2aee46457bcfe8f34201c85d5083f17e74487825e18eeab020ced4db972`
+- Recorded: product, audiences, primary job, four routes, non-goals, content
+  provenance, technology, photography policy, and autonomous mode in `docs/01`.
+- Frontend location: `site/`.
+- Open questions: none blocking; final brand name is provisional as permitted.
+- Checkpoint: `phase-0` commit (see git log).
 
 ## Approvals
 
@@ -95,25 +107,21 @@
 
 ## Blockers
 
-None from tooling. The project is blocked on a project brief, nothing else.
+None. B1 is resolved: the brief was supplied at `docs/PROJECT_BRIEF.md` and
+recorded on 2026-11-11.
 
 | # | Problem | Evidence | Impact | Corrective action | Owner |
 | --- | --- | --- | --- | --- | --- |
-| B1 | `/build-site` invoked with empty `$ARGUMENTS` on 2026-11-11, so no brief exists | Phase 0 row above (`No brief received`); `docs/01-product-brief.md` is still a template; `npm run verify:bootstrap` = 35/35 PASSED, so the toolchain is not the cause | Phases 0–8 cannot start; no product, audience, routes, assets, or visual direction may be invented | Supply the brief in chat, as a file path, or as a file under `docs/references/` | Project owner |
+| B1 | `/build-site` invoked with empty `$ARGUMENTS` on 2026-11-11, so no brief existed | Resolved 2026-11-11: `docs/PROJECT_BRIEF.md` supplied and recorded in `docs/01` | None remaining | Closed | Project owner |
 
 ## Resume instructions
 
 1. Read `AGENTS.md`, `docs/BOOTSTRAP_HANDOFF.md`, and this file.
 2. Run `npm run verify:bootstrap`.
-3. If a brief exists, run `/build-site <brief or path>`.
-4. If no brief exists, stop and ask for one.
-5. Start at Phase 0 and do not skip gates.
+3. Continue at the first phase not marked `PASSED` (Phase 1).
+4. Do not skip gates.
 
 ## Next action
 
-Await the project brief. Do not build a website until Phase 0 records one.
-
-Required brief inputs: product, audience, goal, routes and non-goals, content
-provenance (real vs demonstration), brand inputs, mode (`autonomous` default or
-`approval`), and the source of real product photographs. A mockup is a Phase 2
-visual reference, not a substitute for the written brief.
+Phase 1 — complete product and audience discovery in `docs/01-product-brief.md`,
+then pass G1 and commit the checkpoint.
