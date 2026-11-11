@@ -1,8 +1,8 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — Phase 0 passed; brief recorded from
-> `docs/PROJECT_BRIEF.md`.
+> Last updated: 2026-11-11 — Phase 1 passed; product, audience, routes, and
+> content provenance recorded.
 
 ## Status vocabulary
 
@@ -71,7 +71,7 @@
 | Phase | Name | Status | Gate | Evidence | Approval |
 | --- | --- | --- | --- | --- | --- |
 | 0 | Environment and project brief | PASSED | G0 | `docs/01-product-brief.md`; brief SHA-256 `4dffb2ae…db972`; bootstrap 35/35 | Brief supplied; autonomous mode |
-| 1 | Product and audience discovery | NOT STARTED | G1 | — | — |
+| 1 | Product and audience discovery | PASSED | G1 | `docs/01` Phase 1 sections: 5 journeys, route inventory, content provenance, constraints | Autonomous |
 | 2 | Visual reference research | NOT STARTED | G2 | — | — |
 | 3 | Real image asset sourcing | NOT STARTED | G3 | — | — |
 | 4 | Art direction and design system | NOT STARTED | G4 | — | — |
@@ -97,7 +97,20 @@
   provenance, technology, photography policy, and autonomous mode in `docs/01`.
 - Frontend location: `site/`.
 - Open questions: none blocking; final brand name is provisional as permitted.
-- Checkpoint: `phase-0` commit (see git log).
+- Checkpoint: `35ca53c`.
+
+### G1 — Product and audience discovery
+
+- Result: PASSED
+- Output: `docs/01-product-brief.md` Phase 1 sections.
+- Journeys J1–J5; route inventory for `/`, `/shop`, `/shop/:slug`, `/cart`,
+  and 404; page content requirements; provenance and truth rules; constraints
+  and risks; observable success criteria.
+- No visual direction chosen; no product data invented beyond labelled sample
+  copy planned for Phase 6.
+- Decisions: `docs/DECISIONS.md` D-009 (brand), D-010 (demo commerce model),
+  D-011 (catalogue sized to photography).
+- Checkpoint: see `phase-1` commit in git log.
 
 ## Approvals
 
@@ -123,5 +136,6 @@ recorded on 2026-11-11.
 
 ## Next action
 
-Phase 1 — complete product and audience discovery in `docs/01-product-brief.md`,
-then pass G1 and commit the checkpoint.
+Phase 2 — visual reference research. Capture at least three verified references
+at desktop and mobile widths, analyse them, and select a direction with rationale
+in `docs/DECISIONS.md`.

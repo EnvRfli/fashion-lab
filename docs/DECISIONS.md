@@ -112,13 +112,51 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
 
 ## Project decisions
 
-Add entries here during the build. Suggested format:
+### D-009 — Provisional brand: Fairholt Schoolwear
 
-### D-0XX — _title_
-
-- **Date:**
-- **Decision:**
-- **Rationale:**
-- **Alternatives rejected:**
-- **Approval:** human name/date or autonomous decision reference
+- **Date:** 2026-11-11
+- **Decision:** Use **Fairholt Schoolwear** as the working brand name, with a
+  simple "F" monogram/wordmark rendered as SVG (logo, permitted). The brand is
+  fictional and the site states that products and prices are illustrative.
+- **Rationale:** The brief explicitly permits a proposed provisional identity.
+  "Fairholt" reads as an established English outfitter without borrowing a real
+  school or retailer identity. It is a composite word, not a verified trademark
+  clearance.
+- **Alternatives rejected:** Copying the reference's "Galeri Seragam" identity
+  (prohibited brand copying); a literal school name (would imply a partnership);
+  an abstract tech-style name (wrong category language).
+- **Approval:** autonomous, recorded 2026-11-11.
 - **Status:** `[APPROVED]`
+
+### D-010 — Demonstration commerce model with persistent labelling
+
+- **Date:** 2026-11-11
+- **Decision:** The storefront is explicitly a demonstration. A slim global
+  notice and per-product "Sample price" labels identify illustrative content.
+  Checkout ends in a demonstration explanation, never a payment form. The cart
+  is local-only via `localStorage`; no backend calls.
+- **Rationale:** The brief requires sample product content to be identified and
+  forbids real order processing. Labelling at the point of use keeps the site
+  honest even when a screenshot is shared out of context.
+- **Alternatives rejected:** A single line buried in the footer (easy to miss);
+  simulating a checkout form (misleading); inventing stock availability.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-011 — Catalogue sized to verified photography
+
+- **Date:** 2026-11-11
+- **Decision:** Target eight products across at least four garment categories,
+  but treat the verified photo set as the constraint. Product records are
+  defined after Phase 3, not before.
+- **Rationale:** The workflow requires real photographs before high-fidelity
+  design. Fixing a twelve-product catalogue first would pressure the project
+  into unsuitable or unlicensed imagery.
+- **Alternatives rejected:** Designing a fixed catalogue and finding images
+  afterwards; using a single photo for multiple products (misrepresentation).
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+---
+
+Add new entries above this line, keeping the same fields and a sequential ID.

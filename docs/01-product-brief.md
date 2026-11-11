@@ -250,6 +250,118 @@ with responsive and functional implementation.
 | School names, partnerships, reviews, ratings, sales metrics | Not supplied; must not be invented | `[VERIFIED]` out of scope |
 | Service, delivery, and returns claims | Not supplied; must not be presented as real policy | `[VERIFIED]` out of scope |
 
+## Phase 1 — Product and audience discovery
+
+> Added 2026-11-11. Discovery only; no visual direction is chosen here.
+
+### What this product is, and is not
+
+- `[PROPOSED]` **Is:** a four-route demonstration storefront for a fictional
+  specialist school-uniform outfitter. It presents a small curated range,
+  supports filtering and search, explains fit and care, and maintains a cart in
+  the browser.
+- `[PROPOSED]` **Is not:** a real shop, a payment flow, a stock system, a school
+  portal, or a source of real school uniform regulations. Any resemblance to a
+  real supplier is coincidental; the storefront says so.
+- `[PROPOSED]` **A visitor should be able to:** understand the offer, find a
+  garment by category or stage, read its details, choose a size, add it to the
+  cart, adjust the cart, and see the subtotal.
+
+### Primary user journeys
+
+| # | Journey | Entry | Steps | Success | Status |
+| --- | --- | --- | --- | --- | --- |
+| J1 | Shop by garment need | Home | Choose a category tile → arrive at `/shop` pre-filtered → scan cards → open product → choose size → add to cart → open cart | Cart shows the chosen item, size, quantity, and subtotal | `[PROPOSED]` |
+| J2 | Shop by school stage | Home or header | Choose Junior / Senior → `/shop` with stage filter → compare → open product | A shortlist relevant to the stage | `[PROPOSED]` |
+| J3 | Search for a specific piece | Header or `/shop` | Enter a query → see matching results or a clear empty state → clear the query | Query completes without a dead end | `[PROPOSED]` |
+| J4 | Check the cart before a demo checkout | Any page | Open cart → change quantity → remove a line → review subtotal → read demo checkout notice | Totals update; state persists on reload | `[PROPOSED]` |
+| J5 | Assess the outfitter's credibility | Home | Read the offer, quality/care guidance, and service explanation → browse the range | Understands what the fictional outfitter offers without false claims | `[PROPOSED]` |
+
+### Route and page inventory
+
+| Route | Purpose | Primary action | Required content | Assets |
+| --- | --- | --- | --- | --- |
+| `/` | Explain the offer and route visitors into the range | Browse the collection | Brand, headline, intro, category navigation, stage navigation, featured products, fit/care guidance, demonstration notice | Hero editorial photo; four category photos; four featured product photos |
+| `/shop` | Support finding and comparing pieces | Open a product | Search, category filter, stage filter, sort, result count, product cards (name, category, stage, sample price), empty state | One photo per product |
+| `/shop/:slug` | Support an add-to-cart decision | Add to cart | Name, sample price, description, fabric, care, size options, size guidance, quantity, add-to-cart, related products | Product photo(s); related-product photos |
+| `/cart` | Review and adjust the demonstration cart | Continue shopping / review demo checkout | Line items, size, quantity controls, remove, subtotal, demo notice, empty state | Product thumbnails |
+| `*` (404) | Recover from a wrong URL | Return to shop or home | Clear message and working links | None |
+
+### Content requirements
+
+| Page | Content item | Requirement | Source | Status |
+| --- | --- | --- | --- | --- |
+| Global | Brand name | Provisional, pronounceable, not an existing uniform retailer's identity | Agent proposal | `[PROPOSED]` |
+| Global | Demonstration notice | Plain statement that prices, products, and checkout are illustrative | Agent copy | `[PROPOSED]` |
+| Global | Navigation | Home, Shop, Junior, Senior, Cart; working destinations only | Brief + discovery | `[PROPOSED]` |
+| Home | Headline and intro | Explain specialist schoolwear and the browsing job without unverifiable claims | Agent copy | `[PROPOSED]` |
+| Home | Category names | Blazers, Shirts, Knitwear, Skirts & Trousers, Sport, Accessories | Agent copy | `[PROPOSED]` |
+| Home | Stage names | Junior (ages 4–11), Senior (ages 11–16), Sixth (16–18) | Agent copy; age ranges are sample navigation labels, not uniform rules | `[PROPOSED]` |
+| Home | Fit/care guidance | Practical, generic guidance; no invented certification or testing claims | Agent copy | `[PROPOSED]` |
+| Shop | Product names, prices, descriptions | Clearly identified sample content | Agent copy | `[PROPOSED]` |
+| Shop | Filter and sort labels | Plain, specific, keyboard operable | Agent copy | `[PROPOSED]` |
+| Product | Fabric and care | Generic illustrative composition and washing guidance, labelled sample | Agent copy | `[PROPOSED]` |
+| Product | Size guide | Illustrative body measurements, labelled sample | Agent copy | `[PROPOSED]` |
+| Cart | Totals and notices | Arithmetic must be correct; checkout is explicitly a demonstration | Agent logic | `[PROPOSED]` |
+| All | Reviews, ratings, testimonials, school names, sales metrics, credentials | Prohibited; not supplied | Brief | `[VERIFIED]` |
+
+### Content provenance and truth rules
+
+- `[VERIFIED]` Product names, prices, and descriptions are sample content and
+  must be labelled in the interface, not only in documentation.
+- `[VERIFIED]` No business credentials, reviews, testimonials, or sales metrics
+  may be invented.
+- `[PROPOSED]` No school names, crests, or uniform policies may be invented.
+  The storefront describes a generic outfitter, not a specific school.
+- `[PROPOSED]` No delivery, returns, or guarantee promises are made. The demo
+  checkout explains that no order will be placed.
+- `[PROPOSED]` Photography is licensed stock, used as demonstration imagery, and
+  credited in the site footer and asset manifest.
+
+### Constraints and risks
+
+- `[VERIFIED]` **Licensing:** every photo needs a verified source, creator,
+  licence, and local file hash before use.
+- `[PROPOSED]` **Privacy and dignity:** prefer garment-focused photography.
+  Avoid using identifiable children as product models; do not imply they attend
+  a particular school.
+- `[PROPOSED]` **Accessibility:** WCAG 2.2 AA, keyboard-complete journeys,
+  visible focus, labelled controls, 44px targets, reduced motion, and status
+  messages announced politely.
+- `[PROPOSED]` **No backend:** cart state lives in `localStorage` with a versioned
+  key; malformed stored data falls back safely. No network requests for
+  catalogue or cart.
+- `[PROPOSED]` **Performance:** locally optimised images with explicit
+  dimensions; no web-font blocking beyond a single preconnected family load.
+- `[PROPOSED]` **Scope risk:** too many products for the available licensed
+  photography. Mitigation: define the catalogue from the photographs actually
+  obtained, not the reverse. Minimum eight products across at least four
+  categories.
+
+### Success criteria (observable)
+
+- `[PROPOSED]` All four required routes plus a 404 render from a production
+  build and are reachable without typing a URL.
+- `[PROPOSED]` A visitor can filter by category and stage, search, sort, clear
+  filters, open a product, select a size, add to cart, change quantity, remove a
+  line, and see correct totals, with state surviving a reload.
+- `[PROPOSED]` Invalid product slugs land on a designed not-found state.
+- `[PROPOSED]` Every product image is a local raster photograph recorded in the
+  manifest; no broken images at 390, 768, or 1440.
+- `[PROPOSED]` Keyboard-only completion of J1 and J4; axe reports no serious or
+  critical violations.
+- `[PROPOSED]` Sample content and demonstration status are visible without
+  opening documentation.
+
+### Discovery risks and mitigations
+
+| Risk | Impact | Mitigation | Status |
+| --- | --- | --- | --- |
+| Licensed uniform-specific photography is scarce | Catalogue cannot be represented honestly | Source garment photography from licensed stock; define products around obtained photos; block if unusable | `[PENDING]` |
+| Sample content mistaken for a real shop | Trust and honesty failure | Persistent demonstration label; per-price "sample" note; demo checkout | `[PROPOSED]` |
+| Filter/search complexity creates dead ends | Broken journeys | Empty state with clear-all; test every combination | `[PROPOSED]` |
+| Fictional brand collides with a real business | Legal/trust issue | Use an invented composite name; state it is fictional | `[PROPOSED]` |
+
 ## Open questions
 
 | Question | Why it matters | Blocking? | Status |
@@ -266,6 +378,17 @@ with responsive and functional implementation.
 | --- | --- | --- | --- |
 | Project brief accepted for execution | Project owner (brief supplied in `docs/PROJECT_BRIEF.md`) | 2026-11-11 | Brief and autonomous mode as written |
 | Frontend location `site/` | Workflow default (autonomous) | 2026-11-11 | Application location |
+
+## Phase 1 checklist
+
+- [x] Product explained without inventing product truth.
+- [x] Primary and secondary audiences, context, and device mix explicit.
+- [x] Primary job and observable success criteria explicit.
+- [x] Every requested route has a purpose, primary action, and content requirement.
+- [x] Content provenance labelled; prohibited content named.
+- [x] Journeys, constraints, risks, and non-goals recorded.
+- [x] No visual direction chosen.
+- [x] Status updated in `docs/PHASE_STATUS.md`.
 
 ## Phase 0 checklist
 
