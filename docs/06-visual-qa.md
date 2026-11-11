@@ -192,6 +192,18 @@ Inspector: **DeepSeek V4.1 Flash (vision-capable model), 2026-11-11**, using the
   single download, ZIP download, menu dialogs, school create/edit/delete,
   photo upload/delete, category description save/restore, demo user add.
 
+### Commerce and SVG zero-check
+
+- Source search for `cart|checkout|price|buy|shop|payment|promo|sale` in
+  `site/src` returns only the About page's negative statement ("Tanpa keranjang
+  atau checkout") and a test assertion that "Shop by layer" is absent. No `/cart`
+  or `/shop` route exists in `site/src/App.tsx`.
+- Rendered pages contain no price, currency, buy, or add-to-bag UI.
+- `npm run validate:assets -- --require-assets` confirms all eight content
+  images are raster photos. A source scan finds `<svg>` only in
+  `components/Icons.tsx` for icons and the brand mark; no garment is drawn with
+  SVG/CSS/Canvas.
+
 ## 7. Gate result
 
 **G7 — Browser-based visual QA: PASSED**, with the minor, documented
