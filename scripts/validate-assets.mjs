@@ -372,8 +372,9 @@ async function validateAsset(root, asset, index, report) {
 
 function extractReferences(line) {
   const refs = [];
+  const seen = new Set();
   const patterns = [
-    { kind: "img", regex: /<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi, group: 1 },
+    { kind: "img", regex: /\bsrc\s*=\s*\{?\s*["']([^"']+)["']/gi, group: 1 },
     { kind: "srcset", regex: /\bsrcset\s*=\s*["']([^"']+)["']/gi, group: 1 },
     { kind: "css", regex: /url\(\s*(['"]?)([^'")]+)\1\s*\)/gi, group: 2 },
     { kind: "import", regex: /(?:from\s+|import\s*\()\s*["']([^"']+)["']/gi, group: 1 },
@@ -384,7 +385,9 @@ function extractReferences(line) {
       let ref = match[pattern.group];
       if (!ref) continue;
       if (pattern.kind === "srcset") ref = ref.split(",")[0].trim().split(/\s+/)[0];
-      if (ref) refs.push({ ref, kind: pattern.kind });
+      if (!ref || seen.has(ref)) continue;
+      seen.add(ref);
+      refs.push({ ref, kind: pattern.kind });
     }
   }
   return refs;
