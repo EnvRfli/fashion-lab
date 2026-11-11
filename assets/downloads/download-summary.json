@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hero-uniform-flatlay",
+    "pexels": 36910113,
+    "downloadPath": "assets/downloads/hero-uniform-flatlay.jpg",
+    "publicPath": "site/public/images/hero-uniform-flatlay.jpg",
+    "bytes": 1248302,
+    "width": 1600,
+    "height": 2133,
+    "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+  },
+  {
+    "id": "editorial-atelier-rail",
+    "pexels": 7671167,
+    "downloadPath": "assets/downloads/editorial-atelier-rail.jpg",
+    "publicPath": "site/public/images/editorial-atelier-rail.jpg",
+    "bytes": 95731,
+    "width": 1600,
+    "height": 1067,
+    "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+  },
+  {
+    "id": "product-poplin-shirt",
+    "pexels": 28576622,
+    "downloadPath": "assets/downloads/product-poplin-shirt.jpg",
+    "publicPath": "site/public/images/product-poplin-shirt.jpg",
+    "bytes": 318212,
+    "width": 1600,
+    "height": 2400,
+    "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+  },
+  {
+    "id": "product-wool-blazer",
+    "pexels": 19109151,
+    "downloadPath": "assets/downloads/product-wool-blazer.jpg",
+    "publicPath": "site/public/images/product-wool-blazer.jpg",
+    "bytes": 304933,
+    "width": 1600,
+    "height": 2400,
+    "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+  },
+  {
+    "id": "product-striped-knit",
+    "pexels": 45982,
+    "downloadPath": "assets/downloads/product-striped-knit.jpg",
+    "publicPath": "site/public/images/product-striped-knit.jpg",
+    "bytes": 260223,
+    "width": 1600,
+    "height": 1081,
+    "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+  },
+  {
+    "id": "product-cotton-skirt",
+    "pexels": 38266547,
+    "downloadPath": "assets/downloads/product-cotton-skirt.jpg",
+    "publicPath": "site/public/images/product-cotton-skirt.jpg",
+    "bytes": 642356,
+    "width": 1600,
+    "height": 2133,
+    "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+  },
+  {
+    "id": "product-twill-trouser",
+    "pexels": 33633245,
+    "downloadPath": "assets/downloads/product-twill-trouser.jpg",
+    "publicPath": "site/public/images/product-twill-trouser.jpg",
+    "bytes": 327075,
+    "width": 1600,
+    "height": 1599,
+    "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+  },
+  {
+    "id": "product-leather-loafer",
+    "pexels": 10259873,
+    "downloadPath": "assets/downloads/product-leather-loafer.jpg",
+    "publicPath": "site/public/images/product-leather-loafer.jpg",
+    "bytes": 82381,
+    "width": 1600,
+    "height": 1600,
+    "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+  }
+]

@@ -1,8 +1,8 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — Phase 2 passed; direction A selected with references
-> and screenshots.
+> Last updated: 2026-11-11 — Phase 3 passed; eight licensed photographs recorded
+> as demonstration imagery.
 
 ## Status vocabulary
 
@@ -73,7 +73,7 @@
 | 0 | Environment and project brief | PASSED | G0 | `docs/01-product-brief.md`; brief SHA-256 `4dffb2ae…db972`; bootstrap 35/35 | Brief supplied; autonomous mode |
 | 1 | Product and audience discovery | PASSED | G1 | `docs/01` Phase 1 sections: 5 journeys, route inventory, content provenance, constraints | Autonomous |
 | 2 | Visual reference research | PASSED | G2 | `docs/02` with 3 external references + supplied mockup; 6 screenshots inspected; direction A selected | Autonomous (D-012) |
-| 3 | Real image asset sourcing | NOT STARTED | G3 | — | — |
+| 3 | Real image asset sourcing | PASSED | G3 | 8 licensed Pexels photos; 6 products + 2 editorial; `validate:assets --require-assets` 0 errors | Autonomous |
 | 4 | Art direction and design system | NOT STARTED | G4 | — | — |
 | 5 | Wireframes and page specifications | NOT STARTED | G5 | — | — |
 | 6 | Frontend implementation | NOT STARTED | G6 | `site/` not created | — |
@@ -125,7 +125,23 @@
 - Direction options: A The Outfitter's Ledger (selected), B The Term List,
   C Playground Colour-Block (both rejected with reasons).
 - Decision: D-012. Autonomous mode; no human approval required.
-- Checkpoint: see `phase-2` commit in git log.
+- Checkpoint: `4cefa73`.
+
+### G3 — Real image asset sourcing
+
+- Result: PASSED
+- Source: Pexels License, <https://www.pexels.com/license/>; all source pages
+  opened 2026-11-11.
+- Manifest: `docs/03-asset-manifest.md`; 8 assets (6 product, 2 editorial).
+- Files: `site/public/images/*.jpg`; source copies `assets/downloads/*.jpg`;
+  `scripts/fetch-assets.mjs` reproduces the set.
+- Inspection: all eight 1600px files read as image content; no corrupt or
+  non-photographic images.
+- Command: `npm run validate:assets -- --require-assets`
+  → `Assets checked: 8` / `Summary: 0 error(s), 0 warning(s).`
+- All stock images labelled demonstration; no AI, SVG, CSS, or placeholder
+  product imagery.
+- Checkpoint: see `phase-3` commit in git log.
 
 ## Approvals
 
@@ -151,5 +167,6 @@ recorded on 2026-11-11.
 
 ## Next action
 
-Phase 3 — source real licensed photographs, download and validate them, and
-complete `docs/03-asset-manifest.md` before any high-fidelity design or code.
+Phase 4 — define the art direction and canonical token system in
+`docs/04-design-system.md`, measure contrast, and generate tokens with
+`npm run tokens:build -- --require`.
