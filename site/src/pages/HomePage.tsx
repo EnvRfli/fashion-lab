@@ -1,215 +1,205 @@
-import { Link } from "react-router-dom";
-import { ProductCard } from "../components/ProductCard";
-import { StageRail } from "../components/StageRail";
+import { useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { DemoNote } from "../components/DemoNote";
+import { EducationLevelCards } from "../components/EducationLevelCards";
+import { EmptyState } from "../components/EmptyState";
 import {
-  CATEGORIES,
-  PRODUCTS,
-  formatPrice,
-  getCategoryCount,
-} from "../data/products";
+  ArrowRightIcon,
+  DownloadIcon,
+  ImageIcon,
+  SchoolIcon,
+} from "../components/Icons";
+import { SchoolCard } from "../components/SchoolCard";
+import { SchoolFilters } from "../components/SchoolFilters";
+import { SearchBar } from "../components/SearchBar";
+import { DEMO_ASSETS } from "../data/assets";
+import { useDemoData } from "../data/useDemoData";
+import {
+  countSchoolsByLevel,
+  filterAndSortSchools,
+  type SchoolQuery,
+} from "../lib/schools";
 import { usePageTitle } from "../lib/use-page-title";
 
-const CATEGORY_IMAGES: Record<string, { src: string; alt: string; position: string }> = {
-  blazers: {
-    src: "/images/product-wool-blazer.jpg",
-    alt: "A navy single-breasted blazer on a tailor's mannequin over a stone knit top.",
-    position: "50% 34%",
-  },
-  shirts: {
-    src: "/images/product-poplin-shirt.jpg",
-    alt: "A white cotton poplin shirt on wooden hangers, held at the collar by a hand.",
-    position: "50% 62%",
-  },
-  knitwear: {
-    src: "/images/product-striped-knit.jpg",
-    alt: "A folded navy and grey striped knitted crewneck on a pale background.",
-    position: "50% 50%",
-  },
-  "skirts-trousers": {
-    src: "/images/product-cotton-skirt.jpg",
-    alt: "A cream straight-cut skirt with fine pinstripes, laid flat on white linen.",
-    position: "50% 55%",
-  },
-  accessories: {
-    src: "/images/product-leather-loafer.jpg",
-    alt: "A pair of black leather penny loafers lit against a dark background.",
-    position: "50% 68%",
-  },
-};
+const HERO_IMAGES = [
+  DEMO_ASSETS["poplin-shirt"],
+  DEMO_ASSETS["wool-blazer"],
+  DEMO_ASSETS["uniform-flatlay"],
+];
 
 export function HomePage() {
   usePageTitle();
-  const essentials = PRODUCTS.slice(0, 4);
+  const navigate = useNavigate();
+  const { schools, photos } = useDemoData();
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState<SchoolQuery>({
+    query: "",
+    level: "semua",
+    sort: "terbaru",
+  });
+
+  const levelCounts = useMemo(() => countSchoolsByLevel(schools), [schools]);
+  const listing = useMemo(
+    () => filterAndSortSchools(schools, photos, query),
+    [schools, photos, query],
+  );
+  const visible = listing.slice(0, 4);
+
+  const submitSearch = () => {
+    const trimmed = search.trim();
+    navigate(trimmed ? `/sekolah?q=${encodeURIComponent(trimmed)}` : "/sekolah");
+  };
 
   return (
     <>
-      <section className="bg-blush">
-        <div className="shell grid gap-8 py-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:py-16">
-          <div className="max-w-[36rem]">
-            <h1 className="display text-ink">A uniform, considered.</h1>
-            <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-[var(--color-text-primary)]">
-              Schoolwear essentials laid out plainly: six sample pieces, real
-              photographs, and a cart you can try.
+      <section className="hero">
+        <div className="shell hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">
+              <SchoolIcon />
+              Direktori seragam sekolah
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link className="btn btn-primary" to="/shop">
-                Shop the collection
-              </Link>
-              <a className="btn btn-secondary" href="#fit-and-care">
-                Fit and care
-              </a>
-            </div>
-            <p className="mt-5 text-xs text-[var(--color-text-secondary)]">
-              Sample products and prices. No payment is taken.
+            <h1>Koleksi Seragam Sekolah</h1>
+            <p className="hero-description">
+              Temukan berbagai referensi seragam sekolah berdasarkan jenjang
+              pendidikan. Cari sekolah, buka galerinya, lalu unduh foto yang
+              tersedia.
             </p>
-          </div>
 
-          <figure className="hero-figure">
-            <img
-              src="/images/hero-uniform-flatlay.jpg"
-              alt="Flat lay of a checked blazer, striped tie, blue shirt, rust trousers, and brown loafers arranged on a striped cotton surface."
-              width={1600}
-              height={2133}
-              fetchPriority="high"
-              loading="eager"
+            <SearchBar
+              id="hero-search"
+              value={search}
+              onChange={setSearch}
+              onSubmit={submitSearch}
             />
-          </figure>
-        </div>
-      </section>
 
-      <div className="shell">
-        <StageRail />
-      </div>
-
-      <section className="section">
-        <div className="shell">
-          <div className="section-heading">
-            <div>
-              <h2 className="heading-2">Shop by layer</h2>
-              <p className="section-intro">
-                Start with the piece you need, then build the rest of the week
-                around it.
-              </p>
-            </div>
-            <Link className="text-link" to="/shop">
-              All pieces
-            </Link>
+            <DemoNote className="hero-demo" />
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-6 lg:grid-cols-5">
-            {CATEGORIES.map((category) => {
-              const image = CATEGORY_IMAGES[category.id];
-              const count = getCategoryCount(category.id);
-              return (
-                <li key={category.id}>
-                  <Link
-                    to={`/shop?category=${category.id}`}
-                    className="category-tile group"
-                  >
-                    <div className="category-media">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        width={1600}
-                        height={2133}
-                        loading="lazy"
-                        style={{ objectPosition: image.position }}
-                      />
-                    </div>
-                    <div className="mt-3 flex items-baseline justify-between gap-2 border-b border-line pb-2">
-                      <span className="text-sm font-medium text-ink group-hover:text-[var(--color-text-accent)]">
-                        {category.shortLabel}
-                      </span>
-                      <span className="text-xs text-[var(--color-text-secondary)]">
-                        {count} {count === 1 ? "piece" : "pieces"}
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section border-t border-line">
-        <div className="shell">
-          <div className="section-heading">
-            <div>
-              <h2 className="heading-2">Term essentials</h2>
-              <p className="section-intro">
-                Four pieces that cover most of the school week. The full
-                collection is six.
-              </p>
-            </div>
-            <Link className="text-link" to="/shop">
-              See all six
-            </Link>
-          </div>
-
-          <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {essentials.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+          <div className="hero-media" aria-label="Contoh foto referensi seragam">
+            {HERO_IMAGES.map((asset, index) => (
+              <figure
+                key={asset.key}
+                className={`hero-photo hero-photo-${index + 1}`}
+              >
+                <img src={asset.path} alt={asset.alt} />
+              </figure>
             ))}
+            <div className="hero-badge hero-badge-top">
+              <ImageIcon />
+              <span>
+                <strong>{photos.length}</strong> foto referensi
+              </span>
+            </div>
+            <div className="hero-badge hero-badge-bottom">
+              <DownloadIcon />
+              <span>Unduh per foto atau sekaligus</span>
+            </div>
           </div>
-
-          <p className="mt-8 text-xs text-[var(--color-text-secondary)]">
-            Sample prices from{" "}
-            {formatPrice(Math.min(...PRODUCTS.map((product) => product.price)))}.
-            Product names and descriptions are illustrative.
-          </p>
         </div>
       </section>
 
-      <section id="fit-and-care" className="section border-t border-line">
-        <div className="shell grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-14">
-          <figure className="overflow-hidden rounded-[var(--radius-lg)]">
-            <img
-              src="/images/editorial-atelier-rail.jpg"
-              alt="A pale stone overshirt hanging alone on a black rail against a plaster wall, with empty hangers beside it."
-              width={1600}
-              height={1067}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-          </figure>
-
-          <div>
-            <h2 className="heading-2">Fit, care, and the school gate</h2>
-            <p className="mt-4 max-w-[52ch] text-[var(--color-text-secondary)]">
-              A uniform has to survive a full term, not a single photograph.
-              These are practical starting points, not school rules.
-            </p>
-
-            <div className="mt-8 space-y-6">
-              <div className="border-t border-line pt-5">
-                <h3 className="font-display text-xl text-ink">
-                  Start with the list
-                </h3>
-                <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  Every school publishes its own requirements. Use this shop as a
-                  sample catalogue, not as a uniform policy.
-                </p>
-              </div>
-              <div className="border-t border-line pt-5">
-                <h3 className="font-display text-xl text-ink">
-                  Measure before you buy
-                </h3>
-                <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  Take measurements at the start of term and leave a little room
-                  to grow. The size labels here are illustrative.
-                </p>
-              </div>
-              <div className="border-t border-line pt-5">
-                <h3 className="font-display text-xl text-ink">
-                  Care for the everyday
-                </h3>
-                <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  Follow the care label, wash dark colours together, and keep a
-                  spare shirt for the days that need one.
-                </p>
-              </div>
+      <section className="section section-categories">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <h2>Pilih Kategori Sekolah</h2>
+              <p>Mulai dari jenjang yang Anda cari.</p>
             </div>
+          </div>
+          <EducationLevelCards counts={levelCounts} />
+        </div>
+      </section>
+
+      <section className="section section-listing">
+        <div className="shell">
+          <div className="section-heading section-heading-row">
+            <div>
+              <div className="heading-with-badge">
+                <h2>Daftar Sekolah</h2>
+                <span className="demo-badge">Data demo</span>
+              </div>
+              <p>Contoh data sekolah untuk menjelajahi alur galeri.</p>
+            </div>
+            <Link to="/sekolah" className="text-link">
+              Lihat semua sekolah
+              <ArrowRightIcon />
+            </Link>
+          </div>
+
+          <SchoolFilters
+            query={query}
+            onChange={setQuery}
+            showSearch={false}
+          />
+
+          {visible.length > 0 ? (
+            <div className="school-grid">
+              {visible.map((school) => (
+                <SchoolCard key={school.id} school={school} photos={photos} />
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              title="Tidak ada sekolah yang cocok"
+              description="Coba pilih kategori lain atau hapus filter untuk melihat seluruh daftar."
+              action={
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() =>
+                    setQuery({ query: "", level: "semua", sort: "terbaru" })
+                  }
+                >
+                  Hapus filter
+                </button>
+              }
+            />
+          )}
+
+          {listing.length > 4 ? (
+            <div className="listing-more">
+              <Link to="/sekolah" className="btn btn-secondary">
+                Lihat {listing.length} sekolah lainnya
+              </Link>
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      <section className="section section-how">
+        <div className="shell">
+          <div className="how-card">
+            <div>
+              <h2>Cara memakai galeri</h2>
+              <p>
+                Galeri ini membantu Anda melihat referensi seragam, bukan
+                membeli produk. Semua foto adalah contoh berlisensi.
+              </p>
+            </div>
+            <ol className="how-list">
+              <li>
+                <span>1</span>
+                <div>
+                  <strong>Cari sekolah</strong>
+                  <p>Gunakan nama sekolah atau pilih jenjang TK–SMA.</p>
+                </div>
+              </li>
+              <li>
+                <span>2</span>
+                <div>
+                  <strong>Buka galeri</strong>
+                  <p>Lihat foto atasan, bawahan, dan pelengkap.</p>
+                </div>
+              </li>
+              <li>
+                <span>3</span>
+                <div>
+                  <strong>Unduh referensi</strong>
+                  <p>Unduh satu foto atau seluruh arsip yang tersedia.</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </section>

@@ -1,8 +1,14 @@
 # Bootstrap Handoff
 
+> **REALIGNMENT NOTE — 2026-11-11.** Bootstrap tooling is preserved and verified
+> at **35/35**. The active product is now **Galeri Seragam**, implemented in
+> `site/`. The old e-commerce application is superseded and preserved at Git
+> checkpoint `ef09a4f`. See `docs/PHASE_STATUS.md`, `docs/REALIGNMENT_AUDIT.md`,
+> `docs/MIGRATION_PLAN.md`, and `docs/05-page-specifications.md` before doing
+> project work. Do not use the old `/shop`, `/cart`, or fashion direction.
+>
 > Purpose: let a fresh OpenCode session continue without this conversation.
-> Status: bootstrap setup complete pending the final `npm run verify:bootstrap`
-> result recorded below.
+> Status: bootstrap setup complete; realignment complete on 2026-11-11.
 
 ## 1. Environment summary
 
@@ -250,14 +256,14 @@ temporary browser state, or unlicensed assets.
 
 ## 6. Known limitations
 
-1. **No project brief exists.** The website has not been started. This is
-   intentional.
-2. **All project documents are templates.** No colors, typefaces, routes,
-   products, assets, or approvals have been invented.
-3. **The attached mockup is not stored.** The school-uniform mockup from the
-   bootstrap conversation is not in the repository and is not an approved brief.
-   Supply it as a file under `docs/references/` if it should be used as a visual
-   reference in Phase 2.
+1. **The realignment is complete.** The active project is Galeri Seragam; the
+   old e-commerce implementation is preserved at `ef09a4f`, not active.
+2. **Demo data is illustrative.** The 12 schools and 62 photo records are a
+   demonstration dataset; photo counts are accurate to those records, not real
+   inventory. See `docs/06-visual-qa.md` for asset limitations.
+3. **The primary reference is stored.** It is
+   `docs/references/primary/galeri-seragam-main.png`, a multi-screen composite
+   supplied by the project owner, not a page to clone.
 4. **`web-design-guidelines` requires network access** each time it is used.
 5. **`agent-browser` is a stub skill.** Load `agent-browser skills get core`
    before the first browser command in every session.
@@ -277,8 +283,10 @@ temporary browser state, or unlicensed assets.
    active `opencode-go/deepseek-v4.1-flash` succeeded. The repository does not
    pin a model. If a fresh session inherits an unfunded model, select the funded
    model in OpenCode or top up the account; this is external to the repository.
-10. **Stock photography licensing is future work.** Phase 3 must verify each
-    source page and license; the bootstrap cannot pre-approve assets.
+10. **Stock photography is demonstration imagery.** The eight Pexels photos were
+    verified and hashed for the demo. If the client supplies real school photos,
+    add them to the manifest and update credits; do not present stock photos as
+    official uniforms.
 11. **No deployment.** Deployment is out of scope unless a later brief explicitly
     adds it and records the target and credentials handling.
 
@@ -296,15 +304,16 @@ temporary browser state, or unlicensed assets.
    If it fails, fix the setup before any project work.
 5. Load the three skills through the `skill` tool if they are not already
    loaded.
-6. If a brief exists, run `/build-site <brief or path>`.
-7. If no brief exists, ask for one and stop. Do not infer a project from the
-   repository name.
-8. If the user supplies the mockup file, record it in
-   `docs/02-visual-references.md` as a reference only; Phase 0 still requires a
-   written brief.
+6. Read `docs/PHASE_STATUS.md` for the resume point. The realignment is complete;
+   do not re-run `/build-site` against the old brief.
+7. Start the implemented app with `cd site && npm run dev`, or
+   `npm run build && npm run preview`. Public routes: `/`, `/sekolah`,
+   `/sekolah/:slug`, `/kategori`, `/tentang`; admin: `/admin`.
+8. Re-run quality commands from `docs/05-page-specifications.md` §9 before
+   changing released work.
 9. Do not change provider or model settings. Do not deploy.
-10. When Phase 3 begins, use real photographs only; see the asset policy in
-    `AGENTS.md`. If assets are unavailable, report the blocker.
+10. Preserve the eight verified demo photos and their credits. Do not introduce
+    SVG/CSS/Canvas garments or unlicensed replacements.
 
 ## 8. Final verification record
 
@@ -313,10 +322,10 @@ also written to `docs/PHASE_STATUS.md`.
 
 | Check | Result |
 | --- | --- |
-| `npm run verify:bootstrap` | **PASSED — 35/35 checks** on 2026-11-11 |
+| `npm run verify:bootstrap` | **PASSED — 35/35 checks** on 2026-11-11 (re-run after realignment) |
 | Asset validator self-test | **PASSED — 10/10 cases** |
 | Browser doctor | **7 pass, 1 warning (ffmpeg), 0 fail** |
-| Visual inspection | **PASSED** for smoke and three QA-viewport screenshots on 2026-11-11 |
+| Visual inspection | **PASSED** for final Galeri Seragam screenshots at 390/768/1440 on 2026-11-11 |
 | `/build-site` fresh session | **PASSED** — expanded, ran verification, stopped for missing brief, committed `16b6921` |
-| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record; `6444607` evidence and handoff |
-| Working tree clean | **PASSED** — `git status --short` empty after the evidence commit |
+| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record; `6444607` evidence and handoff; `ef09a4f` pre-realignment storefront; final realignment commit in git log |
+| Working tree clean | Verified after the final realignment commit |

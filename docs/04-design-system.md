@@ -1,8 +1,9 @@
 # 04 — Design System
 
-> **Status: PHASE 4 COMPLETE — direction and canonical tokens approved
-> autonomously. This document is the single source of truth for visual values.**
+> **Status: REALIGNED — canonical Galeri Seragam system. This document is the
+> single source of truth for visual values.**
 > Generated CSS: `site/src/styles/tokens.css` (do not hand-edit).
+> Supersedes the fashion-storefront direction recorded in earlier revisions.
 
 ## Status legend
 
@@ -16,13 +17,133 @@
 
 | Field | Value | Status |
 | --- | --- | --- |
-| Direction name | The Outfitter's Ledger | `[APPROVED]` |
-| One-sentence principle | A calm, precise schoolwear catalogue set like a well-kept outfitter's ledger: oxblood masthead, blush paper, hairline rules, and garments photographed flat and true. | `[APPROVED]` |
-| Why it fits this subject | School uniform shopping starts with a list: stages, garments, sizes, quantities. The ledger structure turns that reality into navigation and gives the store a credible, organised voice for parents and school staff. | `[VERIFIED]` |
-| Why it is not generic | The structure comes from the subject, not a DTC template: a timetable-like stage rail, tabular prices, hairline rules, a 7/5 editorial split, and a solid oxblood footer. It avoids cream/terracotta, acid-green-on-black, all-caps eyebrows, decorative numbering, and identical shadowed cards. | `[VERIFIED]` |
-| Relationship to references | Takes the supplied mockup's crimson/blush warmth and rounded product media; Stevensons' calm role/service structure; Folk's image-led merchandising; Daunt Books' curated rows and plain labels. None of their assets, copy, or layouts are copied. | `[VERIFIED]` |
-| Relationship to real assets | The checked flat-lay hero carries the ledger idea literally — garments laid out as a kit. Product photos use a consistent 4:5 chalk frame and 20px radius so mixed stock backgrounds read as one catalogue. | `[VERIFIED]` |
-| Approval | Autonomous decision D-013, 2026-11-11 | `[APPROVED]` |
+| Direction name | Galeri Seragam — Friendly Directory | `[APPROVED]` |
+| One-sentence principle | A warm, practical school-uniform reference library: burgundy confidence, soft blush hospitality, white working surfaces, and clear directory navigation. | `[APPROVED]` |
+| Why it fits this subject | Parents and school staff arrive with a lookup task, not a shopping mood. The system prioritises search, level recognition, photo browsing, and admin efficiency while keeping the brand friendly. | `[VERIFIED]` |
+| Why it is not generic | The hierarchy follows the supplied reference: pink two-column hero, four illustrated level cards, compact school cards with level badges and photo counts, a burgundy admin rail, and a photo-first detail page. Decoration stays subordinate to lookup. | `[VERIFIED]` |
+| Relationship to references | Matches the primary composite's burgundy/white/soft-pink language and its directory + gallery + CMS structure. It does not copy the composite as a page, its mockup frames, or its embedded photographs. | `[VERIFIED]` |
+| Relationship to real assets | The eight verified photographs are presented in consistent rounded media frames with descriptive alt text and demo credit. No cut-out garment, SVG, or CSS drawing substitutes for a photograph. | `[VERIFIED]` |
+| Approval | Autonomous decision D-017, 2026-11-11. | `[APPROVED]` |
+
+## Typography
+
+**Plus Jakarta Sans Variable** for display and body (SIL Open Font License 1.1,
+self-hosted through Fontsource). Fallback: `Segoe UI`, `system-ui`, `Arial`,
+sans-serif. No serif display face. Headings use 700–800 weight with tight
+tracking; body copy uses 400–500 with a comfortable measure.
+
+| Role | Size | Weight | Line height | Use |
+| --- | --- | --- | --- | --- |
+| Display | `clamp(2.25rem, 4.4vw, 3.5rem)` | 800 | 1.08 | Homepage hero |
+| H1 | 2.25rem / 36px | 800 | 1.15 | Page titles |
+| H2 | 1.875rem / 30px | 700 | 1.2 | Section headings |
+| H3 | 1.375rem / 22px | 700 | 1.3 | Card/dialog titles |
+| Body | 1rem / 16px | 400 | 1.6 | Paragraphs |
+| Small | 0.875rem / 14px | 500 | 1.5 | Metadata, helper text |
+| Micro | 0.75rem / 12px | 600 | 1.4 | Badges, labels |
+
+Body measure: 42rem. Hero description: 30rem. Admin table text: 0.875rem.
+
+## Colour
+
+| Token | Value | Role |
+| --- | --- | --- |
+| `burgundy` | `#8E1B2B` | Primary CTA, active nav, logo, admin rail |
+| `burgundyDeep` | `#6E1320` | Hover/pressed CTA, dark accents |
+| `burgundySoft` | `#F7E3E6` | Level badge, soft emphasis |
+| `blush` | `#FBE9EC` | Hero gradient start, category tints |
+| `blushSoft` | `#FFF6F7` | Hero gradient end, quiet sections |
+| `page` | `#FCFAF9` | Page background outside white cards |
+| `surface` | `#FFFFFF` | Cards, panels, forms |
+| `surfaceMuted` | `#F7F2F3` | Table header, disabled fields |
+| `ink` | `#2B2227` | Primary text |
+| `inkMuted` | `#6B5A62` | Secondary text, helper copy |
+| `border` | `#EADDE1` | Card and field borders |
+| `borderStrong` | `#C9B4BA` | Input boundary, stronger dividers |
+
+Level accents (badge background / text): TK `#F7EDE2` / `#6E4A26`;
+SD `#FBE4E8` / `#8E1B2B`; SMP `#E8F0FB` / `#245A96`;
+SMA `#FBF0D5` / `#74510F`. These are used only for level identification,
+never as the sole carrier of meaning.
+
+### Measured contrast (WCAG 2.2 relative luminance)
+
+| Pair | Ratio | Requirement | Result |
+| --- | --- | --- | --- |
+| Primary text `#2B2227` on white | 15.43:1 | 4.5:1 normal text | Pass AAA |
+| Secondary `#6B5A62` on white | 6.43:1 | 4.5:1 | Pass AA |
+| Burgundy `#8E1B2B` on white | 8.97:1 | 4.5:1 | Pass AAA |
+| White on burgundy | 8.97:1 | 4.5:1 | Pass AAA |
+| Secondary on blush `#FBE9EC` | 5.51:1 | 4.5:1 | Pass AA |
+| SD badge text on SD tint | 7.41:1 | 4.5:1 | Pass AAA |
+| SMP badge text on SMP tint | 6.14:1 | 4.5:1 | Pass AA |
+| SMA badge text on SMA tint | 6.33:1 | 4.5:1 | Pass AA |
+| TK badge text on TK tint | 6.80:1 | 4.5:1 | Pass AA |
+| Error `#B3261E` on white | 6.54:1 | 4.5:1 | Pass AA |
+| White on deep burgundy | 11.82:1 | 4.5:1 | Pass AAA |
+| Secondary `#5F4E56` on page `#FCFAF9` | 7.44:1 | 4.5:1 | Pass AAA |
+
+Non-text UI boundaries (`borderStrong` `#C9B4BA` on white, 2.14:1) are
+supplemented by labels, icons, and focus rings; inputs also use a filled
+surface and 2px focus outline, so no control relies on the border alone.
+
+## Shape, surface, and spacing
+
+- Content shell: `1200px` maximum, `24px` desktop gutter, `16px` mobile gutter.
+- Cards: `18px` radius, 1px `border`, soft shadow
+  `0 18px 40px -30px rgba(76, 23, 35, 0.28)`.
+- Fields: `12px` radius, 1px `borderStrong`, white surface.
+- Badges: pill radius, 12px semibold label.
+- Buttons: `12px` radius, minimum 44px height; primary burgundy, secondary
+  white with border, ghost transparent.
+- Photo media: `14px` radius; consistent 4:3 or 3:2 crop; `object-fit: cover`.
+- Vertical rhythm: 8px base; section spacing 48–72px desktop, 32–48px mobile.
+- Maximum information density: 4 school cards per row at ≥1024px, 2 at
+  640–1023px, 1 below 640px. Photo grids: 4 columns desktop, 3 tablet,
+  2 mobile.
+
+## Components
+
+| Component | Rules |
+| --- | --- |
+| `PublicHeader` | White, 1px bottom border. Logo left, nav centre/right, outlined Login Admin CTA. Active link burgundy with 2px underline. Mobile: 44px menu button opens a full-height dialog. |
+| `Hero` | Soft pink gradient, two columns at ≥900px. Title, description, search field with burgundy submit. Right: real-photo collage in rounded frames. Mobile stacks title/search first, collage below. |
+| `EducationLevelCards` | 4-up desktop, 2-up mobile. Soft tinted icon tile, level code, count, chevron. Entire card is a link; visible focus ring. |
+| `SchoolCard` | Media 3:2, school name, level badge, photo count. Hover raises shadow slightly; focus ring. No price. |
+| `SchoolFilters` | Search input, level select, sort select. Labels visible above fields on desktop; compact stacked layout on mobile. |
+| `GalleryTabs` | Two tabs with `role=tablist`, roving focus, underlined active state. URL-independent local state. |
+| `PhotoGrid` | Buttons (not links) open the preview dialog. Each tile has a caption and alt text. 2-col mobile, 3-col tablet, 4-col desktop. |
+| `PhotoPreviewDialog` | Native `<dialog>`, max 960px, image left / metadata right on desktop, stacked mobile. Close, previous, next, download. Focus returns to the triggering tile. |
+| `DownloadActions` | Primary burgundy "Download Semua (n Foto)" with download icon. Disabled state + explanation when no photos. Busy state while zipping. Error state if bytes fail. |
+| `AdminSidebar` | Burgundy panel, white text, active item lighter burgundy with white left indicator. Mobile: slide-in dialog triggered by a top bar. |
+| `StatCard` | White card, tinted icon tile, large number, label. Four-up desktop, two-up mobile. |
+| `DataTable` | Header on `surfaceMuted`, 1px row dividers, actions at row end. Horizontal scroll wrapper on narrow screens; non-essential columns hidden below 768px. |
+| `Forms` | Visible labels, required marker, inline error text, 44px controls, save/cancel pair. Invalid fields get `aria-invalid` and error description. |
+| `ImageDropzone` | Dashed border, upload icon, accepted types and size, preview thumbnail with remove button, inline error. |
+
+## Motion
+
+- Durations: 140ms fast, 220ms base, 420ms slow.
+- Standard easing: `cubic-bezier(0.2, 0.7, 0.3, 1)`.
+- All transitions are limited to colour, shadow, and transform.
+- `prefers-reduced-motion: reduce` removes smooth scrolling and reduces
+  transitions to near-zero duration. No essential information is carried by
+  motion.
+
+## Accessibility rules
+
+- Semantic landmarks, one H1 per page, logical heading order.
+- Skip link to main content.
+- Visible 2px burgundy focus ring with 2px offset on every interactive element.
+- Minimum 44×44px targets.
+- All images have meaningful alt text; decorative marks use `aria-hidden`.
+- Native dialog focus trapping and Escape close.
+- Form errors announced with `role="alert"` and linked by `aria-describedby`.
+- Status changes (download busy/success/error) use `role="status"` or
+  `role="alert"`.
+- Colour is never the only indicator: level badges include the level code,
+  active nav includes an underline, errors include text.
+- Text zoom to 200% must not clip; layouts use reflowing grids.
 
 ## Canonical design tokens
 
@@ -32,66 +153,80 @@
 
 <!-- BEGIN DESIGN TOKENS JSON -->
 {
-  "version": 1,
+  "version": 2,
   "meta": {
-    "name": "Fairholt Schoolwear — The Outfitter's Ledger",
+    "name": "Galeri Seragam — Friendly Directory",
     "status": "approved"
   },
   "color": {
     "base": {
-      "oxblood": "#7A2230",
-      "oxbloodDeep": "#521720",
-      "blush": "#F6E5E3",
-      "chalk": "#FBF9F5",
-      "paper": "#FFFFFF",
-      "ink": "#1E2430",
-      "inkMuted": "#5A6070",
-      "brass": "#B08A4F",
-      "border": "#E2D8D2",
-      "borderStrong": "#8C7C74"
+      "burgundy": "#8E1B2B",
+      "burgundyDeep": "#6E1320",
+      "burgundySoft": "#F7E3E6",
+      "blush": "#FBE9EC",
+      "blushSoft": "#FFF6F7",
+      "page": "#FCFAF9",
+      "surface": "#FFFFFF",
+      "surfaceMuted": "#F7F2F3",
+      "ink": "#2B2227",
+      "inkMuted": "#6B5A62",
+      "border": "#EADDE1",
+      "borderStrong": "#C9B4BA"
     },
     "text": {
-      "primary": "#1E2430",
-      "secondary": "#5A6070",
-      "inverse": "#FBF9F5",
-      "accent": "#7A2230",
-      "error": "#A33131",
-      "success": "#2E6B4F"
+      "primary": "#2B2227",
+      "secondary": "#5F4E56",
+      "muted": "#6B5A62",
+      "inverse": "#FFFFFF",
+      "accent": "#8E1B2B",
+      "error": "#B3261E",
+      "success": "#1F6B45"
     },
     "semantic": {
-      "success": "#2E6B4F",
-      "error": "#A33131",
-      "warning": "#8A5A12",
-      "info": "#2A4A6B",
-      "focus": "#7A2230"
+      "success": "#1F6B45",
+      "error": "#B3261E",
+      "warning": "#74510F",
+      "info": "#245A96",
+      "focus": "#8E1B2B"
+    },
+    "level": {
+      "tk": "#F7EDE2",
+      "tkText": "#6E4A26",
+      "sd": "#FBE4E8",
+      "sdText": "#8E1B2B",
+      "smp": "#E8F0FB",
+      "smpText": "#245A96",
+      "sma": "#FBF0D5",
+      "smaText": "#74510F"
     }
   },
   "typography": {
     "family": {
-      "display": "Fraunces Variable, Georgia, serif",
-      "body": "Archivo Variable, Arial, sans-serif"
+      "display": "Plus Jakarta Sans Variable, Segoe UI, system-ui, Arial, sans-serif",
+      "body": "Plus Jakarta Sans Variable, Segoe UI, system-ui, Arial, sans-serif"
     },
     "size": {
       "xs": "0.75rem",
       "sm": "0.875rem",
       "base": "1rem",
       "lg": "1.125rem",
-      "xl": "1.375rem",
-      "2xl": "1.75rem",
-      "3xl": "2.25rem",
-      "4xl": "3rem",
-      "5xl": "3.75rem",
-      "display": "clamp(2.75rem, 5.2vw, 4.5rem)"
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "display": "clamp(2.25rem, 4.4vw, 3.5rem)"
     },
     "weight": {
       "regular": "400",
       "medium": "500",
       "semibold": "600",
-      "bold": "700"
+      "bold": "700",
+      "extrabold": "800"
     },
     "lineHeight": {
-      "tight": "1.02",
-      "snug": "1.18",
+      "tight": "1.08",
+      "snug": "1.25",
       "normal": "1.5",
       "relaxed": "1.65"
     },
@@ -119,9 +254,9 @@
     "4xl": "8rem"
   },
   "radius": {
-    "sm": "6px",
+    "sm": "8px",
     "md": "12px",
-    "lg": "20px",
+    "lg": "18px",
     "pill": "999px"
   },
   "border": {
@@ -129,8 +264,8 @@
     "strong": "2px"
   },
   "shadow": {
-    "card": "0 18px 40px -30px rgba(30, 36, 48, 0.35)",
-    "menu": "0 24px 60px -32px rgba(30, 36, 48, 0.45)"
+    "card": "0 18px 40px -30px rgba(76, 23, 35, 0.28)",
+    "menu": "0 24px 60px -32px rgba(76, 23, 35, 0.35)"
   },
   "motion": {
     "duration": {
@@ -149,193 +284,12 @@
     "desktop": "1440px"
   },
   "layout": {
-    "maxWidth": "1240px",
+    "maxWidth": "1200px",
     "gutter": "1.5rem",
     "gutterMobile": "1rem",
     "gridColumns": "12",
-    "headerHeight": "76px"
+    "headerHeight": "72px",
+    "sidebarWidth": "260px"
   }
 }
 <!-- END DESIGN TOKENS JSON -->
-
-## Color
-
-| Token | Value | Use | Contrast pair | Ratio | WCAG AA | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| `--color-base-oxblood` | `#7A2230` | Primary brand, masthead rule, primary buttons, footer | `--color-text-inverse` #FBF9F5 on it | 9.51:1 | Pass (normal text) | `[VERIFIED]` |
-| `--color-base-oxblood-deep` | `#521720` | Footer and button hover | `--color-text-inverse` on it | 13.29:1 | Pass | `[VERIFIED]` |
-| `--color-base-blush` | `#F6E5E3` | Hero field, quiet callout surfaces | `--color-text-primary` #1E2430 on it | 12.76:1 | Pass | `[VERIFIED]` |
-| `--color-base-chalk` | `#FBF9F5` | Page background | `--color-text-primary` on it | 14.79:1 | Pass | `[VERIFIED]` |
-| `--color-base-paper` | `#FFFFFF` | Product media and cards | `--color-text-primary` on it | 15.55:1 | Pass | `[VERIFIED]` |
-| `--color-base-ink` | `#1E2430` | Primary text | on chalk | 14.79:1 | Pass | `[VERIFIED]` |
-| `--color-base-ink-muted` | `#5A6070` | Secondary text | on chalk | 5.98:1 | Pass | `[VERIFIED]` |
-| `--color-text-secondary` | `#5A6070` | Metadata, helper text | on paper | 6.28:1 | Pass | `[VERIFIED]` |
-| `--color-text-accent` | `#7A2230` | Links and accent text | on chalk | 9.51:1 | Pass | `[VERIFIED]` |
-| `--color-text-error` | `#A33131` | Field errors and error state | on chalk | 6.57:1 | Pass | `[VERIFIED]` |
-| `--color-text-success` | `#2E6B4F` | Confirmation state | on chalk | 5.99:1 | Pass | `[VERIFIED]` |
-| `--color-semantic-warning` | `#8A5A12` | Sample-content notice | on chalk | 5.62:1 | Pass | `[VERIFIED]` |
-| `--color-base-border-strong` | `#8C7C74` | Input borders (non-text UI) | on paper | 4.00:1 | Pass (3:1 UI) | `[VERIFIED]` |
-| `--color-base-brass` | `#B08A4F` | Decorative rules and focus companion | on chalk | 3.03:1 | Pass (3:1 UI) only; never body text | `[VERIFIED]` |
-| `--color-base-border` | `#E2D8D2` | Decorative hairline dividers only | on chalk | 1.33:1 | Decorative only; not an input boundary | `[VERIFIED]` |
-
-Rules:
-
-- Text meets WCAG 2.2 AA: 4.5:1 normal, 3:1 large text and UI boundaries.
-- Ratios above were calculated from the hex values with the WCAG relative
-  luminance formula; they are measured, not guessed.
-- `--color-base-brass` is never used for body text. It is a 1px rule and
-  companion accent; focus rings use oxblood at 3:1 or better.
-- `--color-base-border` is decorative only. Interactive boundaries use
-  `--color-base-border-strong`.
-- State is never conveyed by colour alone; icons and text accompany it.
-
-## Typography
-
-| Role | Family | Size token | Weight | Line height | Measure | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| Display | Fraunces Variable | `--font-size-display` (clamp 44–72px) | 500 | `--line-height-tight` 1.02 | 12ch headline | `[VERIFIED]` |
-| Page heading | Fraunces Variable | `--font-size-4xl` 48px → mobile 36px | 500 | `--line-height-snug` 1.18 | 20ch | `[VERIFIED]` |
-| Section heading | Fraunces Variable | `--font-size-2xl` 28px | 500 | `--line-height-snug` | 28ch | `[VERIFIED]` |
-| Product name | Fraunces Variable | `--font-size-xl` 22px | 500 | `--line-height-snug` | 24ch | `[VERIFIED]` |
-| Body | Archivo Variable | `--font-size-base` 16px | 400 | `--line-height-relaxed` 1.65 | 68ch / 42rem | `[VERIFIED]` |
-| UI label / button | Archivo Variable | `--font-size-sm` 14px | 500 | `--line-height-normal` | 24ch | `[VERIFIED]` |
-| Price | Archivo Variable | `--font-size-base`/`lg` | 500 | `--line-height-normal` | tabular numerals | `[VERIFIED]` |
-| Caption / legal | Archivo Variable | `--font-size-xs` 12px | 400 | `--line-height-normal` | 60ch | `[VERIFIED]` |
-
-Rules:
-
-- Fonts: **Fraunces** (SIL Open Font License 1.1, via `@fontsource-variable/fraunces`)
-  and **Archivo** (SIL Open Font License 1.1, via
-  `@fontsource-variable/archivo`). Both are self-hosted through npm packages, so
-  there is no third-party font request at runtime.
-- Fallbacks: `Georgia, serif` for display; `Arial, sans-serif` for body.
-- Body measure stays under 80 characters; long-form copy is capped at
-  `--type-measure-body`.
-- No all-caps labels, decorative eyebrows, or single-word colour accents in
-  headlines. Fraunces' optical sizing and a tight display leading provide the
-  character instead.
-- Numerals in prices, quantities, and totals use `font-variant-numeric: tabular-nums`.
-
-## Layout and spacing
-
-| Token | Value | Use | Status |
-| --- | --- | --- | --- |
-| `--layout-max-width` | 1240px | Content shell | `[VERIFIED]` |
-| `--layout-gutter` | 24px | Desktop/tablet page gutters | `[VERIFIED]` |
-| `--layout-gutter-mobile` | 16px | Mobile page gutters | `[VERIFIED]` |
-| `--space-3xs`…`--space-4xl` | 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px | All margins and padding | `[VERIFIED]` |
-| Grid | 12 columns, 24px gap | Editorial splits and product rows | `[PROPOSED]` |
-| Breakpoints | 390 / 768 / 1440 target; 640 / 1024 intermediate | Layout reflow | `[VERIFIED]` |
-
-Responsive behaviour:
-
-- **390px:** single column; 16px gutters; hero stacks image above copy or below
-  a compact headline; stage rail scrolls horizontally with visible overflow
-  affordance; product grid 1 column with 4:5 media; header uses a menu button.
-- **768px:** 8-column grid; product grid 2 columns; hero split 1:1; filters wrap
-  into two rows; header retains menu until 1024px.
-- **1440px:** 12-column grid capped at 1240px; product grid 3 columns; hero 7/5
-  split; filters in one row; generous 96–128px section rhythm.
-
-Alignment: left-aligned editorial content, centred only for short notices and
-empty states. Prices and quantities are right-aligned within their columns.
-
-## Shape, border, and elevation
-
-| Token | Value | Use | Status |
-| --- | --- | --- | --- |
-| `--radius-lg` | 20px | Product media, category tiles, hero image | `[VERIFIED]` |
-| `--radius-md` | 12px | Inputs, notices, size buttons | `[VERIFIED]` |
-| `--radius-sm` | 6px | Small badges | `[VERIFIED]` |
-| `--radius-pill` | 999px | Primary/secondary buttons, filter chips | `[VERIFIED]` |
-| `--border-hair` | 1px | Ledger rules and card outlines | `[VERIFIED]` |
-| `--shadow-card` | `0 18px 40px -30px rgba(30,36,48,.35)` | Mobile menu and floating summary only | `[VERIFIED]` |
-
-Product cards use a 1px border and a flat chalk/paper field, not a drop shadow.
-Only the sticky cart summary and mobile menu use elevation.
-
-## Motion
-
-| Token | Value | Use | Status |
-| --- | --- | --- | --- |
-| `--motion-duration-fast` | 140ms | Hover, focus, colour changes | `[VERIFIED]` |
-| `--motion-duration-base` | 220ms | Menu, accordion, size selection | `[VERIFIED]` |
-| `--motion-duration-slow` | 420ms | Cart line removal (with reduced-motion fallback) | `[VERIFIED]` |
-| `--motion-easing-standard` | `cubic-bezier(.2,.7,.3,1)` | State changes | `[VERIFIED]` |
-| `--motion-easing-out` | `cubic-bezier(.16,1,.3,1)` | Overlays | `[VERIFIED]` |
-
-Rules:
-
-- No page-load entrance animations and no scroll-triggered reveals.
-- Motion answers an action: menu opens, size is chosen, cart line is removed.
-- `prefers-reduced-motion: reduce` sets all durations to 0.01ms and disables
-  transform-based hover movement.
-
-## Components
-
-| Component | Variants | States | Tokens used | Accessibility notes | Status |
-| --- | --- | --- | --- | --- | --- |
-| Primary button | Oxblood pill, inverse text | default, hover (deep oxblood), focus-visible (2px oxblood ring + 2px offset), active, disabled, loading | oxblood, oxblood-deep, text-inverse, radius-pill, space | Native `<button>`; loading keeps width and announces via `aria-live` | `[VERIFIED]` |
-| Secondary button | Outline on chalk | default, hover (blush fill), focus, active, disabled | ink, border-strong, blush | Visible boundary 3:1; 44px min height | `[VERIFIED]` |
-| Text link | Oxblood underline | default, hover, focus-visible, visited | text-accent | Underline persists; no colour-only meaning | `[VERIFIED]` |
-| Header | Masthead + nav + cart | default, scrolled, menu open | chalk, oxblood, border | `<header>` + `<nav aria-label="Primary">`; menu button has `aria-expanded`/`aria-controls` | `[VERIFIED]` |
-| Mobile menu | Full-width panel | closed, open, focus trap, Escape | paper, border, shadow-menu | Focus moves in, Escape closes, focus returns to trigger; body scroll locked | `[VERIFIED]` |
-| Stage rail | Junior / Senior / Sixth links | default, hover, focus, current | blush, oxblood, ink | Real links with `aria-current="page"` where filtered | `[VERIFIED]` |
-| Category tile | Image + label + count | default, hover, focus | radius-lg, chalk, ink | Whole tile is one link; image alt describes the photograph | `[VERIFIED]` |
-| Product card | Image, name, stage, sample price | default, hover, focus-within, unavailable | paper, border, radius-lg | One primary link; equal card heights; image has fixed ratio | `[VERIFIED]` |
-| Filter chip | Category / stage | default, selected, focus, disabled | border, blush, oxblood | `aria-pressed`; 44px target | `[VERIFIED]` |
-| Text input / search | Search field | default, focus, error, disabled | border-strong, paper, radius-md | Visible `<label>`; error `aria-describedby`; clear button labelled | `[VERIFIED]` |
-| Select | Sort, size guide | default, focus, disabled | border-strong, paper | Native `<select>` with visible label | `[VERIFIED]` |
-| Size selector | Radio group | default, selected, focus, disabled, error | border, oxblood, blush | `<fieldset>` + `<legend>`; real radios visually styled | `[VERIFIED]` |
-| Quantity stepper | − / value / + | default, focus, disabled at min | border, paper, ink | Labelled buttons ("Decrease quantity"); value announced | `[VERIFIED]` |
-| Notice | Demo, info, error, success | static | blush, warning, error, success | `role="status"` for dynamic messages; icon + text | `[VERIFIED]` |
-| Cart line | Thumbnail, details, qty, remove | default, removing | paper, border | Remove button names the product; totals update live | `[VERIFIED]` |
-| Empty state | Shop, cart, 404 | static | chalk, blush, oxblood | One clear action; no dead ends | `[VERIFIED]` |
-| Footer | Oxblood solid | static | oxblood-deep, text-inverse | Landmark `<footer>`; credit links open source/licence in new tab | `[VERIFIED]` |
-
-Required state coverage where relevant: default, hover, focus-visible, active,
-disabled, loading, empty, error, success. Every control is at least 44×44 CSS
-pixels where practical.
-
-## Imagery direction
-
-| Field | Value | Status |
-| --- | --- | --- |
-| Product photo treatment | 4:5 media, `object-fit: cover`, chalk/paper frame, 20px radius, 1px border; no colour overlays; no stretch | `[VERIFIED]` |
-| Product crop guidance | Shirt: focus below collar; blazer: jacket body; knit: full folded garment; skirt: full skirt; trousers: left two-thirds; loafer: shoes | `[VERIFIED]` |
-| Editorial treatment | Full-bleed within the content shell, 20px radius, no text overlay on faces; captions below, not on image | `[VERIFIED]` |
-| Category treatment | Reuse the product photograph with a plain label beneath; category is navigation, not a separate product claim | `[VERIFIED]` |
-| Icon/logo treatment | 1.5px stroke SVG icons; "F" monogram and wordmark as vector logo; no product illustration | `[VERIFIED]` |
-| Demonstration label | Global notice bar + "Sample price" on product cards + footer credit + product detail note | `[VERIFIED]` |
-
-## Generated token output
-
-```powershell
-npm run tokens:build -- --require
-```
-
-- Source: `docs/04-design-system.md` marker block.
-- Output: `site/src/styles/tokens.css`.
-- Status: generated 2026-11-11; do not hand-edit.
-- Tailwind v4 consumes the variables through `@theme inline`; components must not
-  introduce raw hex values, arbitrary spacing, or font stacks outside the token
-  file (documented exceptions: SVG icon strokes and the logo).
-
-## Decisions
-
-| Decision | Alternatives considered | Rationale | Date | Status |
-| --- | --- | --- | --- | --- |
-| Oxblood/blush/chalk palette | Navy/white (Stevensons-like); forest/orange (Option B); cobalt mosaic (Option C) | Carries the supplied mockup's warm crimson identity while staying credible for school staff; navy was rejected as a direct copy of the direct reference | 2026-11-11 | `[APPROVED]` |
-| Fraunces + Archivo | All-sans (Inter/Manrope); Bodoni + grotesque; system serif | Fraunces gives editorial character without the "default serif" look; Archivo keeps utility text sturdy and legible at small sizes | 2026-11-11 | `[APPROVED]` |
-| 20px product media, flat cards | Identical shadowed cards; square corners; 8px radius | Rounding echoes the supplied mockup and softens stock photography; flat bordered cards avoid the generic SaaS kit | 2026-11-11 | `[APPROVED]` |
-| Ledger structure | Generic hero + grid; checklist-first | Specific to uniform shopping and differentiates from the references | 2026-11-11 | `[APPROVED]` |
-
-## Phase 4 checklist
-
-- [x] Direction is specific to the brief and real assets.
-- [x] Color, type, layout, shape, and motion tokens are complete.
-- [x] Contrast pairs measured and pass AA, or exceptions documented.
-- [x] Component states specified.
-- [x] `npm run tokens:build -- --require` succeeds.
-- [x] Approval recorded (autonomous D-013).
-- [x] Status updated in `docs/PHASE_STATUS.md`.

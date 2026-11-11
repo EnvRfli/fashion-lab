@@ -1,8 +1,39 @@
 # 01 — Product Brief
 
-> **Status: PHASE 0 RECORDED — brief received 2026-11-11.**
-> Interpretations are labeled `[PROPOSED]`. The brief itself is quoted verbatim
-> below and is the authority for product truth.
+> **SUPERSEDED — 2026-11-11.** The e-commerce brief recorded below is
+> historical and must not drive active work. The authoritative brief is
+> `docs/PROJECT_BRIEF.md` for **Galeri Seragam — School Directory + Uniform
+> Photo Gallery + Admin CMS**. See `docs/REALIGNMENT_AUDIT.md`,
+> `docs/MIGRATION_PLAN.md`, and `docs/05-page-specifications.md` for the active
+> product and route specification.
+>
+> Active mode: `autonomous`. Active frontend: `site/`. Active routes:
+> `/`, `/sekolah`, `/sekolah/:slug`, `/kategori`, `/tentang`,
+> `/admin`, `/admin/sekolah`, `/admin/sekolah/baru`,
+> `/admin/sekolah/:id/edit`, `/admin/kategori`, `/admin/foto`,
+> `/admin/foto/baru`, `/admin/pengguna`, `/admin/masuk`.
+> No cart, checkout, pricing, or fashion-commerce flow is active.
+
+## Active brief summary (Galeri Seragam)
+
+| Field | Value | Status |
+| --- | --- | --- |
+| Product | School directory, uniform photo gallery, and demo admin CMS | `[VERIFIED]` |
+| Primary audience | Parents, students, teachers, and school communities seeking uniform references | `[VERIFIED]` |
+| Secondary audience | Demo admin staff entering school/photo data | `[VERIFIED]` |
+| Primary job | Find a school, inspect its uniform photo gallery, and download available references | `[VERIFIED]` |
+| Language | Bahasa Indonesia | `[VERIFIED]` |
+| Visual target | `docs/references/primary/galeri-seragam-main.png`; burgundy/white/soft-pink modern app | `[VERIFIED]` |
+| Data | Clearly labelled demo schools, photos, categories, and users; no real inventory | `[VERIFIED]` |
+| Persistence | Browser `localStorage`; no backend or secure authentication | `[VERIFIED]` |
+| Mode | `autonomous` | `[VERIFIED]` |
+
+## Historical record (superseded)
+
+> **Status: HISTORICAL — e-commerce brief received 2026-11-11, superseded later
+> the same day by the corrected Galeri Seragam brief.**
+> Interpretations are labeled `[PROPOSED]`. The old brief is quoted only for
+> audit history and is **not** an active requirement.
 
 ## Status legend
 

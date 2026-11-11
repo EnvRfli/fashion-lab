@@ -4,10 +4,39 @@ A reusable, project-local workflow for building frontend sites from a brief with
 real assets, a persistent design system, browser-based QA, and explicit quality
 gates.
 
-This repository is the **development system**, not the website. The site will be
-created in `site/` during Phase 6 of a real project.
+This repository contains the workflow **and** the current project:
+**Galeri Seragam** — a school directory, uniform photo gallery, and demo admin
+CMS in `site/`. The previous e-commerce implementation is superseded and
+preserved at Git checkpoint `ef09a4f`.
 
-## Quick start
+## Current project quick start
+
+```powershell
+cd site
+npm install
+npm run dev          # http://127.0.0.1:5173
+# or
+npm run build
+npm run preview      # http://127.0.0.1:3000
+```
+
+Quality commands:
+
+```powershell
+cd site
+npm run build
+npm run lint
+npm run typecheck
+npm test
+cd ..
+npm run validate:assets -- --require-assets
+npm run verify:bootstrap
+```
+
+Project status, routes, evidence, and limitations: `docs/PHASE_STATUS.md` and
+`docs/06-visual-qa.md`.
+
+## Workflow quick start
 
 ```powershell
 npm install

@@ -1,8 +1,15 @@
 # 02 — Visual References
 
-> **Status: PHASE 2 COMPLETE — three external references verified plus the
-> supplied mockup; one direction selected autonomously.**
-> Access date for all external references: 2026-11-11.
+> **SUPERSEDED DIRECTION — 2026-11-11.** The references and "Outfitter's
+> Ledger" comparison below were researched for the old e-commerce brief. They
+> remain historical research. The active visual target is the supplied primary
+> reference `docs/references/primary/galeri-seragam-main.png`, analysed in
+> `docs/DESIGN_ALIGNMENT.md` and implemented as the Galeri Seragam system in
+> `docs/04-design-system.md`. Do not use the e-commerce direction to justify
+> active UI decisions.
+>
+> **Status: HISTORICAL — three external references were verified plus the
+> earlier mockup.** Access date for all external references: 2026-11-11.
 
 ## Status legend
 

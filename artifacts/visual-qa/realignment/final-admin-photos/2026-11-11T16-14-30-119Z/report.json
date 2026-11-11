@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-11-11T16:14:40.624Z",
+  "url": "http://127.0.0.1:3000/admin/foto",
+  "session": "visual-qa-d1ea2b5d512c",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/admin-photos/2026-11-11T16-14-30-119Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 1,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Galeri foto demo"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 62
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "Data Foto — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/foto",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 45,
+          "incomplete": 0,
+          "passes": 44,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/admin-photos/2026-11-11T16-14-30-119Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 1,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Galeri foto demo"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 62
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "Data Foto — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/foto",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 45,
+          "incomplete": 0,
+          "passes": 44,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/admin-photos/2026-11-11T16-14-30-119Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 1,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Galeri foto demo"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 62
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "Data Foto — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/foto",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 43,
+          "incomplete": 1,
+          "passes": 46,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 10
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

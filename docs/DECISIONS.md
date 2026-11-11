@@ -209,6 +209,136 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
 - **Approval:** autonomous, recorded 2026-11-11.
 - **Status:** `[APPROVED]`
 
+### D-015 — Supersede the e-commerce brief with Galeri Seragam
+
+- **Date:** 2026-11-11
+- **Decision:** The corrected `docs/PROJECT_BRIEF.md` is the only active product
+  brief. The former Fairholt storefront brief, routes, cart, prices, and design
+  direction are historical and must not drive active work.
+- **Rationale:** The user supplied a corrected product direction and a primary
+  composite reference: School Directory + Uniform Gallery + Admin CMS. Keeping
+  the old brief active would preserve forbidden commerce behavior.
+- **Alternatives rejected:** Re-skinning the storefront while retaining cart or
+  prices; creating a new repository and losing the verified bootstrap.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-016 — Partial application-layer rebuild
+
+- **Date:** 2026-11-11
+- **Decision:** Keep the repository, bootstrap scripts, skills, browser setup,
+  Vite/React/TypeScript/Tailwind foundation, and asset validator. Replace the
+  application layer: routes, pages, commerce state, product data, and visual
+  CSS.
+- **Rationale:** The technical foundation is healthy and verified; only the
+  product direction and application code are wrong. A full restart would
+  discard working tooling without benefit.
+- **Alternatives rejected:** Incremental re-skin (would leave commerce logic and
+  editorial assumptions); complete bootstrap restart (unnecessary risk).
+- **Evidence:** `docs/REALIGNMENT_AUDIT.md`, `docs/MIGRATION_PLAN.md`,
+  checkpoint `ef09a4f`.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-017 — Galeri Seragam visual system
+
+- **Date:** 2026-11-11
+- **Decision:** Use burgundy `#8E1B2B`, white surfaces, soft pink gradients,
+  Plus Jakarta Sans, compact level cards, a directory toolbar, 2-column mobile
+  galleries, and a burgundy admin rail.
+- **Rationale:** The primary reference shows a friendly, functional education
+  directory, not a luxury fashion store. The new system preserves its
+  burgundy/white/pink hierarchy while remaining accessible.
+- **Alternatives rejected:** The old editorial serif/cream/brass system;
+  neutral SaaS blue; a direct pixel clone of the composite.
+- **Evidence:** `docs/04-design-system.md`; generated 91 tokens; measured WCAG
+  contrast table.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-018 — Demo data labels and stock-photo reuse
+
+- **Date:** 2026-11-11
+- **Decision:** Seed 12 illustrative schools, 62 photo records, 4 canonical
+  categories, and 3 demo users. Reuse the eight verified Pexels photos across
+  demo galleries, always labelled as demonstration imagery with creator,
+  source, and licence. Derive every count from records.
+- **Rationale:** The brief requires a working demo dataset but forbids inventing
+  official school uniforms or inventory. Labelling and per-photo credit keep
+  the demo honest.
+- **Alternatives rejected:** Fabricating official uniforms; using unlicensed
+  candidate images; SVG/CSS substitutes.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-019 — Admin is a demo, not secure authentication
+
+- **Date:** 2026-11-11
+- **Decision:** Provide `/admin/masuk` as a visual demo with no password
+  checking, no stored credentials, no route guard claimed as security, and a
+  persistent demo bar. Persist demo data in `localStorage` under
+  `galeri-seragam.demo.v2`; expose a reset action.
+- **Rationale:** The brief forbids fake secure authentication and unsupported
+  multi-user claims. Honest demo behavior is more useful than a misleading
+  login.
+- **Alternatives rejected:** Client-only route guards presented as protection;
+  hardcoded credentials; a mock backend.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-020 — Real downloads and real ZIP archives
+
+- **Date:** 2026-11-11
+- **Decision:** Fetch actual local photo bytes for individual downloads and
+  build bulk archives with `fflate`. Preflight every file; if any fetch fails,
+  show an error and do not produce a misleading partial archive. Disable the
+  action when no photos exist.
+- **Rationale:** The brief requires real bytes or an honest disabled state, not
+  a simulated success.
+- **Evidence:** Browser test produced a 6-file ZIP (2,647,911 bytes);
+  `01-kemeja-putih.jpg` … `06-rel-seragam.jpg`.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-021 — Upload handling is photographic and bounded
+
+- **Date:** 2026-11-11
+- **Decision:** Accept only JPG/PNG/WebP raster files up to 2.5MB, preview them,
+  and resize/compress real photos only to fit browser storage. Store as data
+  URLs. No generated or drawn product imagery.
+- **Rationale:** Makes the admin demo genuinely usable while respecting the
+  photographic asset policy and localStorage limits.
+- **Alternatives rejected:** Storing unlimited originals (quota failure);
+  accepting SVG (policy violation); sending files to a non-existent backend.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-022 — URL-driven public discovery state
+
+- **Date:** 2026-11-11
+- **Decision:** Keep `q`, `kategori`, and `urut` in URL search params for the
+  directory; keep the active tab and preview dialog in local UI state. Remove
+  the old cart/catalogue state entirely.
+- **Rationale:** Shareable, refresh-safe filters with no backend; simpler than
+  persisting transient discovery state.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
+### D-023 — Visual QA findings and final disposition
+
+- **Date:** 2026-11-11
+- **Decision:** Accept the realignment as passing G7 with documented minor
+  mismatches: generic stock imagery instead of official uniforms, a photo
+  collage instead of cut-out hero garments, and a larger mobile identity photo
+  than the reference thumbnail. Fix all automated accessibility/overflow
+  findings before sign-off.
+- **Rationale:** Structural, colour, and interaction fidelity are strong; the
+  remaining differences are asset- or legibility-driven, not commerce drift.
+- **Evidence:** `docs/06-visual-qa.md`; final runs at 390/768/1440 with 0 axe
+  violations, 0 overflow, 0 console errors.
+- **Approval:** autonomous, recorded 2026-11-11.
+- **Status:** `[APPROVED]`
+
 ---
 
 Add new entries above this line, keeping the same fields and a sequential ID.

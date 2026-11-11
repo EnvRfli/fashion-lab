@@ -13,10 +13,13 @@ Read this file before doing any project work. Then read:
 
 ## Status
 
-- Bootstrap: complete only when `npm run verify:bootstrap` passes.
-- Project brief: **not yet received**.
-- Website implementation: **not started**.
-- Do not fabricate a brief, design decisions, assets, page content, or approvals.
+- Bootstrap: complete; `npm run verify:bootstrap` passes 35/35.
+- Project brief: **received and realigned** to Galeri Seragam at
+  `docs/PROJECT_BRIEF.md`. The earlier e-commerce brief is superseded.
+- Website implementation: **complete** in `site/` — public directory/gallery and
+  demo admin CMS. See `docs/PHASE_STATUS.md` and `docs/REALIGNMENT_REPORT.md`.
+- Visual QA: **passed** with documented limitations in `docs/06-visual-qa.md`.
+- No unresolved blocker; optional future work requires a new brief.
 
 ## Repository map
 
@@ -40,7 +43,7 @@ Read this file before doing any project work. Then read:
 | `scripts/visual-qa.mjs` | Browser QA capture and measurement runner. |
 | `scripts/build-tokens.mjs` | Generates CSS custom properties from `docs/04`. |
 | `scripts/verify-bootstrap.mjs` | Reproducible bootstrap verification. |
-| `site/` | Future frontend application. Do not scaffold during bootstrap. |
+| `site/` | Galeri Seragam frontend application (React + TypeScript + Vite). |
 | `artifacts/visual-qa/` | Committed QA screenshots and reports. |
 
 ## Non-negotiable operating rules

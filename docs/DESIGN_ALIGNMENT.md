@@ -1,8 +1,11 @@
 # DESIGN ALIGNMENT — Galeri Seragam
 
-**Status:** Corrected target specification from user-provided reference; implementation validation pending.  
+**Status:** Implemented and visually inspected on 2026-11-11. The checklist at
+the end records the observed result per screen; minor differences are documented
+in `docs/06-visual-qa.md`.  
 **Primary image:** `docs/references/primary/galeri-seragam-main.png`  
-**Source of truth:** `docs/PROJECT_BRIEF.md` and this primary reference override old e-commerce design direction.
+**Source of truth:** `docs/PROJECT_BRIEF.md` and this primary reference override
+old e-commerce design direction.
 
 ## What the reference actually shows
 
@@ -49,14 +52,26 @@ Top public navigation: **Beranda**, **Sekolah**, **Kategori**, **Tentang**, **Lo
 
 ## Visual QA checklist
 
-- [ ] Actual homepage matches structural hierarchy of top-left desktop reference.
-- [ ] Actual mobile homepage matches top-center phone concept (as responsive app, not fake phone frame).
-- [ ] School detail matches top-right phone concept.
-- [ ] Admin dashboard matches bottom-left concept.
-- [ ] School and photo forms match bottom-middle/right concepts.
-- [ ] Responsive layouts work at 390, 768 and 1440 widths.
-- [ ] Photos load from real verified files; SVG garments absent.
-- [ ] No checkout, cart, product pricing or shopping copy.
-- [ ] Actual rendered screenshots were inspected with supported visual capability.
+- [x] Actual homepage matches structural hierarchy of top-left desktop
+  reference. Evidence: `final-home/.../desktop-1440.png`. Difference: real-photo
+  collage replaces the cut-out uniform pair.
+- [x] Actual mobile homepage matches top-centre phone concept as a responsive
+  app, not a fake phone frame. Evidence: `final-home/.../mobile-390.png`.
+- [x] School detail matches top-right phone concept. Evidence:
+  `final-detail/.../mobile-390.png`. Difference: larger identity photo for
+  legibility.
+- [x] Admin dashboard matches bottom-left concept. Evidence:
+  `final-admin/.../desktop-1440.png`.
+- [x] School and photo forms match bottom-middle/right concepts. Evidence:
+  `final-admin-school-form/...` and `final-admin-photo-form/...`.
+- [x] Responsive layouts work at 390, 768 and 1440 widths; final runs report no
+  horizontal page overflow.
+- [x] Photos load from real verified files; SVG garments absent.
+- [x] No checkout, cart, product pricing or shopping copy in active UI.
+- [x] Actual rendered screenshots were inspected with supported visual
+  capability (`opencode-go/deepseek-v4.1-flash`).
 
-**Note:** Checkbox items are targets, **not claims that they already passed**. Avoid inventing precise pixel measurements from the screenshot. Optimize structural and stylistic fidelity without cloning unsupported third-party assets.
+**Note:** Checked items reflect the final inspection recorded in
+`docs/06-visual-qa.md`, not an assumption from DOM checks. Do not claim
+pixel-level cloning; the reference is a multi-screen composite and the
+implementation is a responsive application.

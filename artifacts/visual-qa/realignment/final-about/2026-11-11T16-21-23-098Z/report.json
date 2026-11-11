@@ -1,0 +1,314 @@
+{
+  "generatedAt": "2026-11-11T16:21:30.702Z",
+  "url": "http://127.0.0.1:3000/tentang",
+  "session": "visual-qa-d1ea2b5d512c",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-about/2026-11-11T16-21-23-098Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Referensi seragam, tanpa alur belanja."
+          },
+          {
+            "level": 2,
+            "text": "Direktori sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Galeri foto"
+          },
+          {
+            "level": 2,
+            "text": "Unduh referensi"
+          },
+          {
+            "level": 2,
+            "text": "Panel admin demo"
+          },
+          {
+            "level": 2,
+            "text": "Tentang data dan foto"
+          },
+          {
+            "level": 2,
+            "text": "Mode demo"
+          },
+          {
+            "level": 2,
+            "text": "Mulai dari daftar sekolah"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 8,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "Tentang — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/tentang",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 53,
+          "incomplete": 1,
+          "passes": 36,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 6
+          }
+        ]
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-about/2026-11-11T16-21-23-098Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Referensi seragam, tanpa alur belanja."
+          },
+          {
+            "level": 2,
+            "text": "Direktori sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Galeri foto"
+          },
+          {
+            "level": 2,
+            "text": "Unduh referensi"
+          },
+          {
+            "level": 2,
+            "text": "Panel admin demo"
+          },
+          {
+            "level": 2,
+            "text": "Tentang data dan foto"
+          },
+          {
+            "level": 2,
+            "text": "Mode demo"
+          },
+          {
+            "level": 2,
+            "text": "Mulai dari daftar sekolah"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 8,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "Tentang — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/tentang",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 53,
+          "incomplete": 1,
+          "passes": 36,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 6
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-about/2026-11-11T16-21-23-098Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Referensi seragam, tanpa alur belanja."
+          },
+          {
+            "level": 2,
+            "text": "Direktori sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Galeri foto"
+          },
+          {
+            "level": 2,
+            "text": "Unduh referensi"
+          },
+          {
+            "level": 2,
+            "text": "Panel admin demo"
+          },
+          {
+            "level": 2,
+            "text": "Tentang data dan foto"
+          },
+          {
+            "level": 2,
+            "text": "Mode demo"
+          },
+          {
+            "level": 2,
+            "text": "Mulai dari daftar sekolah"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 1
+        },
+        "landmarks": 8,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "Tentang — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/tentang",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 6
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

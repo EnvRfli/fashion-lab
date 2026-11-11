@@ -1,6 +1,12 @@
 # 03 — Asset Manifest
 
-> **Status: PHASE 3 COMPLETE — eight licensed photographs downloaded, inspected,
+> **REALIGNED USE — 2026-11-11.** The same eight verified photographs now back
+> the Galeri Seragam demo galleries as generic uniform/reference imagery. They
+> remain **demonstration imagery**, not official uniforms of any demo school and
+> not client inventory. Each gallery photo repeats the creator, source URL, and
+> licence in `site/src/data/assets.ts` and in the preview UI.
+>
+> **Status: COMPLETE — eight licensed photographs downloaded, inspected,
 > hashed, and recorded as demonstration imagery.**
 > All assets are stock photography from Pexels, used under the Pexels License.
 > They are **not** the client's inventory and must never be presented as such.

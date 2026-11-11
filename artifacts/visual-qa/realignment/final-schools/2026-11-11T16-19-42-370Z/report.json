@@ -1,0 +1,386 @@
+{
+  "generatedAt": "2026-11-11T16:19:50.537Z",
+  "url": "http://127.0.0.1:3000/sekolah",
+  "session": "visual-qa-d1ea2b5d512c",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-schools/2026-11-11T16-19-42-370Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 3,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Daftar Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Hasil pencarian sekolah"
+          },
+          {
+            "level": 3,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 3 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 5 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "TK Tunas Ceria"
+          },
+          {
+            "level": 3,
+            "text": "TK Pertiwi 02"
+          },
+          {
+            "level": 3,
+            "text": "TK Al-Hikmah"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 1 Lembang"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMA Harapan Bangsa"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 12
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "Daftar Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 44,
+          "incomplete": 1,
+          "passes": 45,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 4
+          }
+        ]
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-schools/2026-11-11T16-19-42-370Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 3,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Daftar Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Hasil pencarian sekolah"
+          },
+          {
+            "level": 3,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 3 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 5 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "TK Tunas Ceria"
+          },
+          {
+            "level": 3,
+            "text": "TK Pertiwi 02"
+          },
+          {
+            "level": 3,
+            "text": "TK Al-Hikmah"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 1 Lembang"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMA Harapan Bangsa"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 12
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "Daftar Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 44,
+          "incomplete": 1,
+          "passes": 45,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 4
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/visual-qa/realignment/final-schools/2026-11-11T16-19-42-370Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 3,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Daftar Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Hasil pencarian sekolah"
+          },
+          {
+            "level": 3,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 3 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 5 Bandung"
+          },
+          {
+            "level": 3,
+            "text": "TK Tunas Ceria"
+          },
+          {
+            "level": 3,
+            "text": "TK Pertiwi 02"
+          },
+          {
+            "level": 3,
+            "text": "TK Al-Hikmah"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 1 Lembang"
+          },
+          {
+            "level": 3,
+            "text": "SMPN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMAN 2 Cimahi"
+          },
+          {
+            "level": 3,
+            "text": "SMA Harapan Bangsa"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 12
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "Daftar Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 44,
+          "incomplete": 1,
+          "passes": 45,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 4
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

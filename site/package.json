@@ -1,9 +1,9 @@
 {
-  "name": "fairholt-schoolwear",
+  "name": "galeri-seragam",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Fairholt Schoolwear — a demonstration school-uniform storefront",
+  "description": "Galeri Seragam - demo school directory, uniform photo gallery, and admin panel",
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json --noEmit && vite build",
@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
-    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "fflate": "^0.8.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.5"

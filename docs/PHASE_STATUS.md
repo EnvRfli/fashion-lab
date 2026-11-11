@@ -1,204 +1,201 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — Phase 5 passed; all routes and states specified.
+> Last updated: 2026-11-11 — realignment audit, implementation, and visual QA
+> complete.
 
 ## Status vocabulary
 
 `NOT STARTED` · `IN PROGRESS` · `PASSED` · `FAILED` · `BLOCKED` · `WAIVED`
 
+## Realignment summary
+
+| Item | Value |
+| --- | --- |
+| Product | **Galeri Seragam** — School Directory + Uniform Photo Gallery + Admin CMS |
+| Authoritative brief | `docs/PROJECT_BRIEF.md` |
+| Primary visual reference | `docs/references/primary/galeri-seragam-main.png` |
+| Execution instruction | `docs/REALIGNMENT_EXECUTION.md` |
+| Approach | **Partial application-layer rebuild** inside the same repository |
+| Baseline checkpoint | `ef09a4f` — pre-realignment fashion storefront preserved |
+| Frontend | `site/` — React 19 + TypeScript + Vite 8 + Tailwind 4 |
+| Mode | `autonomous` |
+
+The previous e-commerce brief, `/shop`, `/cart`, prices, cart state, product
+catalogue, and "Outfitter's Ledger" visual direction are **superseded**. They
+remain in Git history at `ef09a4f` for audit but are not active requirements.
+
 ## Bootstrap verification
 
 | Item | Result | Evidence |
 | --- | --- | --- |
-| Repository initialized | PASSED | `git init -b main`; repository at `D:\personal_project\fashion-lab` |
+| `npm run verify:bootstrap` | **PASSED — 35/35** | Run 2026-11-11 after the external Chrome-for-Testing CDN became reachable |
 | Node / npm | PASSED | Node `v24.19.0`, npm `11.17.0` |
-| Project dependencies | PASSED | `agent-browser@0.42.0`, `skills@1.8.1`, `image-size@2.1.0` installed |
-| Skill: frontend-design | PASSED | `.agents/skills/frontend-design/SKILL.md`; loaded through OpenCode `skill` tool |
-| Skill: web-design-guidelines | PASSED | `.agents/skills/web-design-guidelines/SKILL.md`; loaded through OpenCode `skill` tool |
-| Skill: agent-browser | PASSED | `.agents/skills/agent-browser/SKILL.md`; loaded through OpenCode `skill` tool |
-| Skill lock file | PASSED | `skills-lock.json` contains all three, version 2, copy mode |
-| Browser runtime | PASSED | Chrome for Testing `157.0.8103.50` installed |
-| Browser diagnostics | PASSED | `agent-browser doctor`: 7 pass, 1 warning (ffmpeg absent, not needed), 0 fail |
-| Browser smoke: local page | PASSED | `artifacts/visual-qa/bootstrap-smoke/agent-browser-smoke.png`; snapshot, click, fill, console error, page error verified |
-| Browser smoke: public page | PASSED | `https://example.com` opened; snapshot and screenshot captured |
-| Screenshot image inspection | PASSED | Smoke PNG read as image content; burgundy header and `AGENT-BROWSER-SMOKE-OK` observed |
-| QA runner 390/768/1440 | PASSED | `artifacts/visual-qa/bootstrap-smoke/`; all three screenshots inspected |
-| Asset validator self-test | PASSED | 10/10 isolated cases passed |
-| `/build-site` command file | PASSED | `.opencode/commands/build-site.md` exists with `agent: build` and `$ARGUMENTS` |
-| `/build-site` fresh-session behavior | PASSED | Session `ses_e359507ebffeULJMnBmvTB6c0n` expanded the command, ran `verify:bootstrap` (35/35), refused to invent a brief, and recorded blocker B1 |
-| Bootstrap verifier | PASSED | `npm run verify:bootstrap`: 35/35 checks passed |
-| Git checkpoint | PASSED | `fe28235` bootstrap; `16b6921` fresh-session blocker record; `6444607` committed smoke/QA evidence and handoff |
+| Skills | PASSED | `frontend-design`, `web-design-guidelines`, `agent-browser` present and locked |
+| Browser doctor | PASSED | 7 pass, 1 warning (ffmpeg absent), 0 fail |
+| Asset validator self-test | PASSED | 10/10 cases |
+| Token build | PASSED | 91 tokens generated |
+| Bootstrap tooling preserved | PASSED | No changes to `scripts/verify-bootstrap.mjs`, `validate-assets.mjs`, `visual-qa.mjs`, `build-tokens.mjs`, `.agents/skills/`, or `skills-lock.json` |
 
-### Browser smoke evidence
+### Environment note
 
-- Local fixture: `http://127.0.0.1:4173/agent-browser-smoke.html`
-- Snapshot returned the heading and controls.
-- Fill and click returned `SMOKE-ACTION-PASSED`.
-- Console inspection returned `SMOKE-CONSOLE-ERROR`.
-- Page error inspection returned `Error: SMOKE-PAGE-ERROR`.
-- Accessibility audit returned 0 violations for the smoke fixture.
-- Public page: `https://example.com` opened and captured.
-- Vision: the active model declares `input: ["text","image"]`; a screenshot was
-  read and described, not merely saved.
+An earlier run on 2026-11-11 failed the bootstrap doctor's **network
+reachability probe** for the Chrome-for-Testing CDN (6 pass, 1 warn, 1 fail)
+while the browser launch itself passed. Retrying later returned 7 pass, 1 warn,
+0 fail and 35/35. No verifier logic was weakened. This is recorded as an
+external network transient, not a code change.
 
-### QA runner smoke evidence
+## Gate status
 
-- URL: `http://127.0.0.1:4173/qa-page.html`
-- Screenshots: `mobile-390.png`, `tablet-768.png`, `desktop-1440.png`
-- Automated checks: no overflow, no broken images, no missing alt, no unlabeled
-  controls, no unnamed interactive elements, no console errors, no page errors,
-  0 axe violations.
-- Visual inspection: all three screenshots read as images; layout stacked on
-  mobile, two-column at tablet/desktop, consistent typography and spacing.
+| Gate | Scope | Status | Evidence |
+| --- | --- | --- | --- |
+| Bootstrap | Environment and tooling | **PASSED** | `npm run verify:bootstrap` → 35/35 |
+| Realignment A | Audit and migration plan | **PASSED** | `docs/REALIGNMENT_AUDIT.md`, `docs/MIGRATION_PLAN.md` |
+| G0 | Corrected brief recorded | **PASSED** | `docs/PROJECT_BRIEF.md`, supersession banner in `docs/01` |
+| G4 | Realigned design system | **PASSED** | `docs/04`; 91 tokens; measured contrast table |
+| G5 | Page specifications | **PASSED** | `docs/05`; 16 routes; states; responsive and test matrix |
+| G6 | Frontend implementation | **PASSED** | Build, lint, typecheck, 36 tests, asset validation |
+| G7 | Browser visual QA | **PASSED** | 390/768/1440 screenshots captured and visually inspected; 0 axe violations/overflow on final runs |
+| G8 | Final validation | **PASSED** | All commands re-run; bootstrap 35/35; asset 0 errors; final screenshots inspected |
 
-### `/build-site` fresh-session evidence
+## Implementation evidence
 
-- A fresh OpenCode session with no conversation history expanded
-  `/build-site` into the full command prompt and switched to the `build` agent.
-- It ran `npm run verify:bootstrap` and received 35/35 checks passed.
-- With empty arguments, it did **not** invent a project; it stopped at Phase 0
-  and asked for the brief.
-- It recorded blocker B1 in this file and committed `16b6921`.
-- The command pins no model or provider. The non-interactive test used the
-  currently active `opencode-go/deepseek-v4.1-flash`; an earlier test with the
-  build agent's unfunded default model failed with a provider 402, which is an
-  account-balance issue, not a command-discovery failure.
+### Routes implemented
 
-## Project phases
+**Public:** `/`, `/sekolah`, `/sekolah/:slug`, `/kategori`, `/tentang`, 404.
 
-| Phase | Name | Status | Gate | Evidence | Approval |
-| --- | --- | --- | --- | --- | --- |
-| 0 | Environment and project brief | PASSED | G0 | `docs/01-product-brief.md`; brief SHA-256 `4dffb2ae…db972`; bootstrap 35/35 | Brief supplied; autonomous mode |
-| 1 | Product and audience discovery | PASSED | G1 | `docs/01` Phase 1 sections: 5 journeys, route inventory, content provenance, constraints | Autonomous |
-| 2 | Visual reference research | PASSED | G2 | `docs/02` with 3 external references + supplied mockup; 6 screenshots inspected; direction A selected | Autonomous (D-012) |
-| 3 | Real image asset sourcing | PASSED | G3 | 8 licensed Pexels photos; 6 products + 2 editorial; `validate:assets --require-assets` 0 errors | Autonomous |
-| 4 | Art direction and design system | PASSED | G4 | `docs/04` tokens; 78 generated; contrast measured AA; D-013 | Autonomous |
-| 5 | Wireframes and page specifications | PASSED | G5 | `docs/05`: 5 routes, content, assets, 390/768/1440, states, interaction matrix | Autonomous |
-| 6 | Frontend implementation | NOT STARTED | G6 | `site/` not created | — |
-| 7 | Browser-based visual QA | NOT STARTED | G7 | — | — |
-| 8 | Refinement and final validation | NOT STARTED | G8 | — | — |
+**Admin:** `/admin/masuk`, `/admin`, `/admin/sekolah`,
+`/admin/sekolah/baru`, `/admin/sekolah/:id/edit`, `/admin/kategori`,
+`/admin/foto`, `/admin/foto/baru`, `/admin/pengguna`.
 
-## Current state
+### Functional behavior verified in the browser
 
-- Project brief: **received** at `docs/PROJECT_BRIEF.md`; recorded in `docs/01`.
-- Frontend: not scaffolded.
-- Design system: template only; no approved tokens.
-- Assets: manifest empty; no product images.
-- Mode: `autonomous` (from brief).
+- Home search → `/sekolah?q=Sukajadi` returned 1 matching school.
+- Level filter + "Nama A–Z" returned the three SMP schools in order.
+- Reset restored all 12 schools; URL parameters persisted.
+- School detail Galeri/Informasi tabs; photo preview with prev/next; Escape
+  closes.
+- Individual download produced "Foto diunduh.".
+- Bulk download produced `seragam-sdn-001-bandung.zip` (2,647,911 bytes) with
+  six real JPEG entries (`01-kemeja-putih.jpg` … `06-rel-seragam.jpg`).
+- Admin school create, public visibility, edit, and delete all succeeded.
+- Photo upload from a real local JPEG succeeded, appeared on the public gallery,
+  and was deleted afterwards.
+- Category description save appeared on `/kategori`; restore-default restored
+  the seed description.
+- Demo user add/delete and delete confirmation worked.
+- Public and admin mobile menus opened, navigated, and closed.
 
-### G0 — Environment and brief
+### Commands and results
 
-- Result: PASSED
-- Command: `npm run verify:bootstrap` → `Summary: 35/35 checks passed.`
-- Brief: `docs/PROJECT_BRIEF.md`, SHA-256 `4dffb2aee46457bcfe8f34201c85d5083f17e74487825e18eeab020ced4db972`
-- Recorded: product, audiences, primary job, four routes, non-goals, content
-  provenance, technology, photography policy, and autonomous mode in `docs/01`.
-- Frontend location: `site/`.
-- Open questions: none blocking; final brand name is provisional as permitted.
-- Checkpoint: `35ca53c`.
+```powershell
+npm run verify:bootstrap
+# Summary: 35/35 checks passed.
 
-### G1 — Product and audience discovery
+npm run validate:assets -- --require-assets
+# Assets checked: 8; Summary: 0 error(s), 0 warning(s).
 
-- Result: PASSED
-- Output: `docs/01-product-brief.md` Phase 1 sections.
-- Journeys J1–J5; route inventory for `/`, `/shop`, `/shop/:slug`, `/cart`,
-  and 404; page content requirements; provenance and truth rules; constraints
-  and risks; observable success criteria.
-- No visual direction chosen; no product data invented beyond labelled sample
-  copy planned for Phase 6.
-- Decisions: `docs/DECISIONS.md` D-009 (brand), D-010 (demo commerce model),
-  D-011 (catalogue sized to photography).
-- Checkpoint: `55d745c`.
+npm run tokens:build -- --require
+# Generated 91 token(s) -> site/src/styles/tokens.css (status: approved)
 
-### G2 — Visual reference research
+cd site
+npm run build
+# vite v8.3.8; 69 modules transformed; built successfully
+npm run lint
+# exit 0, no warnings
+npm run typecheck
+# exit 0
+npm test
+# 4 test files passed; 36 tests passed
+```
 
-- Result: PASSED
-- References: Stevensons (direct), Folk (adjacent), Daunt Books (non-obvious),
-  plus the supplied mockup. All external references reached 2026-11-11.
-- Screenshots: `artifacts/visual-qa/references/stevensons-{desktop-1440,mobile-390}.png`,
-  `folk-{desktop-1440,mobile-390}.png`, `dauntbooks-{desktop-1440,mobile-390}.png`.
-- Inspection: all six screenshots read as image content. Folk and Daunt mobile
-  captures contain blank lazy-load regions and were not used as mobile evidence;
-  limitation recorded in `docs/02`.
-- Direction options: A The Outfitter's Ledger (selected), B The Term List,
-  C Playground Colour-Block (both rejected with reasons).
-- Decision: D-012. Autonomous mode; no human approval required.
-- Checkpoint: `4cefa73`.
+### Test coverage
 
-### G3 — Real image asset sourcing
+| File | Tests |
+| --- | --- |
+| `site/src/lib/schools.test.ts` | Search, level filter, three sorts, counts, slug uniqueness, formatting |
+| `site/src/data/demo-store.test.ts` | Seed fallback, round-trip, invalid data, school add/update/delete cascade, photo/category/user mutations, no password field |
+| `site/src/lib/downloads.test.ts` | Safe file names, data-URL extensions, archive name, image validation, byte formatting |
+| `site/src/App.test.tsx` | Home, home search navigation, detail tabs, categories, dashboard, school create validation/success, photo form validation, demo users |
 
-- Result: PASSED
-- Source: Pexels License, <https://www.pexels.com/license/>; all source pages
-  opened 2026-11-11.
-- Manifest: `docs/03-asset-manifest.md`; 8 assets (6 product, 2 editorial).
-- Files: `site/public/images/*.jpg`; source copies `assets/downloads/*.jpg`;
-  `scripts/fetch-assets.mjs` reproduces the set.
-- Inspection: all eight 1600px files read as image content; no corrupt or
-  non-photographic images.
-- Command: `npm run validate:assets -- --require-assets`
-  → `Assets checked: 8` / `Summary: 0 error(s), 0 warning(s).`
-- All stock images labelled demonstration; no AI, SVG, CSS, or placeholder
-  product imagery.
-- Checkpoint: `10da044`.
+### Visual QA evidence
 
-### G4 — Art direction and design system
+Final runs (each has 390, 768, 1440 screenshots and `report.json`):
 
-- Result: PASSED
-- Direction: The Outfitter's Ledger (D-013).
-- Tokens: `docs/04-design-system.md` canonical JSON block; 78 CSS custom
-  properties generated by `npm run tokens:build -- --require` into
-  `site/src/styles/tokens.css` (status: approved).
-- Contrast: measured with the WCAG relative-luminance formula. Primary text
-  14.79:1 on chalk; inverse 9.51:1 on oxblood; secondary 5.98:1 on chalk; input
-  boundary 4.00:1. All text pairs pass AA. Brass is restricted to 3:1 UI use.
-- Typography: Fraunces Variable + Archivo Variable, self-hosted via Fontsource
-  (SIL OFL 1.1); fallbacks documented.
-- Components and states specified, including keyboard and reduced-motion rules.
-- Checkpoint: `9822a27`.
+- `artifacts/visual-qa/realignment/final-home/2026-11-11T16-19-17-157Z`
+- `artifacts/visual-qa/realignment/final-schools/2026-11-11T16-19-42-370Z`
+- `artifacts/visual-qa/realignment/final-detail/2026-11-11T16-20-06-369Z`
+- `artifacts/visual-qa/realignment/final-admin/2026-11-11T16-20-35-352Z`
+- `artifacts/visual-qa/realignment/final-admin-school-form/2026-11-11T16-20-58-412Z`
+- `artifacts/visual-qa/realignment/final-admin-photo-form/2026-11-11T16-01-31-305Z`
+- `artifacts/visual-qa/realignment/final-categories/2026-11-11T16-12-09-062Z`
+- `artifacts/visual-qa/realignment/final-about/2026-11-11T16-21-23-098Z`
+- `artifacts/visual-qa/realignment/final-admin-login/2026-11-11T16-25-06-930Z`
+- `artifacts/visual-qa/realignment/final-admin-photos/2026-11-11T16-14-30-119Z`
+- `artifacts/visual-qa/realignment/final-admin-categories/2026-11-11T16-15-14-414Z`
+- `artifacts/visual-qa/realignment/final-admin-users/2026-11-11T16-17-59-609Z`
+- Interaction states: `artifacts/visual-qa/realignment/interactions/`
 
-### G5 — Wireframes and page specifications
+Inspector: `opencode-go/deepseek-v4.1-flash` (vision-capable), 2026-11-11.
+Full observations and fixes: `docs/06-visual-qa.md`.
 
-- Result: PASSED
-- Output: `docs/05-page-specifications.md`.
-- Routes: `/`, `/shop`, `/shop/:slug`, `/cart`, `*` (404), each with purpose,
-  ASCII wireframe, content inventory, asset slots, responsive table, components,
-  interaction matrix, functionality, and accessibility acceptance.
-- Catalogue: six sample products (shirt, blazer, knit, skirt, trouser, loafer)
-  with categories, stages, sample prices, sizes, and image IDs.
-- Content provenance: all product copy and prices are marked sample; no reviews,
-  school names, delivery promises, or credentials invented.
-- Every image slot maps to one of the eight verified manifest assets.
-- Global states: demo notice, mobile menu, empty search, empty bag, size error,
-  added-to-bag, demo checkout, 404, storage fallback.
-- No visual direction or token changed.
-- Checkpoint: see `phase-5` commit in git log.
+### Preserved vs replaced
+
+**Preserved:** bootstrap scripts, skills, browser, asset validator, token
+generator, visual QA runner, Vite/React/TypeScript/Tailwind foundation, test
+setup, 8 verified Pexels assets and manifest.
+
+**Replaced:** public/admin routes, all pages, commerce components, cart state,
+product catalogue, CSS, canonical tokens, page specs, QA evidence, status and
+decision records. Old work remains at checkpoint `ef09a4f`.
+
+### Security and content honesty
+
+- No real authentication; `/admin/masuk` explicitly checks nothing and stores
+  no password. Admin routes are openly reachable and labelled demo.
+- No backend, payments, deployment, or provider/credential changes.
+- All photos are labelled demonstration imagery with creator, source, and
+  licence. No school logo, official uniform, or affiliation is claimed.
+- No SVG/CSS/Canvas garment imagery; only inline SVG icons/logo marks.
 
 ## Approvals
 
 | Date | Scope | Approver | Decision | Status |
 | --- | --- | --- | --- | --- |
-| — | — | — | No project approvals yet | — |
+| 2026-11-11 | Realignment approach, design system, demo data, downloads, admin honesty, QA disposition | Agent, autonomous mode | D-015–D-023 recorded in `docs/DECISIONS.md` | `[APPROVED]` |
+
+## Outstanding limitations (not blockers)
+
+1. The eight stock photos are generic garments, not official school uniforms.
+2. Demo schools reuse photos; counts are accurate to the demo records, not real
+   inventory.
+3. Hero uses a real-photo collage, not the reference's cut-out uniform pair.
+4. Mobile detail identity photo is larger than the reference thumbnail.
+5. Admin data is browser-local and single-user.
+6. No deployment or backend was requested or performed.
+
+These are documented in `docs/06-visual-qa.md` and do not violate a required
+route, interaction, asset-policy, or accessibility criterion.
 
 ## Blockers
 
-None. B1 is resolved: the brief was supplied at `docs/PROJECT_BRIEF.md` and
-recorded on 2026-11-11.
+None.
 
-| # | Problem | Evidence | Impact | Corrective action | Owner |
-| --- | --- | --- | --- | --- | --- |
-| B1 | `/build-site` invoked with empty `$ARGUMENTS` on 2026-11-11, so no brief existed | Resolved 2026-11-11: `docs/PROJECT_BRIEF.md` supplied and recorded in `docs/01` | None remaining | Closed | Project owner |
+B1 (old: no brief) remains closed. The only transient issue was the external
+Chrome-for-Testing CDN reachability probe, resolved on retry and recorded above.
 
 ## Resume instructions
 
-1. Read `AGENTS.md`, `docs/BOOTSTRAP_HANDOFF.md`, and this file.
+1. Read `AGENTS.md`, `docs/PHASE_STATUS.md`, `docs/BOOTSTRAP_HANDOFF.md`.
 2. Run `npm run verify:bootstrap`.
-3. Continue at the first phase not marked `PASSED` (Phase 1).
-4. Do not skip gates.
+3. To run the site: `cd site && npm install && npm run dev` or
+   `npm run build && npm run preview`.
+4. To re-check quality: run the commands in `docs/05` §9.
+5. Do not revive `/shop`, `/cart`, prices, or the old editorial direction.
+6. Do not replace demo photos without updating `docs/03` and the manifest.
 
 ## Next action
 
-Phase 6 — scaffold the React + TypeScript + Vite + Tailwind application in
-`site/`, implement every specified route and state with the eight verified
-assets and generated tokens, then pass build, lint, typecheck, tests, and asset
-validation.
+No required implementation work remains. Optional future work, only with a new
+brief: replace stock demonstration imagery with client-owned licensed photos,
+and add a real backend/authentication layer if explicitly requested.
