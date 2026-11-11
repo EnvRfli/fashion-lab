@@ -28,7 +28,7 @@
 | `/build-site` command file | PASSED | `.opencode/commands/build-site.md` exists with `agent: build` and `$ARGUMENTS` |
 | `/build-site` fresh-session behavior | PASSED | Session `ses_e359507ebffeULJMnBmvTB6c0n` expanded the command, ran `verify:bootstrap` (35/35), refused to invent a brief, and recorded blocker B1 |
 | Bootstrap verifier | PASSED | `npm run verify:bootstrap`: 35/35 checks passed |
-| Git checkpoint | PASSED | `fe28235` bootstrap; `16b6921` fresh-session blocker record |
+| Git checkpoint | PASSED | `fe28235` bootstrap; `16b6921` fresh-session blocker record; `6444607` committed smoke/QA evidence and handoff |
 
 ### Browser smoke evidence
 

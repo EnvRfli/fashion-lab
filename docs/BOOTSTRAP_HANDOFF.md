@@ -318,5 +318,5 @@ also written to `docs/PHASE_STATUS.md`.
 | Browser doctor | **7 pass, 1 warning (ffmpeg), 0 fail** |
 | Visual inspection | **PASSED** for smoke and three QA-viewport screenshots on 2026-11-11 |
 | `/build-site` fresh session | **PASSED** — expanded, ran verification, stopped for missing brief, committed `16b6921` |
-| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record |
-| Working tree clean | Confirm with `git status` after the final documentation commit |
+| Git checkpoints | `fe28235` bootstrap; `16b6921` empty-brief blocker record; `6444607` evidence and handoff |
+| Working tree clean | **PASSED** — `git status --short` empty after the evidence commit |
