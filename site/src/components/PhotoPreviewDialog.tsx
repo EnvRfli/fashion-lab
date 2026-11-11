@@ -111,11 +111,26 @@ export function PhotoPreviewDialog({
 
           <p className="preview-credit">
             Foto demonstrasi oleh {photo.creator}. Lisensi{" "}
-            <a href={photo.licenseUrl} target="_blank" rel="noreferrer">
-              {photo.license}
-              <ExternalLinkIcon />
-            </a>
+            {photo.licenseUrl ? (
+              <a href={photo.licenseUrl} target="_blank" rel="noreferrer">
+                {photo.license}
+                <ExternalLinkIcon />
+              </a>
+            ) : (
+              photo.license
+            )}
             .
+            {photo.sourceUrl ? (
+              <>
+                {" "}
+                Sumber:{" "}
+                <a href={photo.sourceUrl} target="_blank" rel="noreferrer">
+                  tautan foto
+                  <ExternalLinkIcon />
+                </a>
+                .
+              </>
+            ) : null}
           </p>
 
           <div className="preview-actions">

@@ -372,14 +372,18 @@ export function SchoolDetailPage() {
                     ).map((photo) => (
                       <li key={`${photo.creator}-${photo.sourceUrl}`}>
                         {photo.title} — {photo.creator},{" "}
-                        <a
-                          href={photo.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {photo.license}
-                          <ExternalLinkIcon />
-                        </a>
+                        {photo.sourceUrl ? (
+                          <a
+                            href={photo.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {photo.license}
+                            <ExternalLinkIcon />
+                          </a>
+                        ) : (
+                          photo.license
+                        )}
                       </li>
                     ))}
                   </ul>
