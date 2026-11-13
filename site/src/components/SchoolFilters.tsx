@@ -30,14 +30,14 @@ export function SchoolFilters({
     <div className="school-filters">
       {showSearch ? (
         <div className="filter-field filter-field-search">
-          <label htmlFor={searchId}>Cari sekolah</label>
+          <label htmlFor={searchId}>Cari klien</label>
           <div className="filter-control filter-control-search">
             <SearchIcon aria-hidden="true" />
             <input
               id={searchId}
               type="search"
               value={query.query}
-              placeholder="Cari nama sekolah..."
+              placeholder="Cari nama klien..."
               onChange={(event) =>
                 onChange({ ...query, query: event.target.value })
               }
@@ -107,7 +107,7 @@ export function SchoolFilters({
 
       {typeof resultCount === "number" ? (
         <p className="filter-count" role="status" aria-live="polite">
-          {resultCount} sekolah ditemukan
+          {resultCount} klien ditemukan
         </p>
       ) : null}
     </div>

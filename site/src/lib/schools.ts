@@ -88,8 +88,8 @@ export function filterAndSortSchools(
     const haystack = [
       school.name,
       school.location,
-      school.level,
-      levelName.get(school.level) ?? "",
+      school.level ?? "",
+      school.level ? (levelName.get(school.level) ?? "") : "",
     ]
       .map(normalizeText)
       .join(" ");
@@ -114,6 +114,7 @@ export function countSchoolsByLevel(schools: School[]): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const level of EDUCATION_LEVELS) counts[level.id] = 0;
   for (const school of schools) {
+    if (!school.level) continue;
     counts[school.level] = (counts[school.level] ?? 0) + 1;
   }
   return counts;
@@ -134,7 +135,7 @@ export function uniqueSchoolSlug(
   schools: School[],
   ignoreId?: string,
 ): string {
-  const base = slugify(name) || "sekolah-demo";
+  const base = slugify(name) || "klien";
   const used = new Set(
     schools.filter((school) => school.id !== ignoreId).map((s) => s.slug),
   );

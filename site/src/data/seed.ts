@@ -6,7 +6,7 @@ import type {
   School,
 } from "./types";
 
-const SEED_VERSION = 2;
+const SEED_VERSION = 3;
 
 interface SeedSchool {
   id: string;
@@ -28,7 +28,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SD",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh profil sekolah dasar untuk demonstrasi galeri. Halaman ini menunjukkan bagaimana identitas sekolah, jumlah foto, dan keterangan singkat ditampilkan.",
+      "Dokumentasi pekerjaan seragam sekolah dasar: kemeja, rok, celana, dan pelengkap harian.",
     assets: [
       "poplin-shirt",
       "cotton-skirt",
@@ -47,8 +47,9 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SD",
     location: "Bandung, Jawa Barat",
     description:
-      "Data contoh untuk melihat daftar foto seragam jenjang SD. Seluruh isi galeri adalah foto stok demonstrasi, bukan seragam resmi sekolah.",
-    assets: ["poplin-shirt", "cotton-skirt", "leather-loafer", "atelier-rail"],    createdAt: "2026-11-09T10:30:00.000Z",
+      "Koleksi foto seragam jenjang SD dengan atasan, bawahan, dan pelengkap untuk kegiatan belajar.",
+    assets: ["poplin-shirt", "cotton-skirt", "leather-loafer", "atelier-rail"],
+    createdAt: "2026-11-09T10:30:00.000Z",
     updatedAt: "2026-11-09T10:30:00.000Z",
   },
   {
@@ -58,7 +59,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMP",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh halaman sekolah jenjang SMP dengan galeri atasan, bawahan, dan pelengkap. Gunakan tab Informasi untuk melihat keterangan data demo.",
+      "Dokumentasi seragam jenjang SMP, mencakup atasan, bawahan, dan aksesori pendukung.",
     assets: [
       "poplin-shirt",
       "wool-blazer",
@@ -77,7 +78,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMA",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh profil jenjang SMA untuk memperlihatkan tampilan galeri yang lebih lengkap, termasuk setelan dan aksesori pendukung.",
+      "Dokumentasi setelan seragam jenjang SMA dengan atasan, bawahan, dan pelengkap.",
     assets: [
       "poplin-shirt",
       "wool-blazer",
@@ -96,7 +97,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "TK",
     location: "Cimahi, Jawa Barat",
     description:
-      "Contoh data taman kanak-kanak dengan pilihan foto yang lebih ringkas. Nama dan profil sekolah pada demo ini bersifat ilustratif.",
+      "Dokumentasi seragam taman kanak-kanak dengan potongan nyaman untuk aktivitas bermain dan belajar.",
     assets: ["striped-knit", "poplin-shirt", "cotton-skirt", "leather-loafer"],
     createdAt: "2026-11-06T09:20:00.000Z",
     updatedAt: "2026-11-06T09:20:00.000Z",
@@ -108,7 +109,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "TK",
     location: "Bandung Barat, Jawa Barat",
     description:
-      "Contoh halaman TK untuk menunjukkan pencarian, filter jenjang, dan galeri foto yang dapat diunduh.",
+      "Koleksi seragam TK dengan atasan, bawahan, dan pelengkap untuk kegiatan harian.",
     assets: ["striped-knit", "cotton-skirt", "leather-loafer", "uniform-flatlay"],
     createdAt: "2026-11-05T11:00:00.000Z",
     updatedAt: "2026-11-05T11:00:00.000Z",
@@ -120,7 +121,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "TK",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh profil TK dengan koleksi referensi atasan, bawahan, dan pelengkap. Semua foto adalah stok demonstrasi berlisensi.",
+      "Dokumentasi seragam TK dengan referensi atasan, bawahan, dan pelengkap.",
     assets: [
       "poplin-shirt",
       "cotton-skirt",
@@ -138,7 +139,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SD",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh sekolah dasar dengan variasi foto atasan, bawahan, dan pelengkap. Data ini tidak mewakili sekolah sungguhan.",
+      "Dokumentasi seragam sekolah dasar dengan variasi atasan, bawahan, dan pelengkap.",
     assets: [
       "poplin-shirt",
       "cotton-skirt",
@@ -156,7 +157,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMP",
     location: "Lembang, Jawa Barat",
     description:
-      "Contoh halaman SMP dengan galeri ringkas. Gunakan tombol Download Semua untuk mengunduh arsip foto yang benar-benar tersedia.",
+      "Dokumentasi seragam SMP dengan atasan, bawahan, dan pelengkap.",
     assets: ["poplin-shirt", "wool-blazer", "twill-trouser", "leather-loafer"],
     createdAt: "2026-11-02T08:45:00.000Z",
     updatedAt: "2026-11-02T08:45:00.000Z",
@@ -168,7 +169,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMP",
     location: "Cimahi, Jawa Barat",
     description:
-      "Contoh profil SMP untuk memperlihatkan kombinasi atasan, bawahan, dan aksesori dalam galeri dua kolom di ponsel.",
+      "Dokumentasi seragam SMP dengan kombinasi atasan, bawahan, dan aksesori.",
     assets: [
       "poplin-shirt",
       "wool-blazer",
@@ -187,7 +188,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMA",
     location: "Cimahi, Jawa Barat",
     description:
-      "Contoh halaman SMA dengan galeri tujuh foto. Semua foto adalah referensi visual berlisensi, bukan seragam resmi sekolah.",
+      "Dokumentasi seragam SMA dengan atasan, bawahan, dan pelengkap.",
     assets: [
       "poplin-shirt",
       "wool-blazer",
@@ -207,7 +208,7 @@ const SEED_SCHOOLS: SeedSchool[] = [
     level: "SMA",
     location: "Bandung, Jawa Barat",
     description:
-      "Contoh profil SMA dengan koleksi referensi setelan dan pelengkap. Nama sekolah digunakan sebagai contoh, bukan entitas terverifikasi.",
+      "Dokumentasi setelan seragam SMA dengan atasan, bawahan, dan aksesori pendukung.",
     assets: [
       "poplin-shirt",
       "wool-blazer",
@@ -235,7 +236,8 @@ const COVER_BY_SLUG: Record<string, string> = {
   "sma-harapan-bangsa": "poplin-shirt",
 };
 
-const CATEGORY_DESCRIPTIONS: Record<string, string> = {  TK: "Seragam taman kanak-kanak dengan potongan nyaman untuk aktivitas bermain dan belajar.",
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  TK: "Seragam taman kanak-kanak dengan potongan nyaman untuk aktivitas bermain dan belajar.",
   SD: "Seragam sekolah dasar yang umum dipakai untuk kegiatan belajar harian.",
   SMP: "Seragam jenjang menengah pertama dengan atasan, bawahan, dan atribut pendukung.",
   SMA: "Seragam jenjang menengah atas, termasuk setelan dan aksesori untuk kegiatan sekolah.",
@@ -264,6 +266,11 @@ const SEED_USERS: DemoUser[] = [
     createdAt: "2026-10-22T10:15:00.000Z",
   },
 ];
+
+/** Stable ID → description map used by the one-way copy migration. */
+export const SEED_DESCRIPTIONS: Record<string, string> = Object.fromEntries(
+  SEED_SCHOOLS.map((school) => [school.id, school.description]),
+);
 
 function makePhoto(
   school: SeedSchool,

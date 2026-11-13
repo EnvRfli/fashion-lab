@@ -107,5 +107,3 @@ export const DEMO_ASSETS: Record<string, DemoAsset> = {
     licenseUrl: PEXELS_LICENSE_URL,
   },
 };
-
-export const DEMO_ASSET_LIST = Object.values(DEMO_ASSETS);

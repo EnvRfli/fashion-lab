@@ -1,11 +1,22 @@
 # DESIGN ALIGNMENT — Galeri Seragam
 
-**Status:** Implemented and visually inspected on 2026-11-11. The checklist at
-the end records the observed result per screen; minor differences are documented
-in `docs/06-visual-qa.md`.  
+**Status:** Implemented and visually inspected on 2026-11-11. **V2 minimal
+adjustment applied and visually re-inspected on 2026-11-13.**
+**Current visual baseline (v2):** the rendered application before the v2 change
+(`artifacts/nafa-v2/before/`). The v2 package preserves that design; it does not
+target a new aesthetic.
 **Primary image:** `docs/references/primary/galeri-seragam-main.png`  
-**Source of truth:** `docs/PROJECT_BRIEF.md` and this primary reference override
-old e-commerce design direction.
+**Source of truth:** `docs/PROJECT_BRIEF.md` (v2 section),
+`nafa-portfolio-adjustment-v2/specs/`, and the current rendered app. Older
+demo/download/user-management requirements are superseded.
+
+> **V2 delta.** The approved composition is unchanged: same palette, typography,
+> navbar, hero, four category cards, portfolio/client grid, detail tabs, photo
+> grid, lightbox, admin sidebar and form language. The v2 change removes public
+> demo/download/user-management UI and reduces the admin form to two required
+> inputs. It does **not** add a phone mockup collage, a commerce layout, or a new
+> visual identity. Before/after evidence and observed differences are in
+> `docs/NAFA_V2_EXECUTION_REPORT.md` and `docs/06-visual-qa.md`.
 
 ## What the reference actually shows
 
@@ -39,7 +50,10 @@ Component names are suggestions; matching behavior and structure matters more th
 
 ## Content and navigation
 
-Top public navigation: **Beranda**, **Sekolah**, **Kategori**, **Tentang**, **Login Admin**. Public CTA: search or browse schools, **not** shop. School categories: **TK, SD, SMP, SMA**. Download actions apply to photos, not transactions.
+Top public navigation (v2): **Beranda**, **Portofolio**, **Kategori**,
+**Tentang**, **Login Admin**. Public CTA: search or browse client portfolios,
+**not** shop. The four education-level categories remain as optional browsing
+groups. Photo preview remains; **no download action** is present.
 
 ## Explicitly forbidden visual/product drift
 
@@ -70,6 +84,12 @@ Top public navigation: **Beranda**, **Sekolah**, **Kategori**, **Tentang**, **Lo
 - [x] No checkout, cart, product pricing or shopping copy in active UI.
 - [x] Actual rendered screenshots were inspected with supported visual
   capability (`opencode-go/deepseek-v4.1-flash`).
+
+**V2 note:** The separate `/admin/foto/baru` screen and the demo/download/user
+features referenced in the historical checklist are superseded. Multi-photo
+upload now lives inside the portfolio form, and the old feature URLs redirect to
+the portfolio list. The retained design language and responsive composition are
+unchanged; see `docs/NAFA_V2_EXECUTION_REPORT.md`.
 
 **Note:** Checked items reflect the final inspection recorded in
 `docs/06-visual-qa.md`, not an assumption from DOM checks. Do not claim

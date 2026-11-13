@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { DemoNote } from "../components/DemoNote";
 import {
   BookIcon,
   CapIcon,
@@ -20,7 +19,7 @@ const ICONS = {
 } as const;
 
 export function CategoriesPage() {
-  usePageTitle("Kategori Sekolah");
+  usePageTitle("Kategori Klien");
   const { schools, photos, categoryDescriptions } = useDemoData();
   const counts = countSchoolsByLevel(schools);
 
@@ -29,12 +28,11 @@ export function CategoriesPage() {
       <section className="page-hero">
         <div className="shell">
           <p className="eyebrow">Kategori</p>
-          <h1>Kategori Sekolah</h1>
+          <h1>Kategori Klien</h1>
           <p>
-            Empat jenjang pendidikan utama. Pilih kategori untuk melihat daftar
-            sekolah dan galeri referensi seragamnya.
+            Empat kategori pendidikan utama. Pilih kategori untuk melihat daftar
+            klien dan galeri hasil pekerjaannya.
           </p>
-          <DemoNote />
         </div>
       </section>
 
@@ -69,14 +67,14 @@ export function CategoriesPage() {
                     </div>
                   </div>
                   <div className="category-card-stats">
-                    <span>{schoolCount} Sekolah</span>
+                    <span>{schoolCount} Klien</span>
                     <span>{formatPhotoCount(photoCount)}</span>
                   </div>
                   <Link
                     to={`/sekolah?kategori=${level.id}`}
                     className="category-card-link"
                   >
-                    Lihat sekolah {level.id}
+                    Lihat klien {level.id}
                     <ChevronDownIcon />
                   </Link>
                 </article>
@@ -86,14 +84,14 @@ export function CategoriesPage() {
 
           <div className="category-footer">
             <div>
-              <h2>Belum menemukan sekolah?</h2>
+              <h2>Belum menemukan klien?</h2>
               <p>
-                Gunakan pencarian di halaman daftar sekolah untuk mencari
-                berdasarkan nama atau lokasi.
+                Gunakan pencarian di halaman portofolio untuk mencari
+                berdasarkan nama klien atau lokasi.
               </p>
             </div>
             <Link to="/sekolah" className="btn btn-primary">
-              Buka daftar sekolah
+              Buka daftar klien
             </Link>
           </div>
         </div>

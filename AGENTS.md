@@ -19,7 +19,12 @@ Read this file before doing any project work. Then read:
 - Website implementation: **complete** in `site/` — public directory/gallery and
   demo admin CMS. See `docs/PHASE_STATUS.md` and `docs/REALIGNMENT_REPORT.md`.
 - Visual QA: **passed** with documented limitations in `docs/06-visual-qa.md`.
-- No unresolved blocker; optional future work requires a new brief.
+- Nafa v2 adjustment (2026-11-13): **complete locally** — client portfolio
+  public UI, two-input admin, multi-photo upload, seeded data preserved.
+  Production auth/storage/content approval remains blocked. See
+  `docs/NAFA_V2_EXECUTION_REPORT.md`.
+- No unresolved blocker for local continuation; production release blockers are
+  recorded in `docs/PHASE_STATUS.md`.
 
 ## Repository map
 

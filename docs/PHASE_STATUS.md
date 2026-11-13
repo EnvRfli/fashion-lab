@@ -1,202 +1,191 @@
 # Phase Status
 
 > Living resume file. Read this first in a new session.
-> Last updated: 2026-11-11 — realignment audit, implementation, and visual QA
-> complete.
+> Last updated: 2026-11-13 — **Nafa Collection v2 minimal-change adjustment**.
+> No push, deployment, or backend provisioning was performed.
 
 ## Status vocabulary
 
 `NOT STARTED` · `IN PROGRESS` · `PASSED` · `FAILED` · `BLOCKED` · `WAIVED`
 
-## Realignment summary
+## Current direction
 
 | Item | Value |
 | --- | --- |
-| Product | **Galeri Seragam** — School Directory + Uniform Photo Gallery + Admin CMS |
-| Authoritative brief | `docs/PROJECT_BRIEF.md` |
-| Primary visual reference | `docs/references/primary/galeri-seragam-main.png` |
-| Execution instruction | `docs/REALIGNMENT_EXECUTION.md` |
-| Approach | **Partial application-layer rebuild** inside the same repository |
-| Baseline checkpoint | `ef09a4f` — pre-realignment fashion storefront preserved |
-| Implementation checkpoint | `ec0e678` — Galeri Seragam implementation, docs, and QA evidence |
+| Product | **Galeri Seragam / Nafa Collection** — client portfolio + garment project photos |
+| Authoritative brief | `docs/PROJECT_BRIEF.md` v2 section + `nafa-portfolio-adjustment-v2/specs/` |
+| Visual baseline | Rendered app before v2 (`artifacts/nafa-v2/before/`) |
+| Execution report | `docs/NAFA_V2_EXECUTION_REPORT.md` |
+| Baseline audit | `docs/NAFA_V2_BASELINE.md` |
+| Change plan | `docs/NAFA_V2_CHANGE_PLAN.md` |
 | Frontend | `site/` — React 19 + TypeScript + Vite 8 + Tailwind 4 |
+| Data source | `site/src/data/seed.ts` + browser `localStorage` |
 | Mode | `autonomous` |
+| Restore branch | `nafa-v2-baseline` at `1a98a8a` |
+| Current working state | v2 changes uncommitted; no push/deploy |
 
-The previous e-commerce brief, `/shop`, `/cart`, prices, cart state, product
-catalogue, and "Outfitter's Ledger" visual direction are **superseded**. They
-remain in Git history at `ef09a4f` for audit but are not active requirements.
-
-## Bootstrap verification
-
-| Item | Result | Evidence |
-| --- | --- | --- |
-| `npm run verify:bootstrap` | **PASSED — 35/35** | Run 2026-11-11 after the external Chrome-for-Testing CDN became reachable |
-| Node / npm | PASSED | Node `v24.19.0`, npm `11.17.0` |
-| Skills | PASSED | `frontend-design`, `web-design-guidelines`, `agent-browser` present and locked |
-| Browser doctor | PASSED | 7 pass, 1 warning (ffmpeg absent), 0 fail |
-| Asset validator self-test | PASSED | 10/10 cases |
-| Token build | PASSED | 91 tokens generated |
-| Bootstrap tooling preserved | PASSED | No changes to `scripts/verify-bootstrap.mjs`, `validate-assets.mjs`, `visual-qa.mjs`, `build-tokens.mjs`, `.agents/skills/`, or `skills-lock.json` |
-
-### Environment note
-
-An earlier run on 2026-11-11 failed the bootstrap doctor's **network
-reachability probe** for the Chrome-for-Testing CDN (6 pass, 1 warn, 1 fail)
-while the browser launch itself passed. Retrying later returned 7 pass, 1 warn,
-0 fail and 35/35. No verifier logic was weakened. This is recorded as an
-external network transient, not a code change.
-
-## Gate status
+## V2 gate status
 
 | Gate | Scope | Status | Evidence |
 | --- | --- | --- | --- |
-| Bootstrap | Environment and tooling | **PASSED** | `npm run verify:bootstrap` → 35/35 |
-| Realignment A | Audit and migration plan | **PASSED** | `docs/REALIGNMENT_AUDIT.md`, `docs/MIGRATION_PLAN.md` |
-| G0 | Corrected brief recorded | **PASSED** | `docs/PROJECT_BRIEF.md`, supersession banner in `docs/01` |
-| G4 | Realigned design system | **PASSED** | `docs/04`; 91 tokens; measured contrast table |
-| G5 | Page specifications | **PASSED** | `docs/05`; 16 routes; states; responsive and test matrix |
-| G6 | Frontend implementation | **PASSED** | Build, lint, typecheck, 36 tests, asset validation |
-| G7 | Browser visual QA | **PASSED** | 390/768/1440 screenshots captured and visually inspected; 0 axe violations/overflow on final runs |
-| G8 | Final validation | **PASSED** | All commands re-run; bootstrap 35/35; asset 0 errors; final screenshots inspected |
+| V2-A | Audit, before screenshots, data inventory | **PASSED** | `docs/NAFA_V2_BASELINE.md`; `artifacts/nafa-v2/before/`; baseline JSON 12/62/8 |
+| V2-B | Minimal-change plan | **PASSED** | `docs/NAFA_V2_CHANGE_PLAN.md` |
+| D01 | All seeded clients remain accessible | **PASSED** | 12 → 12; 0 missing IDs; `artifacts/nafa-v2/data-comparison.json` |
+| D02 | Photo associations/image hashes preserved | **PASSED** | 62 → 62; 0 missing photo IDs; 0 hash mismatches |
+| D03 | No destructive reseed/truncate | **PASSED** | Additive copy migration only; no reset UI; store test |
+| C01 | No prototype/demo labels in UI | **PASSED** | 0 hits across 10 rendered routes; `artifacts/nafa-v2/text-scan.txt` |
+| C02 | No public signup/login/profile/user management | **PASSED** | User route redirects; 0 rendered public-user hits |
+| C03 | No download buttons/ZIP/links | **PASSED** | 0 download buttons, 0 `a[download]`; module removed |
+| C04 | No shop/cart/checkout/pricing | **PASSED** | No commerce routes/UI; regression tests |
+| A01 | Create requires only name + 1+ photos | **PASSED** | UI validation test; browser create with 2 photos |
+| A02 | Multiple photos in one operation | **PASSED** | Multi-file picker; browser upload + store test |
+| A03 | Category/note optional; cover/slug automatic | **PASSED** | Create with no category; first photo cover; slug tests |
+| A04 | Edit preserves existing photos | **PASSED** | 6 existing photos shown; add/remove test; browser flow |
+| A05 | Delete requires confirmation | **PASSED** | Confirm dialog verified in browser and test |
+| V01 | Visual preservation at 390/768/1440 | **PASSED** | Before/after PNGs inspected as images; differences documented |
+| B01 | Bootstrap/build/lint/typecheck/tests green | **PASSED** | See command evidence below |
+| B02 | Nested routes and image URLs work | **PASSED** | Browser navigation + image loads; asset validation |
+| S01 | Anonymous cannot write (server-enforced) | **BLOCKED** | No backend/auth; local login is not secure authorization |
+| S02 | Uploads persist across sessions/devices | **BLOCKED** | localStorage only; reload persistence verified, not server/device persistence |
 
-## Implementation evidence
+**Production deployment is not approved.** See `docs/NAFA_V2_EXECUTION_REPORT.md`
+§9–§12.
 
-### Routes implemented
+## Data preservation evidence
+
+| Metric | Baseline | Final |
+| --- | ---: | ---: |
+| Clients/portfolios | 12 | 12 |
+| Photos | 62 | 62 |
+| Distinct image files | 8 | 8 |
+| Missing client IDs | — | 0 |
+| Missing photo IDs | — | 0 |
+| Image hash mismatches | — | 0 |
+| Retained user records (UI removed) | 3 | 3 |
+
+Only the 12 seeded description strings changed, via an exact-match migration
+that leaves administrator-edited descriptions untouched. IDs, slugs, names,
+covers and photo associations are unchanged.
+
+## Routes
 
 **Public:** `/`, `/sekolah`, `/sekolah/:slug`, `/kategori`, `/tentang`, 404.
 
-**Admin:** `/admin/masuk`, `/admin`, `/admin/sekolah`,
-`/admin/sekolah/baru`, `/admin/sekolah/:id/edit`, `/admin/kategori`,
-`/admin/foto`, `/admin/foto/baru`, `/admin/pengguna`.
+**Admin:** `/admin/masuk`, `/admin`, `/admin/sekolah`, `/admin/sekolah/baru`,
+`/admin/sekolah/:id/edit`.
 
-### Functional behavior verified in the browser
+**Redirected old admin URLs:** `/admin/kategori`, `/admin/foto`,
+`/admin/foto/baru`, `/admin/pengguna` → `/admin/sekolah`.
 
-- Home search → `/sekolah?q=Sukajadi` returned 1 matching school.
-- Level filter + "Nama A–Z" returned the three SMP schools in order.
-- Reset restored all 12 schools; URL parameters persisted.
-- School detail Galeri/Informasi tabs; photo preview with prev/next; Escape
-  closes.
-- Individual download produced "Foto diunduh.".
-- Bulk download produced `seragam-sdn-001-bandung.zip` (2,647,911 bytes) with
-  six real JPEG entries (`01-kemeja-putih.jpg` … `06-rel-seragam.jpg`).
-- Admin school create, public visibility, edit, and delete all succeeded.
-- Photo upload from a real local JPEG succeeded, appeared on the public gallery,
-  and was deleted afterwards.
-- Category description save appeared on `/kategori`; restore-default restored
-  the seed description.
-- Demo user add/delete and delete confirmation worked.
-- Public and admin mobile menus opened, navigated, and closed.
+Public `/sekolah` URLs are intentionally preserved despite the public label
+change to Portofolio/Klien.
 
-### Commands and results
+## Commands and results
 
 ```powershell
 npm run verify:bootstrap
 # Summary: 35/35 checks passed.
 
 npm run validate:assets -- --require-assets
-# Assets checked: 8; Summary: 0 error(s), 0 warning(s).
+# Assets checked: 8; Source files scanned: 47; 0 error(s), 0 warning(s).
 
 npm run tokens:build -- --require
 # Generated 91 token(s) -> site/src/styles/tokens.css (status: approved)
 
 cd site
 npm run build
-# vite v8.3.8; 69 modules transformed; built successfully
+# tsc + vite v8.3.8; 62 modules transformed; built successfully
+
 npm run lint
 # exit 0, no warnings
+
 npm run typecheck
 # exit 0
+
 npm test
-# 4 test files passed; 36 tests passed
+# 3 test files passed; 37 tests passed
 ```
 
-### Test coverage
+Production preview smoke: `npx vite preview --port 4173 --strictPort`; home,
+detail lightbox and admin form loaded, with 0 download controls.
 
-| File | Tests |
-| --- | --- |
-| `site/src/lib/schools.test.ts` | Search, level filter, three sorts, counts, slug uniqueness, formatting |
-| `site/src/data/demo-store.test.ts` | Seed fallback, round-trip, invalid data, school add/update/delete cascade, photo/category/user mutations, no password field |
-| `site/src/lib/downloads.test.ts` | Safe file names, data-URL extensions, archive name, image validation, byte formatting |
-| `site/src/App.test.tsx` | Home, home search navigation, detail tabs, categories, dashboard, school create validation/success, photo form validation, demo users |
+## Visual QA evidence
 
-### Visual QA evidence
+Before runs: `artifacts/nafa-v2/before/*/2026-11-13T02-12…02-13Z`.
 
-Final runs (each has 390, 768, 1440 screenshots and `report.json`):
+After runs (each has 390/768/1440 PNGs + `report.json`):
 
-- `artifacts/visual-qa/realignment/final-home/2026-11-11T16-19-17-157Z`
-- `artifacts/visual-qa/realignment/final-schools/2026-11-11T16-19-42-370Z`
-- `artifacts/visual-qa/realignment/final-detail/2026-11-11T16-20-06-369Z`
-- `artifacts/visual-qa/realignment/final-admin/2026-11-11T16-20-35-352Z`
-- `artifacts/visual-qa/realignment/final-admin-school-form/2026-11-11T16-20-58-412Z`
-- `artifacts/visual-qa/realignment/final-admin-photo-form/2026-11-11T16-01-31-305Z`
-- `artifacts/visual-qa/realignment/final-categories/2026-11-11T16-12-09-062Z`
-- `artifacts/visual-qa/realignment/final-about/2026-11-11T16-21-23-098Z`
-- `artifacts/visual-qa/realignment/final-admin-login/2026-11-11T16-25-06-930Z`
-- `artifacts/visual-qa/realignment/final-admin-photos/2026-11-11T16-14-30-119Z`
-- `artifacts/visual-qa/realignment/final-admin-categories/2026-11-11T16-15-14-414Z`
-- `artifacts/visual-qa/realignment/final-admin-users/2026-11-11T16-17-59-609Z`
-- Interaction states: `artifacts/visual-qa/realignment/interactions/`
+- `artifacts/nafa-v2/after/home/2026-11-13T02-40-13-198Z`
+- `artifacts/nafa-v2/after/listing/2026-11-13T02-40-24-935Z`
+- `artifacts/nafa-v2/after/detail/2026-11-13T02-40-33-673Z`
+- `artifacts/nafa-v2/after/admin-dashboard/2026-11-13T02-40-42-403Z`
+- `artifacts/nafa-v2/after/admin-list/2026-11-13T02-40-52-340Z`
+- `artifacts/nafa-v2/after/admin-create-final/2026-11-13T02-54-58-369Z`
+- `artifacts/nafa-v2/after/admin-login-final/2026-11-13T02-57-20-809Z`
+- `artifacts/nafa-v2/after/categories/2026-11-13T02-41-18-400Z`
+- `artifacts/nafa-v2/after/about/2026-11-13T02-41-28-108Z`
 
-Inspector: `opencode-go/deepseek-v4.1-flash` (vision-capable), 2026-11-11.
-Full observations and fixes: `docs/06-visual-qa.md`.
+Interactions: `artifacts/nafa-v2/after/interactions/`.
 
-### Preserved vs replaced
+All after runs reported 0 console errors/warnings, 0 axe violations, 0 broken
+images, 0 missing alt text, 0 unlabeled controls, and 0 horizontal overflow at
+390/768/1440. The PNGs were opened as image content and inspected by
+`opencode-go/deepseek-v4.1-flash` on 2026-11-13. Details:
+`docs/06-visual-qa.md` §8.
 
-**Preserved:** bootstrap scripts, skills, browser, asset validator, token
-generator, visual QA runner, Vite/React/TypeScript/Tailwind foundation, test
-setup, 8 verified Pexels assets and manifest.
+## Admin flow verified in the browser
 
-**Replaced:** public/admin routes, all pages, commerce components, cart state,
-product catalogue, CSS, canonical tokens, page specs, QA evidence, status and
-decision records. Old work remains at checkpoint `ef09a4f`.
+`Login → Tambah Portofolio → Nama klien → multi-photo picker → Simpan &
+Publikasikan`.
 
-### Security and content honesty
-
-- No real authentication; `/admin/masuk` explicitly checks nothing and stores
-  no password. Admin routes are openly reachable and labelled demo.
-- No backend, payments, deployment, or provider/credential changes.
-- All photos are labelled demonstration imagery with creator, source, and
-  licence. No school logo, official uniform, or affiliation is claimed.
-- No SVG/CSS/Canvas garment imagery; only inline SVG icons/logo marks.
+- Created "Pesantren Al-Falah" with 2 photos and no category; it appeared in the
+  public gallery.
+- Edited it to add 1 photo and remove 1 existing photo with confirmation; the
+  remaining photo and name stayed.
+- Deleted it with confirmation; list returned to 12.
+- Created a temporary portfolio, reloaded, confirmed it persisted, then deleted
+  it. Final localStorage: 12 clients / 62 photos / 3 retained user records.
+- No duplicate submit; save button is disabled while processing/saving. A
+  localStorage failure keeps the form open with an honest error and no success
+  message.
 
 ## Approvals
 
 | Date | Scope | Approver | Decision | Status |
 | --- | --- | --- | --- | --- |
-| 2026-11-11 | Realignment approach, design system, demo data, downloads, admin honesty, QA disposition | Agent, autonomous mode | D-015–D-023 recorded in `docs/DECISIONS.md` | `[APPROVED]` |
+| 2026-11-13 | V2 minimal-change scope, design preservation, optional category, local-only persistence honesty, redirects | Agent, autonomous mode | Recorded in change plan and execution report | `[APPROVED]` |
 
-## Outstanding limitations (not blockers)
+No human approval is claimed for production publication, client identity rights,
+or photo rights.
 
-1. The eight stock photos are generic garments, not official school uniforms.
-2. Demo schools reuse photos; counts are accurate to the demo records, not real
-   inventory.
-3. Hero uses a real-photo collage, not the reference's cut-out uniform pair.
-4. Mobile detail identity photo is larger than the reference thumbnail.
-5. Admin data is browser-local and single-user.
-6. No deployment or backend was requested or performed.
+## Production blockers
 
-These are documented in `docs/06-visual-qa.md` and do not violate a required
-route, interaction, asset-policy, or accessibility criterion.
-
-## Blockers
-
-None.
-
-B1 (old: no brief) remains closed. The only transient issue was the external
-Chrome-for-Testing CDN reachability probe, resolved on retry and recorded above.
+1. **No server authentication.** Login is a local readiness gate, not a secure
+   credential check. S01 remains blocked. Do not expose admin writes publicly.
+2. **No durable backend storage.** Uploads are compressed data URLs in
+   `localStorage`; they survive reload in one browser but not another device or
+   Vercel ephemeral runtime. S02 remains blocked.
+3. **Content/permission review.** Seeded client names and Pexels stock photos
+   require owner approval before public production use. Hiding demo labels is not
+   permission to present illustrative identities as verified paying clients.
+4. **No deployment/push.** Intentionally not performed.
 
 ## Resume instructions
 
-1. Read `AGENTS.md`, `docs/PHASE_STATUS.md`, `docs/BOOTSTRAP_HANDOFF.md`.
+1. Read `AGENTS.md`, `docs/NAFA_V2_EXECUTION_REPORT.md`, this file.
 2. Run `npm run verify:bootstrap`.
-3. To run the site: `cd site && npm install && npm run dev` or
-   `npm run build && npm run preview`.
-4. To re-check quality: run the commands in `docs/05` §9.
-5. Do not revive `/shop`, `/cart`, prices, or the old editorial direction.
-6. Do not replace demo photos without updating `docs/03` and the manifest.
+3. Run `cd site && npm install && npm run dev` (or build/preview).
+4. Re-check with the commands above; capture 390/768/1440 and inspect the PNGs.
+5. Do not reintroduce download/ZIP, public user management, demo badges, a
+   separate photo master, mandatory category, or destructive reseed.
+6. Before production: implement the auth/storage contract in the execution
+   report, migrate seed records idempotently, obtain content/photo approval, then
+   verify S01/S02 with a real backend. Do not deploy from this state.
 
-## Next action
+## Previous realignment history (retained)
 
-No required implementation work remains. Optional future work, only with a new
-brief: replace stock demonstration imagery with client-owned licensed photos,
-and add a real backend/authentication layer if explicitly requested.
+The 2026-11-11 Galeri Seragam realignment remains in Git history and in
+`docs/REALIGNMENT_AUDIT.md`, `docs/MIGRATION_PLAN.md`,
+`docs/REALIGNMENT_REPORT.md`, and the old QA runs under
+`artifacts/visual-qa/realignment/`. Its demo/download/user-management features
+are superseded by v2. The earlier e-commerce project is preserved at `ef09a4f`.

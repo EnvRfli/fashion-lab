@@ -1,15 +1,11 @@
 import { useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { DemoNote } from "../components/DemoNote";
 import { EmptyState } from "../components/EmptyState";
 import {
   ArrowLeftIcon,
-  CheckIcon,
-  DownloadIcon,
   ExternalLinkIcon,
   ImageIcon,
   ShareIcon,
-  SpinnerIcon,
 } from "../components/Icons";
 import { LevelBadge } from "../components/LevelBadge";
 import { PhotoGrid } from "../components/PhotoGrid";
@@ -17,7 +13,6 @@ import { PhotoPreviewDialog } from "../components/PhotoPreviewDialog";
 import { SchoolCard } from "../components/SchoolCard";
 import { getEducationLevel } from "../data/education-levels";
 import { useDemoData } from "../data/useDemoData";
-import { downloadPhotosAsArchive } from "../lib/downloads";
 import {
   formatDate,
   formatPhotoCount,
@@ -27,7 +22,6 @@ import {
 import { usePageTitle } from "../lib/use-page-title";
 
 type TabId = "galeri" | "informasi";
-type DownloadState = "idle" | "busy" | "success" | "error";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "galeri", label: "Galeri" },
@@ -38,13 +32,10 @@ export function SchoolDetailPage() {
   const { slug } = useParams();
   const { schools, photos } = useDemoData();
   const school = schools.find((item) => item.slug === slug);
-  usePageTitle(school?.name ?? "Sekolah tidak ditemukan");
+  usePageTitle(school?.name ?? "Portofolio tidak ditemukan");
 
   const [tab, setTab] = useState<TabId>("galeri");
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
-  const [downloadState, setDownloadState] =
-    useState<DownloadState>("idle");
-  const [downloadMessage, setDownloadMessage] = useState("");
   const [shareMessage, setShareMessage] = useState("");
   const tabRefs = useRef<Record<TabId, HTMLButtonElement | null>>({
     galeri: null,
@@ -60,7 +51,9 @@ export function SchoolDetailPage() {
       school
         ? schools
             .filter(
-              (item) => item.id !== school.id && item.level === school.level,
+              (item) =>
+                item.id !== school.id &&
+                (school.level ? item.level === school.level : true),
             )
             .slice(0, 3)
         : [],
@@ -72,11 +65,11 @@ export function SchoolDetailPage() {
       <section className="section">
         <div className="shell">
           <EmptyState
-            title="Sekolah tidak ditemukan"
-            description="Tautan mungkin sudah berubah atau data demo telah direset. Kembali ke daftar sekolah untuk melanjutkan."
+            title="Portofolio tidak ditemukan"
+            description="Tautan mungkin sudah berubah atau portofolio telah dihapus. Kembali ke daftar klien untuk melanjutkan."
             action={
               <Link to="/sekolah" className="btn btn-primary">
-                Kembali ke daftar sekolah
+                Kembali ke daftar klien
               </Link>
             }
           />
@@ -85,34 +78,15 @@ export function SchoolDetailPage() {
     );
   }
 
-  const level = getEducationLevel(school.level);
+  const level = school.level ? getEducationLevel(school.level) : undefined;
   const image = schoolImage(school, photos);
-  const cover = schoolPhotos.find(
-    (photo) => photo.imagePath === image,
-  );
-
-  const handleBulkDownload = async () => {
-    setDownloadState("busy");
-    setDownloadMessage("");
-    try {
-      const count = await downloadPhotosAsArchive(schoolPhotos, school.name);
-      setDownloadState("success");
-      setDownloadMessage(`Arsip ${count} foto berhasil dibuat.`);
-    } catch (error) {
-      setDownloadState("error");
-      setDownloadMessage(
-        error instanceof Error
-          ? error.message
-          : "Arsip gagal dibuat. Coba lagi.",
-      );
-    }
-  };
+  const cover = schoolPhotos.find((photo) => photo.imagePath === image);
 
   const handleShare = async () => {
     setShareMessage("");
     const shareData = {
       title: `${school.name} — Galeri Seragam`,
-      text: `Lihat galeri referensi seragam ${school.name}.`,
+      text: `Lihat portofolio hasil pekerjaan ${school.name}.`,
       url: window.location.href,
     };
     try {
@@ -144,7 +118,7 @@ export function SchoolDetailPage() {
           <div className="detail-topbar">
             <Link to="/sekolah" className="back-link">
               <ArrowLeftIcon />
-              Daftar Sekolah
+              Portofolio Klien
             </Link>
             <button
               type="button"
@@ -166,7 +140,7 @@ export function SchoolDetailPage() {
               {image ? (
                 <img
                   src={image}
-                  alt={cover?.alt ?? `Foto referensi ${school.name}`}
+                  alt={cover?.alt ?? `Foto hasil pekerjaan ${school.name}`}
                 />
               ) : (
                 <div className="media-missing">
@@ -177,16 +151,21 @@ export function SchoolDetailPage() {
             </div>
             <div className="school-identity-copy">
               <div className="school-identity-badges">
-                <LevelBadge level={school.level} />
-                <span className="muted-badge">{level.name}</span>
-                <span className="demo-badge">Data demo</span>
+                {school.level ? <LevelBadge level={school.level} /> : null}
+                <span className="muted-badge">
+                  {level?.name ?? "Tanpa kategori"}
+                </span>
               </div>
               <h1>{school.name}</h1>
-              <p className="school-location">{school.location}</p>
-              <p className="school-summary">{school.description}</p>
+              {school.location ? (
+                <p className="school-location">{school.location}</p>
+              ) : null}
+              {school.description ? (
+                <p className="school-summary">{school.description}</p>
+              ) : null}
               <p className="school-count">
                 <ImageIcon />
-                {formatPhotoCount(schoolPhotos.length)} referensi tersedia
+                {formatPhotoCount(schoolPhotos.length)} hasil pekerjaan
               </p>
             </div>
           </div>
@@ -195,7 +174,7 @@ export function SchoolDetailPage() {
 
       <section className="section school-detail-body">
         <div className="shell">
-          <div className="tabs" role="tablist" aria-label="Konten sekolah">
+          <div className="tabs" role="tablist" aria-label="Konten portofolio">
             {TABS.map((item) => (
               <button
                 key={item.id}
@@ -249,32 +228,8 @@ export function SchoolDetailPage() {
               <div className="gallery-toolbar">
                 <div>
                   <h2>Galeri Foto</h2>
-                  <p>
-                    Klik foto untuk pratinjau, membaca kredit, atau mengunduh.
-                  </p>
+                  <p>Klik foto untuk melihat pratinjau dan kreditnya.</p>
                 </div>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={handleBulkDownload}
-                  disabled={
-                    schoolPhotos.length === 0 || downloadState === "busy"
-                  }
-                  title={
-                    schoolPhotos.length === 0
-                      ? "Belum ada foto yang dapat diunduh."
-                      : undefined
-                  }
-                >
-                  {downloadState === "busy" ? (
-                    <SpinnerIcon />
-                  ) : (
-                    <DownloadIcon />
-                  )}
-                  {downloadState === "busy"
-                    ? "Menyiapkan arsip..."
-                    : `Download Semua (${schoolPhotos.length} Foto)`}
-                </button>
               </div>
 
               {schoolPhotos.length === 0 ? (
@@ -283,23 +238,11 @@ export function SchoolDetailPage() {
                   <div>
                     <strong>Belum ada foto tersedia</strong>
                     <p>
-                      Tombol unduh dinonaktifkan sampai foto ditambahkan melalui
-                      panel admin demo.
+                      Tambahkan foto melalui panel admin agar portofolio ini
+                      dapat ditampilkan.
                     </p>
                   </div>
                 </div>
-              ) : null}
-
-              {downloadMessage ? (
-                <p
-                  className={`inline-status ${
-                    downloadState === "error" ? "is-error" : ""
-                  }`}
-                  role={downloadState === "error" ? "alert" : "status"}
-                >
-                  {downloadState === "success" ? <CheckIcon /> : null}
-                  {downloadMessage}
-                </p>
               ) : null}
 
               <PhotoGrid
@@ -309,10 +252,9 @@ export function SchoolDetailPage() {
               />
 
               <div className="gallery-footnote">
-                <DemoNote>
-                  Foto adalah stok demonstrasi berlisensi, bukan seragam resmi{" "}
-                  {school.name}. Kredit pembuat tercantum pada pratinjau.
-                </DemoNote>
+                <p className="field-hint">
+                  Kredit pembuat foto tercantum pada pratinjau galeri.
+                </p>
               </div>
             </div>
           ) : (
@@ -324,15 +266,15 @@ export function SchoolDetailPage() {
             >
               <div className="info-grid">
                 <div className="info-card">
-                  <h2>Informasi Sekolah</h2>
+                  <h2>Informasi Klien</h2>
                   <dl className="info-list">
                     <div>
-                      <dt>Nama sekolah</dt>
+                      <dt>Nama klien</dt>
                       <dd>{school.name}</dd>
                     </div>
                     <div>
-                      <dt>Jenjang</dt>
-                      <dd>{level.name}</dd>
+                      <dt>Kategori</dt>
+                      <dd>{level?.name ?? "Tanpa kategori"}</dd>
                     </div>
                     <div>
                       <dt>Lokasi</dt>
@@ -350,16 +292,11 @@ export function SchoolDetailPage() {
                 </div>
 
                 <div className="info-card">
-                  <h2>Tentang data ini</h2>
-                  <p>{school.description}</p>
-                  <div className="info-callout">
-                    <strong>Data demonstrasi</strong>
-                    <p>
-                      Profil sekolah, jumlah foto, dan seluruh isi galeri adalah
-                      contoh untuk menunjukkan cara kerja aplikasi. Tidak ada
-                      klaim afiliasi dengan sekolah sungguhan.
-                    </p>
-                  </div>
+                  <h2>Tentang pekerjaan ini</h2>
+                  <p>
+                    {school.description ||
+                      "Belum ada keterangan tambahan untuk portofolio ini."}
+                  </p>
                   <h3>Sumber foto</h3>
                   <ul className="credit-list">
                     {Array.from(
@@ -399,8 +336,16 @@ export function SchoolDetailPage() {
           <div className="shell">
             <div className="section-heading">
               <div>
-                <h2>Sekolah lain di jenjang {school.level}</h2>
-                <p>Lanjutkan menjelajahi referensi dengan jenjang yang sama.</p>
+                <h2>
+                  {school.level
+                    ? `Klien lain di kategori ${school.level}`
+                    : "Portofolio klien lain"}
+                </h2>
+                <p>
+                  {school.level
+                    ? "Lanjutkan menjelajahi pekerjaan dengan kategori yang sama."
+                    : "Lihat portofolio klien lainnya."}
+                </p>
               </div>
             </div>
             <div className="school-grid school-grid-three">
@@ -416,7 +361,7 @@ export function SchoolDetailPage() {
         <PhotoPreviewDialog
           photos={schoolPhotos}
           startIndex={previewIndex}
-          schoolName={school.name}
+          clientName={school.name}
           onClose={() => setPreviewIndex(null)}
         />
       ) : null}

@@ -37,7 +37,7 @@ export function EducationLevelCards({
             <span className="level-card-copy">
               <span className="level-card-code">{level.label}</span>
               <span className="level-card-count">
-                {counts[level.id] ?? 0} Sekolah
+                {counts[level.id] ?? 0} Klien
               </span>
             </span>
             <ChevronDownIcon className="level-card-chevron" />

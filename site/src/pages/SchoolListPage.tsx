@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import { DemoNote } from "../components/DemoNote";
 import { EmptyState } from "../components/EmptyState";
 import { SchoolCard } from "../components/SchoolCard";
 import { SchoolFilters } from "../components/SchoolFilters";
@@ -23,7 +22,7 @@ function readQuery(params: URLSearchParams): SchoolQuery {
 }
 
 export function SchoolListPage() {
-  usePageTitle("Daftar Sekolah");
+  usePageTitle("Portofolio Klien");
   const [params, setParams] = useSearchParams();
   const { schools, photos } = useDemoData();
   const query = readQuery(params);
@@ -48,13 +47,12 @@ export function SchoolListPage() {
       <section className="page-hero">
         <div className="shell page-hero-inner">
           <div>
-            <p className="eyebrow">Direktori</p>
-            <h1>Daftar Sekolah</h1>
+            <p className="eyebrow">Portofolio</p>
+            <h1>Portofolio Klien</h1>
             <p>
-              Telusuri sekolah berdasarkan nama atau jenjang pendidikan. Setiap
-              sekolah memiliki galeri foto referensi yang dapat diunduh.
+              Telusuri klien berdasarkan nama atau kategori. Setiap klien
+              memiliki galeri foto hasil pekerjaan.
             </p>
-            <DemoNote />
           </div>
           <SearchBar
             id="school-list-search"
@@ -76,7 +74,7 @@ export function SchoolListPage() {
 
           {results.length > 0 ? (
             <>
-              <h2 className="sr-only">Hasil pencarian sekolah</h2>
+              <h2 className="sr-only">Hasil pencarian klien</h2>
               <div className="school-grid">
                 {results.map((school) => (
                   <SchoolCard key={school.id} school={school} photos={photos} />
@@ -85,8 +83,8 @@ export function SchoolListPage() {
             </>
           ) : (
             <EmptyState
-              title="Sekolah tidak ditemukan"
-              description="Tidak ada sekolah yang cocok dengan pencarian dan filter ini. Coba kata kunci lain atau tampilkan semua kategori."
+              title="Klien tidak ditemukan"
+              description="Tidak ada klien yang cocok dengan pencarian dan filter ini. Coba kata kunci lain atau tampilkan semua kategori."
               action={
                 <button
                   type="button"
@@ -95,7 +93,7 @@ export function SchoolListPage() {
                     setParams(new URLSearchParams(), { replace: true });
                   }}
                 >
-                  Tampilkan semua sekolah
+                  Tampilkan semua klien
                 </button>
               }
             />

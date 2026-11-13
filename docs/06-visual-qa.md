@@ -1,5 +1,9 @@
 # 06 — Visual QA
 
+> **V2 update — 2026-11-13:** the minimal-change adjustment was captured and
+> inspected at 390/768/1440. Visual preservation passed for the v2 scope; see
+> section 8. The historical realignment record below is retained.
+
 > **Status: PASSED — final realignment screenshots captured at 390/768/1440
 > and inspected as image content by the active vision-capable model
 > (`opencode-go/deepseek-v4.1-flash`) on 2026-11-11.**
@@ -210,3 +214,85 @@ Inspector: **DeepSeek V4.1 Flash (vision-capable model), 2026-11-11**, using the
 asset/content mismatches above. Screenshots were captured at 390/768/1440 and
 inspected as images; no critical or major visual defect remains, and no
 shopping/cart/checkout/pricing UI is present.
+
+## 8. Nafa v2 minimal-change QA (2026-11-13)
+
+**Scope:** preserve the existing visual design and every seeded record/photo,
+remove public demo/download/public-user UI, and reduce admin to client name +
+multiple photos.
+
+**Inspector:** `opencode-go/deepseek-v4.1-flash` (vision-capable), 2026-11-13.
+PNGs were opened with the `read` tool as image content.
+
+### Capture locations
+
+- Before: `artifacts/nafa-v2/before/{home,listing,detail,admin-dashboard,admin-list,admin-create,admin-login}/`
+- After: `artifacts/nafa-v2/after/{home,listing,detail,admin-dashboard,admin-list,admin-create-final,admin-login-final,categories,about}/`
+- Interactions: `artifacts/nafa-v2/after/interactions/`
+
+Every after run reported **0 console errors/warnings, 0 axe violations, 0 broken
+images, 0 missing alt text, 0 unlabeled controls, and 0 horizontal overflow** at
+390�844, 768�1024 and 1440�900. The same was true for the before runs.
+
+### Inspection record
+
+- **Homepage:** same white navbar, burgundy brand, pink two-column hero, photo
+  collage, four category cards, filter/sort row, four client cards, explainer
+  band and burgundy footer. Copy is now portfolio/client-oriented. The "Data
+  demo" badge and download badge are gone; the hero and card geometry are
+  unchanged. Mobile retains the stacked composition and readable controls.
+- **Listing:** same page hero, search, filter/sort and card grid. "Daftar
+  Sekolah" is now "Portofolio Klien"; the demo note is absent. No empty state or
+  count regression: 12 clients render.
+- **Detail:** same identity row, Galeri/Informasi tabs, four-column desktop photo
+  grid, mobile two-column grid and related cards. The bulk download button and
+  per-photo download control are gone. The lightbox viewport screenshot shows a
+  full-screen photo, close control, category, credit/license links and `1 / 4`
+  navigation; no download button.
+- **Admin create:** same burgundy sidebar/topbar, panel cards, field controls and
+  submit/cancel placement. The large school form is replaced by one required
+  name field, one required multi-photo dropzone, and a collapsed "Informasi
+  tambahan (opsional)" section. No category is required.
+- **Admin edit:** all six existing photos for SDN 001 Bandung remain visible with
+  a "Sampul" marker and individual remove controls. The layout holds at 390 and
+  1440.
+- **Admin list/dashboard:** cover thumbnails, client names, optional category,
+  photo counts and actions are legible. No demo badge, user stat, user menu or
+  reset-data button remains.
+- **Categories/About/Login:** same card/grid/hero composition; copy is
+  professional and the login card states the local-only readiness limitation.
+
+### Justified visual differences
+
+All differences are attributable to the v2 requirements: removed demo/download/
+user controls, portfolio/client wording, cover thumbnails in the admin table,
+and the simplified admin form. No palette, type scale, spacing scale, hero,
+navbar, gallery grid, card design or responsive breakpoint was changed.
+
+### Functional checks in the browser
+
+- Search "Sukajadi" returned 1 client.
+- Detail lightbox opened, next/previous and Escape worked; 0 download buttons and
+  0 `a[download]` anchors.
+- Admin create with 2 photos, optional category omitted: published and visible
+  publicly.
+- Admin edit added 1 photo and removed 1 existing photo with confirmation; the
+  other photo and client name remained.
+- Delete confirmation appeared; test portfolio deletion returned the list to 12.
+- A temporary portfolio survived a browser reload, then was deleted; final
+  localStorage counts were 12 clients / 62 photos / 3 retained user records.
+- Old `/admin/kategori`, `/admin/foto`, `/admin/foto/baru`, `/admin/pengguna`
+  URLs redirect to the portfolio list.
+
+### Text scan
+
+Across 10 rendered routes, `body.innerText` contained **0** matches for
+`demo|test|sample|dummy|mock|prototype|staging|contoh|percobaan|uji coba` and
+**0** download/unduh wording. Public-user wording scanned on 9 routes returned
+**0** matches. Raw output: `artifacts/nafa-v2/text-scan.txt`.
+
+### Gate result
+
+**V2 visual preservation and public-feature/QA gate: PASSED** for the local build
+at 390/768/1440. Production auth/storage/content approval remains **BLOCKED** and
+is not a visual QA pass.

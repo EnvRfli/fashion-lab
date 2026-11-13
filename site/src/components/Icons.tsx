@@ -146,23 +146,6 @@ export function ImageIcon(props: IconProps) {
   );
 }
 
-export function UsersIcon(props: IconProps) {
-  return (
-    <svg {...base(props)}>
-      <circle cx="9" cy="9" r="3" />
-      <path d="M3.5 19c.4-2.7 2.6-4.4 5.5-4.4s5.1 1.7 5.5 4.4M15 6.2a3 3 0 0 1 0 5.6M16.5 14.8c2 .4 3.5 2 3.8 4.2" />
-    </svg>
-  );
-}
-
-export function DownloadIcon(props: IconProps) {
-  return (
-    <svg {...base(props)}>
-      <path d="M12 4v11M8 11l4 4 4-4M5 19h14" />
-    </svg>
-  );
-}
-
 export function UploadIcon(props: IconProps) {
   return (
     <svg {...base(props)}>

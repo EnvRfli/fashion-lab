@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { DemoNote } from "../components/DemoNote";
 import {
-  DownloadIcon,
   ExternalLinkIcon,
   ImageIcon,
+  InfoIcon,
   SchoolIcon,
-  UsersIcon,
+  ShirtIcon,
 } from "../components/Icons";
 import { DEMO_ASSETS } from "../data/assets";
 import { usePageTitle } from "../lib/use-page-title";
@@ -13,23 +12,23 @@ import { usePageTitle } from "../lib/use-page-title";
 const FEATURES = [
   {
     icon: SchoolIcon,
-    title: "Direktori sekolah",
-    body: "Cari sekolah berdasarkan nama atau jenjang TK, SD, SMP, dan SMA. Data pada demo ini adalah contoh.",
+    title: "Portofolio klien",
+    body: "Lihat hasil pekerjaan berdasarkan nama klien dan kategori pendidikan.",
   },
   {
     icon: ImageIcon,
     title: "Galeri foto",
-    body: "Setiap sekolah memiliki kumpulan foto referensi. Buka pratinjau untuk melihat detail dan kredit foto.",
+    body: "Setiap klien memiliki kumpulan foto hasil pekerjaan. Buka pratinjau untuk melihat detail dan kredit foto.",
   },
   {
-    icon: DownloadIcon,
-    title: "Unduh referensi",
-    body: "Unduh satu foto atau seluruh arsip sekolah. Arsip dibuat dari file foto yang benar-benar tersedia.",
+    icon: ShirtIcon,
+    title: "Produksi konveksi",
+    body: "Dokumentasi seragam dan pakaian untuk sekolah, pesantren, dan organisasi.",
   },
   {
-    icon: UsersIcon,
-    title: "Panel admin demo",
-    body: "Kelola sekolah, kategori, foto, dan pengguna contoh. Perubahan disimpan di browser ini saja.",
+    icon: InfoIcon,
+    title: "Dikelola admin",
+    body: "Satu administrator mengelola nama klien dan foto melalui panel admin.",
   },
 ];
 
@@ -42,19 +41,18 @@ export function AboutPage() {
       <section className="page-hero">
         <div className="shell about-hero">
           <div>
-            <p className="eyebrow">Tentang galeri</p>
-            <h1>Referensi seragam, tanpa alur belanja.</h1>
+            <p className="eyebrow">Tentang Nafa Collection</p>
+            <h1>Portofolio produksi, tanpa alur belanja.</h1>
             <p>
-              Galeri Seragam adalah aplikasi demonstrasi untuk mencari sekolah,
-              melihat referensi seragam, dan mengunduh foto. Aplikasi ini bukan
-              toko, tidak memiliki keranjang, dan tidak menjual produk.
+              Galeri Seragam menampilkan dokumentasi pekerjaan konveksi Nafa
+              Collection untuk sekolah, pesantren, dan organisasi. Aplikasi ini
+              bukan toko, tidak memiliki keranjang, dan tidak menjual produk.
             </p>
-            <DemoNote />
           </div>
           <figure className="about-photo">
             <img src={rail.path} alt={rail.alt} />
             <figcaption>
-              Foto demonstrasi oleh {rail.creator} ·{" "}
+              Foto oleh {rail.creator} ·{" "}
               <a href={rail.sourceUrl} target="_blank" rel="noreferrer">
                 {rail.license}
                 <ExternalLinkIcon />
@@ -86,14 +84,14 @@ export function AboutPage() {
       <section className="section section-about-detail">
         <div className="shell about-detail-grid">
           <div>
-            <h2>Tentang data dan foto</h2>
+            <h2>Tentang portofolio dan foto</h2>
             <p>
-              Seluruh nama sekolah, profil, dan jumlah foto pada demo ini adalah
-              data contoh. Nama sekolah tidak diverifikasi sebagai entitas nyata
-              dan tidak ada klaim afiliasi.
+              Nama klien dan keterangan pada halaman ini disusun sebagai
+              dokumentasi portofolio. Pemilik website perlu memastikan izin
+              publikasi nama dan foto sebelum situs digunakan secara publik.
             </p>
             <p>
-              Foto galeri adalah stok demonstrasi dari Pexels di bawah Pexels
+              Foto galeri adalah stok berlisensi dari Pexels di bawah Pexels
               License. Setiap foto mencantumkan pembuat dan tautan sumber pada
               pratinjau. Foto tidak boleh dianggap sebagai seragam resmi sekolah
               mana pun.
@@ -105,16 +103,16 @@ export function AboutPage() {
             </p>
           </div>
           <aside className="about-aside">
-            <h2>Mode demo</h2>
+            <h2>Status pengelolaan</h2>
             <p>
               Panel admin menyimpan perubahan di <code>localStorage</code>{" "}
-              browser ini. Data tidak dibagikan antarperangkat dan tidak ada
-              autentikasi aman. Tombol Login Admin hanya merupakan alur visual.
+              browser ini. Data tidak dibagikan antarperangkat dan belum
+              terhubung ke autentikasi server.
             </p>
             <ul>
               <li>Tanpa keranjang atau checkout.</li>
               <li>Tanpa harga atau pembayaran.</li>
-              <li>Tanpa akun atau kata sandi nyata.</li>
+              <li>Tanpa akun publik.</li>
             </ul>
           </aside>
         </div>
@@ -123,16 +121,16 @@ export function AboutPage() {
       <section className="section">
         <div className="shell cta-band">
           <div>
-            <h2>Mulai dari daftar sekolah</h2>
-            <p>Cari sekolah atau pilih jenjang, lalu buka galerinya.</p>
+            <h2>Mulai dari daftar klien</h2>
+            <p>Cari klien atau pilih kategori, lalu buka galerinya.</p>
           </div>
           <div className="cta-actions">
             <Link to="/sekolah" className="btn btn-primary">
               <SchoolIcon />
-              Lihat sekolah
+              Lihat portofolio
             </Link>
             <Link to="/admin/masuk" className="btn btn-secondary">
-              Masuk ke admin demo
+              Masuk ke panel admin
             </Link>
           </div>
         </div>

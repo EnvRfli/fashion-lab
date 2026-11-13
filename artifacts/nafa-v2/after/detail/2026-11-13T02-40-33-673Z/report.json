@@ -1,0 +1,317 @@
+{
+  "generatedAt": "2026-11-13T02:40:41.931Z",
+  "url": "http://127.0.0.1:3000/sekolah/sdn-001-bandung",
+  "session": "nafa-v2-after-qa-detail",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/after/detail/2026-11-13T02-40-33-673Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 2,
+            "text": "Galeri Foto"
+          },
+          {
+            "level": 2,
+            "text": "Klien lain di kategori SD"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 9
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "SDN 001 Bandung — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah/sdn-001-bandung",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 46,
+          "incomplete": 1,
+          "passes": 43,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 11
+          }
+        ]
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/after/detail/2026-11-13T02-40-33-673Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 2,
+            "text": "Galeri Foto"
+          },
+          {
+            "level": 2,
+            "text": "Klien lain di kategori SD"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 9
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "SDN 001 Bandung — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah/sdn-001-bandung",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 46,
+          "incomplete": 1,
+          "passes": 43,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 11
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/after/detail/2026-11-13T02-40-33-673Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 0,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "SDN 001 Bandung"
+          },
+          {
+            "level": 2,
+            "text": "Galeri Foto"
+          },
+          {
+            "level": 2,
+            "text": "Klien lain di kategori SD"
+          },
+          {
+            "level": 3,
+            "text": "SDN Sukajadi"
+          },
+          {
+            "level": 3,
+            "text": "SDN Cihampelas 1"
+          },
+          {
+            "level": 2,
+            "text": "JELAJAHI"
+          },
+          {
+            "level": 2,
+            "text": "KATEGORI"
+          },
+          {
+            "level": 2,
+            "text": "FOTO & LISENSI"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 9
+        },
+        "landmarks": 7,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "SDN 001 Bandung — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/sekolah/sdn-001-bandung",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 46,
+          "incomplete": 1,
+          "passes": 43,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 11
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

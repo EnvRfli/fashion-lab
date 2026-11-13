@@ -307,3 +307,48 @@ npm run qa:visual -- --url http://127.0.0.1:3000
 - Backend API, database, deployment, or remote uploads.
 - Claiming stock photos are official uniforms or verified school inventory.
 - Reproducing the composite reference as a single collage page.
+
+---
+
+## Nafa v2 addendum (2026-11-13)
+
+This addendum supersedes the demo/download/user-management details above while
+keeping the same routes, layout and responsive composition.
+
+### Public behavior
+
+- `/` — portfolio homepage; same hero/nav/category/card composition; no demo
+  badge or download badge; search placeholder `Cari nama klien...`.
+- `/sekolah` — preserves the URL, now labelled Portofolio Klien; same search,
+  category filter and sort; no demo note.
+- `/sekolah/:slug` — same identity row, Galeri/Informasi tabs, photo grid,
+  lightbox and related clients; no bulk or per-photo download; labels use
+  Klien/Kategori.
+- `/kategori` — same four level cards; counts read "Klien" and "Foto".
+- `/tentang` — same layout; no demo/download/panel-demo feature cards.
+- No public signup, visitor login, profile, user management or role management.
+
+### Admin behavior
+
+- `/admin/masuk` — one admin entry point; honest local-only readiness note; no
+  demo credentials or bypass link.
+- `/admin` — dashboard with client/photo/category stats and recent portfolios;
+  no user stat or reset-data action.
+- `/admin/sekolah` — portfolio list with cover thumbnail, client name, optional
+  category, photo count, updated date, view/add-photo/edit/delete actions.
+- `/admin/sekolah/baru` — required `Nama klien` + multi-photo upload; optional
+  category/location/description under a collapsed `Informasi tambahan
+  (opsional)`; button `Simpan & Publikasikan`.
+- `/admin/sekolah/:id/edit` — same two primary inputs; existing photos listed
+  with cover marker, confirmation before removal, add-new batch upload; slug
+  preserved; button `Simpan Perubahan`.
+- `/admin/kategori`, `/admin/foto`, `/admin/foto/baru`, `/admin/pengguna` —
+  redirect to `/admin/sekolah`; their former screens are removed.
+
+### Data behavior
+
+- Preserve all 12 seeded clients, 62 photos, 8 image files, IDs, slugs, cover
+  paths and associations. Additive description-copy migration only.
+- Uploaded photos are compressed data URLs in browser storage; this is a local
+  demonstration persistence layer, not production object storage.
+- Required test evidence and limitations: `docs/NAFA_V2_EXECUTION_REPORT.md`.

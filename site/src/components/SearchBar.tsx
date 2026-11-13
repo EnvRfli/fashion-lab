@@ -5,7 +5,7 @@ export function SearchBar({
   value,
   onChange,
   onSubmit,
-  placeholder = "Cari nama sekolah...",
+  placeholder = "Cari nama klien...",
   buttonLabel = "Cari",
   compact = false,
 }: {
@@ -27,7 +27,7 @@ export function SearchBar({
       }}
     >
       <label className="sr-only" htmlFor={id}>
-        Cari sekolah
+        Cari klien
       </label>
       <SearchIcon className="search-bar-icon" />
       <input

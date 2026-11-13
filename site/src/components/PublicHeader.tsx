@@ -5,7 +5,7 @@ import { CloseIcon, MenuIcon, UserIcon } from "./Icons";
 
 const NAV_LINKS = [
   { label: "Beranda", to: "/", end: true },
-  { label: "Sekolah", to: "/sekolah", end: false },
+  { label: "Portofolio", to: "/sekolah", end: false },
   { label: "Kategori", to: "/kategori", end: false },
   { label: "Tentang", to: "/tentang", end: false },
 ];
@@ -114,7 +114,7 @@ export function PublicHeader() {
               <UserIcon />
               Login Admin
             </Link>
-            <p>Mode demo — data sekolah dan foto adalah contoh.</p>
+            <p>Portofolio hasil produksi konveksi Nafa Collection.</p>
           </div>
         </div>
       </dialog>

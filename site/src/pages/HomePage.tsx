@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { DemoNote } from "../components/DemoNote";
 import { EducationLevelCards } from "../components/EducationLevelCards";
 import { EmptyState } from "../components/EmptyState";
 import {
   ArrowRightIcon,
-  DownloadIcon,
+  EyeIcon,
   ImageIcon,
   SchoolIcon,
 } from "../components/Icons";
@@ -57,13 +56,13 @@ export function HomePage() {
           <div className="hero-copy">
             <p className="eyebrow">
               <SchoolIcon />
-              Direktori seragam sekolah
+              Portofolio konveksi Nafa Collection
             </p>
-            <h1>Koleksi Seragam Sekolah</h1>
+            <h1>Portofolio Seragam Klien</h1>
             <p className="hero-description">
-              Temukan berbagai referensi seragam sekolah berdasarkan jenjang
-              pendidikan. Cari sekolah, buka galerinya, lalu unduh foto yang
-              tersedia.
+              Lihat hasil pekerjaan konveksi untuk sekolah, pesantren, dan
+              organisasi. Telusuri nama klien, buka galeri, dan periksa detail
+              setiap foto.
             </p>
 
             <SearchBar
@@ -72,11 +71,9 @@ export function HomePage() {
               onChange={setSearch}
               onSubmit={submitSearch}
             />
-
-            <DemoNote className="hero-demo" />
           </div>
 
-          <div className="hero-media" aria-label="Contoh foto referensi seragam">
+          <div className="hero-media" aria-label="Foto hasil pekerjaan konveksi">
             {HERO_IMAGES.map((asset, index) => (
               <figure
                 key={asset.key}
@@ -88,12 +85,12 @@ export function HomePage() {
             <div className="hero-badge hero-badge-top">
               <ImageIcon />
               <span>
-                <strong>{photos.length}</strong> foto referensi
+                <strong>{photos.length}</strong> foto portofolio
               </span>
             </div>
             <div className="hero-badge hero-badge-bottom">
-              <DownloadIcon />
-              <span>Unduh per foto atau sekaligus</span>
+              <EyeIcon />
+              <span>Lihat galeri klien</span>
             </div>
           </div>
         </div>
@@ -103,8 +100,8 @@ export function HomePage() {
         <div className="shell">
           <div className="section-heading">
             <div>
-              <h2>Pilih Kategori Sekolah</h2>
-              <p>Mulai dari jenjang yang Anda cari.</p>
+              <h2>Pilih Kategori Klien</h2>
+              <p>Mulai dari kategori yang Anda cari.</p>
             </div>
           </div>
           <EducationLevelCards counts={levelCounts} />
@@ -115,14 +112,11 @@ export function HomePage() {
         <div className="shell">
           <div className="section-heading section-heading-row">
             <div>
-              <div className="heading-with-badge">
-                <h2>Daftar Sekolah</h2>
-                <span className="demo-badge">Data demo</span>
-              </div>
-              <p>Contoh data sekolah untuk menjelajahi alur galeri.</p>
+              <h2>Klien & Hasil Produksi</h2>
+              <p>Daftar klien dan dokumentasi pekerjaan yang telah dikerjakan.</p>
             </div>
             <Link to="/sekolah" className="text-link">
-              Lihat semua sekolah
+              Lihat semua portofolio
               <ArrowRightIcon />
             </Link>
           </div>
@@ -141,8 +135,8 @@ export function HomePage() {
             </div>
           ) : (
             <EmptyState
-              title="Tidak ada sekolah yang cocok"
-              description="Coba pilih kategori lain atau hapus filter untuk melihat seluruh daftar."
+              title="Tidak ada klien yang cocok"
+              description="Coba pilih kategori lain atau hapus filter untuk melihat seluruh portofolio."
               action={
                 <button
                   type="button"
@@ -160,7 +154,7 @@ export function HomePage() {
           {listing.length > 4 ? (
             <div className="listing-more">
               <Link to="/sekolah" className="btn btn-secondary">
-                Lihat {listing.length} sekolah lainnya
+                Lihat {listing.length} portofolio lainnya
               </Link>
             </div>
           ) : null}
@@ -171,18 +165,19 @@ export function HomePage() {
         <div className="shell">
           <div className="how-card">
             <div>
-              <h2>Cara memakai galeri</h2>
+              <h2>Cara menjelajahi portofolio</h2>
               <p>
-                Galeri ini membantu Anda melihat referensi seragam, bukan
-                membeli produk. Semua foto adalah contoh berlisensi.
+                Galeri ini menampilkan dokumentasi hasil pekerjaan konveksi,
+                bukan katalog belanja. Setiap foto dapat dilihat lebih besar
+                melalui pratinjau.
               </p>
             </div>
             <ol className="how-list">
               <li>
                 <span>1</span>
                 <div>
-                  <strong>Cari sekolah</strong>
-                  <p>Gunakan nama sekolah atau pilih jenjang TK–SMA.</p>
+                  <strong>Cari klien</strong>
+                  <p>Gunakan nama klien atau pilih kategori.</p>
                 </div>
               </li>
               <li>
@@ -195,8 +190,8 @@ export function HomePage() {
               <li>
                 <span>3</span>
                 <div>
-                  <strong>Unduh referensi</strong>
-                  <p>Unduh satu foto atau seluruh arsip yang tersedia.</p>
+                  <strong>Periksa detail</strong>
+                  <p>Buka pratinjau foto dan lihat kreditnya.</p>
                 </div>
               </li>
             </ol>

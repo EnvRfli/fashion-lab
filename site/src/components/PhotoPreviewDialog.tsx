@@ -1,48 +1,36 @@
 import { useEffect, useRef, useState } from "react";
 import type { GalleryPhoto } from "../data/types";
-import { downloadPhoto } from "../lib/downloads";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
   CloseIcon,
-  DownloadIcon,
   ExternalLinkIcon,
-  SpinnerIcon,
 } from "./Icons";
-
-type DownloadState = "idle" | "busy" | "error";
 
 export function PhotoPreviewDialog({
   photos,
   startIndex,
-  schoolName,
+  clientName,
   onClose,
 }: {
   photos: GalleryPhoto[];
   startIndex: number;
-  schoolName: string;
+  clientName: string;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const [index, setIndex] = useState(startIndex);
-  const [download, setDownload] = useState<{
-    index: number;
-    state: DownloadState;
-    message: string;
-  }>({ index: startIndex, state: "idle", message: "" });
 
   const photo = photos[index];
-  const downloadState = download.index === index ? download.state : "idle";
-  const message = download.index === index ? download.message : "";
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (dialog && !dialog.open) dialog.showModal();
     closeRef.current?.focus();
-    return () => {
-      if (dialog?.open) dialog.close();
-    };
+    // No close() in cleanup: removing the dialog on unmount is enough. Calling
+    // close() here fires a late close event during React StrictMode's effect
+    // replay, which would immediately dismiss the freshly opened preview.
   }, []);
 
   if (!photo) return null;
@@ -50,22 +38,6 @@ export function PhotoPreviewDialog({
   const go = (direction: 1 | -1) => {
     const next = (index + direction + photos.length) % photos.length;
     setIndex(next);
-    setDownload({ index: next, state: "idle", message: "" });
-  };
-
-  const handleDownload = async () => {
-    setDownload({ index, state: "busy", message: "" });
-    try {
-      await downloadPhoto(photo);
-      setDownload({ index, state: "idle", message: "Foto diunduh." });
-    } catch (error) {
-      setDownload({
-        index,
-        state: "error",
-        message:
-          error instanceof Error ? error.message : "Foto gagal diunduh.",
-      });
-    }
   };
 
   return (
@@ -105,12 +77,12 @@ export function PhotoPreviewDialog({
         </div>
 
         <div className="preview-body">
-          <p className="preview-school">{schoolName}</p>
+          <p className="preview-school">{clientName}</p>
           <h2 id="preview-title">{photo.title}</h2>
           <p className="preview-category">{photo.category}</p>
 
           <p className="preview-credit">
-            Foto demonstrasi oleh {photo.creator}. Lisensi{" "}
+            Foto oleh {photo.creator}. Lisensi{" "}
             {photo.licenseUrl ? (
               <a href={photo.licenseUrl} target="_blank" rel="noreferrer">
                 {photo.license}
@@ -132,33 +104,6 @@ export function PhotoPreviewDialog({
               </>
             ) : null}
           </p>
-
-          <div className="preview-actions">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleDownload}
-              disabled={downloadState === "busy"}
-            >
-              {downloadState === "busy" ? (
-                <SpinnerIcon />
-              ) : (
-                <DownloadIcon />
-              )}
-              {downloadState === "busy" ? "Mengunduh..." : "Download Foto"}
-            </button>
-          </div>
-
-          {message ? (
-            <p
-              className={`preview-message ${
-                downloadState === "error" ? "is-error" : ""
-              }`}
-              role={downloadState === "error" ? "alert" : "status"}
-            >
-              {message}
-            </p>
-          ) : null}
 
           <div className="preview-nav">
             <button

@@ -2,24 +2,23 @@ import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { BrandMark } from "../BrandMark";
 import {
-  CategoryIcon,
   CloseIcon,
   HomeIcon,
-  ImageIcon,
   InfoIcon,
   LogOutIcon,
   MenuIcon,
   SchoolIcon,
-  UsersIcon,
 } from "../Icons";
 import { useDemoData } from "../../data/useDemoData";
 
 const ADMIN_LINKS = [
   { label: "Dashboard", to: "/admin", icon: HomeIcon, end: true },
-  { label: "Data Sekolah", to: "/admin/sekolah", icon: SchoolIcon, end: false },
-  { label: "Kategori", to: "/admin/kategori", icon: CategoryIcon, end: false },
-  { label: "Data Foto", to: "/admin/foto", icon: ImageIcon, end: false },
-  { label: "Pengguna", to: "/admin/pengguna", icon: UsersIcon, end: false },
+  {
+    label: "Portofolio",
+    to: "/admin/sekolah",
+    icon: SchoolIcon,
+    end: false,
+  },
 ];
 
 function AdminNav({ onNavigate }: { onNavigate?: () => void }) {
@@ -53,7 +52,7 @@ export function AdminLayout() {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const location = useLocation();
-  const { persistence, isDemoSignedIn, signOutDemo } = useDemoData();
+  const { persistence, isAdminSignedIn, signOutAdmin } = useDemoData();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -90,13 +89,13 @@ export function AdminLayout() {
           <Link
             to="/admin/masuk"
             className="admin-side-link"
-            onClick={signOutDemo}
+            onClick={signOutAdmin}
           >
             <LogOutIcon />
             Keluar
           </Link>
           <p className="admin-side-note">
-            Mode demo. Tidak ada autentikasi aman.
+            Data portofolio disimpan di browser ini.
           </p>
         </div>
       </aside>
@@ -107,9 +106,9 @@ export function AdminLayout() {
             <BrandMark />
           </div>
           <div className="admin-topbar-meta">
-            <span className="demo-badge">Demo</span>
+            <span className="muted-badge">Admin</span>
             <span className="admin-session">
-              {isDemoSignedIn ? "Sesi demo aktif" : "Sesi demo terbuka"}
+              {isAdminSignedIn ? "Sesi admin aktif" : "Sesi admin belum aktif"}
             </span>
             <button
               type="button"
@@ -134,7 +133,7 @@ export function AdminLayout() {
           <p>
             {persistence === "unavailable"
               ? "Penyimpanan browser tidak tersedia. Perubahan hanya bertahan selama halaman terbuka."
-              : "Mode demo — sekolah, foto, dan pengguna disimpan di localStorage browser ini. Bukan data multi-pengguna."}
+              : "Data portofolio disimpan di localStorage browser ini. Belum terhubung ke autentikasi dan penyimpanan server."}
           </p>
         </div>
 
@@ -176,7 +175,7 @@ export function AdminLayout() {
               to="/admin/masuk"
               className="btn btn-outline"
               onClick={() => {
-                signOutDemo();
+                signOutAdmin();
                 setOpen(false);
               }}
             >

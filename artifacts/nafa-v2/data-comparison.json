@@ -1,0 +1,24 @@
+{
+    "baseline":  {
+                     "schools":  12,
+                     "photos":  62,
+                     "distinctImages":  8
+                 },
+    "after":  {
+                  "schools":  12,
+                  "photos":  62,
+                  "distinctImages":  8
+              },
+    "missingSchools":  [
+
+                       ],
+    "changedSchoolIdentity":  [
+
+                              ],
+    "missingPhotos":  [
+
+                      ],
+    "photoHashMismatch":  [
+
+                          ]
+}

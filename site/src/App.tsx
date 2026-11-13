@@ -1,4 +1,4 @@
-import { Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { PublicLayout } from "./components/PublicLayout";
 import { AdminLayout } from "./components/admin/AdminLayout";
 import { AboutPage } from "./pages/AboutPage";
@@ -7,14 +7,10 @@ import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SchoolDetailPage } from "./pages/SchoolDetailPage";
 import { SchoolListPage } from "./pages/SchoolListPage";
-import { AdminCategoriesPage } from "./pages/admin/AdminCategoriesPage";
 import { AdminDashboardPage } from "./pages/admin/AdminDashboardPage";
 import { AdminLoginPage } from "./pages/admin/AdminLoginPage";
-import { AdminPhotoFormPage } from "./pages/admin/AdminPhotoFormPage";
-import { AdminPhotosPage } from "./pages/admin/AdminPhotosPage";
 import { AdminSchoolFormPage } from "./pages/admin/AdminSchoolFormPage";
 import { AdminSchoolsPage } from "./pages/admin/AdminSchoolsPage";
-import { AdminUsersPage } from "./pages/admin/AdminUsersPage";
 
 function SchoolDetailRoute() {
   const { slug } = useParams();
@@ -42,10 +38,23 @@ export function App() {
           path="sekolah/:id/edit"
           element={<AdminSchoolFormPage />}
         />
-        <Route path="kategori" element={<AdminCategoriesPage />} />
-        <Route path="foto" element={<AdminPhotosPage />} />
-        <Route path="foto/baru" element={<AdminPhotoFormPage />} />
-        <Route path="pengguna" element={<AdminUsersPage />} />
+        {/* Old feature URLs stay valid but no longer expose separate screens. */}
+        <Route
+          path="kategori"
+          element={<Navigate to="/admin/sekolah" replace />}
+        />
+        <Route
+          path="foto/baru"
+          element={<Navigate to="/admin/sekolah" replace />}
+        />
+        <Route
+          path="foto"
+          element={<Navigate to="/admin/sekolah" replace />}
+        />
+        <Route
+          path="pengguna"
+          element={<Navigate to="/admin/sekolah" replace />}
+        />
       </Route>
     </Routes>
   );

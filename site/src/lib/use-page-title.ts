@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE_TITLE = "Galeri Seragam — Referensi Seragam Sekolah";
+const BASE_TITLE = "Galeri Seragam — Portofolio Konveksi Nafa Collection";
 
 export function usePageTitle(title?: string) {
   useEffect(() => {

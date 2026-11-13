@@ -35,7 +35,7 @@ export function SchoolCard({
         <div className="school-card-body">
           <h3 className="school-card-name">{school.name}</h3>
           <div className="school-card-meta">
-            <LevelBadge level={school.level} />
+            {school.level ? <LevelBadge level={school.level} /> : null}
             <span>{formatPhotoCount(count)}</span>
           </div>
         </div>

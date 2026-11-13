@@ -11,14 +11,14 @@ export function NotFoundPage() {
         <h1>Halaman tidak ditemukan</h1>
         <p>
           Alamat ini tidak tersedia. Kembali ke beranda atau telusuri daftar
-          sekolah yang ada.
+          klien yang ada.
         </p>
         <div className="not-found-actions">
           <Link to="/" className="btn btn-primary">
             Kembali ke beranda
           </Link>
           <Link to="/sekolah" className="btn btn-secondary">
-            Daftar sekolah
+            Daftar klien
           </Link>
         </div>
       </div>

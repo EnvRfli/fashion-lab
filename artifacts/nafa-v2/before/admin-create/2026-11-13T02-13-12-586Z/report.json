@@ -1,0 +1,243 @@
+{
+  "generatedAt": "2026-11-13T02:13:22.106Z",
+  "url": "http://127.0.0.1:3000/admin/sekolah/baru",
+  "session": "nafa-v2-before-admin-create",
+  "note": "Automated capture only. Visual inspection is PENDING until an image-capable model or human reviews every screenshot.",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/before/admin-create/2026-11-13T02-13-12-586Z/mobile-390.png",
+      "metrics": {
+        "controls": {
+          "total": 5,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Tambah Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Identitas sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Foto sampul"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 0
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 390,
+          "documentClientWidth": 390,
+          "documentScrollWidth": 390,
+          "overflowX": false
+        },
+        "title": "Tambah Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/sekolah/baru",
+        "viewport": {
+          "dpr": 1,
+          "height": 844,
+          "width": 390
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 52,
+          "incomplete": 0,
+          "passes": 37,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/before/admin-create/2026-11-13T02-13-12-586Z/tablet-768.png",
+      "metrics": {
+        "controls": {
+          "total": 5,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Tambah Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Identitas sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Foto sampul"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 0
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 768,
+          "documentClientWidth": 768,
+          "documentScrollWidth": 768,
+          "overflowX": false
+        },
+        "title": "Tambah Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/sekolah/baru",
+        "viewport": {
+          "dpr": 1,
+          "height": 1024,
+          "width": 768
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 52,
+          "incomplete": 0,
+          "passes": 37,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "screenshot": "D:/personal_project/fashion-lab/artifacts/nafa-v2/before/admin-create/2026-11-13T02-13-12-586Z/desktop-1440.png",
+      "metrics": {
+        "controls": {
+          "total": 5,
+          "unlabeled": []
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Tambah Sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Identitas sekolah"
+          },
+          {
+            "level": 2,
+            "text": "Foto sampul"
+          }
+        ],
+        "images": {
+          "broken": [],
+          "missingAlt": 0,
+          "total": 0
+        },
+        "landmarks": 5,
+        "lang": "id",
+        "scroll": {
+          "bodyScrollWidth": 1440,
+          "documentClientWidth": 1440,
+          "documentScrollWidth": 1440,
+          "overflowX": false
+        },
+        "title": "Tambah Sekolah — Galeri Seragam",
+        "unnamedInteractive": [],
+        "url": "http://127.0.0.1:3000/admin/sekolah/baru",
+        "viewport": {
+          "dpr": 1,
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "a11y": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 50,
+          "incomplete": 1,
+          "passes": 39,
+          "violations": 0
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodeCount": 10
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "viewports": 3,
+    "issues": [],
+    "automatedChecks": "overflow, broken images, missing alt, unlabeled controls, unnamed interactive elements, console errors, page errors, axe violations",
+    "visualInspection": "PENDING"
+  }
+}

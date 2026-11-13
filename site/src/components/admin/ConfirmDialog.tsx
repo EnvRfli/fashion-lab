@@ -21,9 +21,9 @@ export function ConfirmDialog({
     const dialog = dialogRef.current;
     if (dialog && !dialog.open) dialog.showModal();
     cancelRef.current?.focus();
-    return () => {
-      if (dialog?.open) dialog.close();
-    };
+    // Removing the dialog on unmount is enough. Calling close() in cleanup
+    // would emit a late close event during StrictMode's effect replay and
+    // immediately cancel the confirmation.
   }, []);
 
   return (

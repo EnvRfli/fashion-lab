@@ -1,11 +1,53 @@
 # PROJECT BRIEF — Galeri Seragam
 
-**Status:** Corrected brief / approved product direction for implementation  
-**Product archetype:** School Directory + School Uniform Photo Gallery + Admin CMS  
+**Status:** Baseline realignment brief (2026-09) — **superseded in part by the
+Nafa Collection v2 adjustment (2026-11-13)**. The v2 package is authoritative
+where the two conflict.
+**Current product archetype (v2):** Client portfolio — client name + garment
+project photos — with one administrator and a local demo data layer.
+**Current visual baseline:** the rendered Galeri Seragam application, not a new
+redesign.
 **Primary visual reference:** `docs/references/primary/galeri-seragam-main.png`  
 **Execution mode:** Autonomous development with verifiable quality gates  
 **Language for user-facing UI:** Bahasa Indonesia  
 **Supersedes:** Any previous fashion e-commerce / premium fashion / shopping-store brief
+
+> **V2 adjustment — 2026-11-13.** The Nafa v2 package
+> (`nafa-portfolio-adjustment-v2/`) supersedes the earlier instructions in this
+> file to require downloads, demo labels, a separate photo master screen,
+> category master screen, user management, or a large school-only form. The
+> current implementation preserves all seeded client/photo data, removes
+> download and public-user features, and reduces admin to `Nama klien` +
+> multiple photos. See `docs/NAFA_V2_EXECUTION_REPORT.md`,
+> `docs/NAFA_V2_BASELINE.md`, and `docs/NAFA_V2_CHANGE_PLAN.md`.
+
+## V2 current requirements (read this first)
+
+- Public navigation labels use **Portofolio/Klien**, while the existing
+  `/sekolah` URLs are preserved for bookmarks.
+- Visitors browse a client list and open a client gallery. Photo preview and
+  lightbox remain; there are **no download controls**.
+- The four education-level category cards and filters remain as useful browsing
+  controls. Category is optional for an administrator.
+- One administrator entry point remains. There is **no public signup, visitor
+  login, profile, user management, or role management**.
+- Admin create/edit requires only **Nama klien** and at least one photo in a
+  multi-file picker. Category, location and description are optional under
+  "Informasi tambahan".
+- All existing 12 seeded clients and 62 photos remain. IDs, slugs, cover paths
+  and image bytes are preserved. See the execution report for the comparison.
+- Demo/prototype words are removed from rendered public/admin copy. Internal
+  identifiers and fixtures may keep technical names.
+- No real backend/auth/storage is present. Local browser persistence is honest
+  and tested; production write readiness remains blocked.
+
+The sections below are retained as the historical baseline brief. Where they
+mention downloads, demo labels, user management, mandatory school forms, or a
+different data model, the v2 section above and the execution report win.
+
+---
+
+## Historical baseline brief (retained for context)
 
 ## 1. Product definition
 

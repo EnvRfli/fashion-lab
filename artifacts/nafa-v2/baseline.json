@@ -1,0 +1,894 @@
+{
+  "generatedAt": "2026-11-13T02:14:28.795Z",
+  "source": "site/src/data/seed.ts via Vite SSR",
+  "seedVersion": 2,
+  "counts": {
+    "schools": 12,
+    "photos": 62,
+    "users": 3,
+    "categoryDescriptions": 4,
+    "distinctImages": 8
+  },
+  "schools": [
+    {
+      "id": "school-sdn-001-bandung",
+      "slug": "sdn-001-bandung",
+      "name": "SDN 001 Bandung",
+      "level": "SD",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/product-poplin-shirt.jpg",
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "updatedAt": "2026-11-10T09:00:00.000Z",
+      "photoCount": 6,
+      "photos": [
+        {
+          "id": "photo-sdn-001-bandung-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sdn-001-bandung-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-sdn-001-bandung-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sdn-001-bandung-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        },
+        {
+          "id": "photo-sdn-001-bandung-striped-knit",
+          "imagePath": "/images/product-striped-knit.jpg",
+          "title": "Sweater rajut",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-striped-knit.jpg",
+            "bytes": 260223,
+            "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+          }
+        },
+        {
+          "id": "photo-sdn-001-bandung-atelier-rail",
+          "imagePath": "/images/editorial-atelier-rail.jpg",
+          "title": "Rel seragam",
+          "category": "Referensi",
+          "image": {
+            "path": "/images/editorial-atelier-rail.jpg",
+            "bytes": 95731,
+            "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-sdn-sukajadi",
+      "slug": "sdn-sukajadi",
+      "name": "SDN Sukajadi",
+      "level": "SD",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/product-cotton-skirt.jpg",
+      "createdAt": "2026-11-09T10:30:00.000Z",
+      "updatedAt": "2026-11-09T10:30:00.000Z",
+      "photoCount": 4,
+      "photos": [
+        {
+          "id": "photo-sdn-sukajadi-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sdn-sukajadi-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-sdn-sukajadi-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sdn-sukajadi-atelier-rail",
+          "imagePath": "/images/editorial-atelier-rail.jpg",
+          "title": "Rel seragam",
+          "category": "Referensi",
+          "image": {
+            "path": "/images/editorial-atelier-rail.jpg",
+            "bytes": 95731,
+            "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-smpn-3-bandung",
+      "slug": "smpn-3-bandung",
+      "name": "SMPN 3 Bandung",
+      "level": "SMP",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/product-wool-blazer.jpg",
+      "createdAt": "2026-11-08T08:15:00.000Z",
+      "updatedAt": "2026-11-08T08:15:00.000Z",
+      "photoCount": 6,
+      "photos": [
+        {
+          "id": "photo-smpn-3-bandung-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-smpn-3-bandung-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-smpn-3-bandung-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-smpn-3-bandung-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-smpn-3-bandung-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-smpn-3-bandung-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-sman-5-bandung",
+      "slug": "sman-5-bandung",
+      "name": "SMAN 5 Bandung",
+      "level": "SMA",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/hero-uniform-flatlay.jpg",
+      "createdAt": "2026-11-07T13:45:00.000Z",
+      "updatedAt": "2026-11-07T13:45:00.000Z",
+      "photoCount": 6,
+      "photos": [
+        {
+          "id": "photo-sman-5-bandung-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sman-5-bandung-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-sman-5-bandung-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-sman-5-bandung-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sman-5-bandung-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        },
+        {
+          "id": "photo-sman-5-bandung-atelier-rail",
+          "imagePath": "/images/editorial-atelier-rail.jpg",
+          "title": "Rel seragam",
+          "category": "Referensi",
+          "image": {
+            "path": "/images/editorial-atelier-rail.jpg",
+            "bytes": 95731,
+            "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-tk-tunas-ceria",
+      "slug": "tk-tunas-ceria",
+      "name": "TK Tunas Ceria",
+      "level": "TK",
+      "location": "Cimahi, Jawa Barat",
+      "coverImage": "/images/product-striped-knit.jpg",
+      "createdAt": "2026-11-06T09:20:00.000Z",
+      "updatedAt": "2026-11-06T09:20:00.000Z",
+      "photoCount": 4,
+      "photos": [
+        {
+          "id": "photo-tk-tunas-ceria-striped-knit",
+          "imagePath": "/images/product-striped-knit.jpg",
+          "title": "Sweater rajut",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-striped-knit.jpg",
+            "bytes": 260223,
+            "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+          }
+        },
+        {
+          "id": "photo-tk-tunas-ceria-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-tk-tunas-ceria-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-tk-tunas-ceria-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-tk-pertiwi-02",
+      "slug": "tk-pertiwi-02",
+      "name": "TK Pertiwi 02",
+      "level": "TK",
+      "location": "Bandung Barat, Jawa Barat",
+      "coverImage": "/images/product-cotton-skirt.jpg",
+      "createdAt": "2026-11-05T11:00:00.000Z",
+      "updatedAt": "2026-11-05T11:00:00.000Z",
+      "photoCount": 4,
+      "photos": [
+        {
+          "id": "photo-tk-pertiwi-02-striped-knit",
+          "imagePath": "/images/product-striped-knit.jpg",
+          "title": "Sweater rajut",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-striped-knit.jpg",
+            "bytes": 260223,
+            "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+          }
+        },
+        {
+          "id": "photo-tk-pertiwi-02-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-tk-pertiwi-02-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-tk-pertiwi-02-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-tk-al-hikmah",
+      "slug": "tk-al-hikmah",
+      "name": "TK Al-Hikmah",
+      "level": "TK",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/hero-uniform-flatlay.jpg",
+      "createdAt": "2026-11-04T14:10:00.000Z",
+      "updatedAt": "2026-11-04T14:10:00.000Z",
+      "photoCount": 5,
+      "photos": [
+        {
+          "id": "photo-tk-al-hikmah-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-tk-al-hikmah-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-tk-al-hikmah-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-tk-al-hikmah-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        },
+        {
+          "id": "photo-tk-al-hikmah-striped-knit",
+          "imagePath": "/images/product-striped-knit.jpg",
+          "title": "Sweater rajut",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-striped-knit.jpg",
+            "bytes": 260223,
+            "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-sdn-cihampelas-1",
+      "slug": "sdn-cihampelas-1",
+      "name": "SDN Cihampelas 1",
+      "level": "SD",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/product-twill-trouser.jpg",
+      "createdAt": "2026-11-03T10:00:00.000Z",
+      "updatedAt": "2026-11-03T10:00:00.000Z",
+      "photoCount": 5,
+      "photos": [
+        {
+          "id": "photo-sdn-cihampelas-1-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sdn-cihampelas-1-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-sdn-cihampelas-1-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-sdn-cihampelas-1-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sdn-cihampelas-1-striped-knit",
+          "imagePath": "/images/product-striped-knit.jpg",
+          "title": "Sweater rajut",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-striped-knit.jpg",
+            "bytes": 260223,
+            "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-smpn-1-lembang",
+      "slug": "smpn-1-lembang",
+      "name": "SMPN 1 Lembang",
+      "level": "SMP",
+      "location": "Lembang, Jawa Barat",
+      "coverImage": "/images/product-leather-loafer.jpg",
+      "createdAt": "2026-11-02T08:45:00.000Z",
+      "updatedAt": "2026-11-02T08:45:00.000Z",
+      "photoCount": 4,
+      "photos": [
+        {
+          "id": "photo-smpn-1-lembang-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-smpn-1-lembang-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-smpn-1-lembang-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-smpn-1-lembang-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-smpn-2-cimahi",
+      "slug": "smpn-2-cimahi",
+      "name": "SMPN 2 Cimahi",
+      "level": "SMP",
+      "location": "Cimahi, Jawa Barat",
+      "coverImage": "/images/editorial-atelier-rail.jpg",
+      "createdAt": "2026-11-01T15:30:00.000Z",
+      "updatedAt": "2026-11-01T15:30:00.000Z",
+      "photoCount": 6,
+      "photos": [
+        {
+          "id": "photo-smpn-2-cimahi-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-smpn-2-cimahi-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-smpn-2-cimahi-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-smpn-2-cimahi-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-smpn-2-cimahi-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-smpn-2-cimahi-atelier-rail",
+          "imagePath": "/images/editorial-atelier-rail.jpg",
+          "title": "Rel seragam",
+          "category": "Referensi",
+          "image": {
+            "path": "/images/editorial-atelier-rail.jpg",
+            "bytes": 95731,
+            "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-sman-2-cimahi",
+      "slug": "sman-2-cimahi",
+      "name": "SMAN 2 Cimahi",
+      "level": "SMA",
+      "location": "Cimahi, Jawa Barat",
+      "coverImage": "/images/product-wool-blazer.jpg",
+      "createdAt": "2026-10-31T09:00:00.000Z",
+      "updatedAt": "2026-10-31T09:00:00.000Z",
+      "photoCount": 7,
+      "photos": [
+        {
+          "id": "photo-sman-2-cimahi-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-cotton-skirt",
+          "imagePath": "/images/product-cotton-skirt.jpg",
+          "title": "Rok lipit",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-cotton-skirt.jpg",
+            "bytes": 642356,
+            "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        },
+        {
+          "id": "photo-sman-2-cimahi-atelier-rail",
+          "imagePath": "/images/editorial-atelier-rail.jpg",
+          "title": "Rel seragam",
+          "category": "Referensi",
+          "image": {
+            "path": "/images/editorial-atelier-rail.jpg",
+            "bytes": 95731,
+            "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-sma-harapan-bangsa",
+      "slug": "sma-harapan-bangsa",
+      "name": "SMA Harapan Bangsa",
+      "level": "SMA",
+      "location": "Bandung, Jawa Barat",
+      "coverImage": "/images/product-poplin-shirt.jpg",
+      "createdAt": "2026-10-30T12:00:00.000Z",
+      "updatedAt": "2026-10-30T12:00:00.000Z",
+      "photoCount": 5,
+      "photos": [
+        {
+          "id": "photo-sma-harapan-bangsa-poplin-shirt",
+          "imagePath": "/images/product-poplin-shirt.jpg",
+          "title": "Kemeja putih",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-poplin-shirt.jpg",
+            "bytes": 318212,
+            "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+          }
+        },
+        {
+          "id": "photo-sma-harapan-bangsa-wool-blazer",
+          "imagePath": "/images/product-wool-blazer.jpg",
+          "title": "Blazer navy",
+          "category": "Atasan",
+          "image": {
+            "path": "/images/product-wool-blazer.jpg",
+            "bytes": 304933,
+            "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+          }
+        },
+        {
+          "id": "photo-sma-harapan-bangsa-twill-trouser",
+          "imagePath": "/images/product-twill-trouser.jpg",
+          "title": "Celana kain",
+          "category": "Bawahan",
+          "image": {
+            "path": "/images/product-twill-trouser.jpg",
+            "bytes": 327075,
+            "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+          }
+        },
+        {
+          "id": "photo-sma-harapan-bangsa-leather-loafer",
+          "imagePath": "/images/product-leather-loafer.jpg",
+          "title": "Sepatu kulit",
+          "category": "Pelengkap",
+          "image": {
+            "path": "/images/product-leather-loafer.jpg",
+            "bytes": 82381,
+            "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+          }
+        },
+        {
+          "id": "photo-sma-harapan-bangsa-uniform-flatlay",
+          "imagePath": "/images/hero-uniform-flatlay.jpg",
+          "title": "Setelan seragam",
+          "category": "Setelan",
+          "image": {
+            "path": "/images/hero-uniform-flatlay.jpg",
+            "bytes": 1248302,
+            "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+          }
+        }
+      ]
+    }
+  ],
+  "distinctImages": [
+    {
+      "path": "/images/product-leather-loafer.jpg",
+      "bytes": 82381,
+      "sha256": "a929377019700dd38a28cab4460bafdd3eb1c63edf29595a7b78a8613a452912"
+    },
+    {
+      "path": "/images/product-poplin-shirt.jpg",
+      "bytes": 318212,
+      "sha256": "0554d0139201b76005797f4b7ce3b4403c3f233932cea79e2c6d151de198d232"
+    },
+    {
+      "path": "/images/product-cotton-skirt.jpg",
+      "bytes": 642356,
+      "sha256": "2aecbcecdc474903a92fa9b6272c38d8b2865619d4c4775a45cde383f5fbf6ae"
+    },
+    {
+      "path": "/images/product-striped-knit.jpg",
+      "bytes": 260223,
+      "sha256": "f87e98b22c04aeb678b1432cdce49f8df1172f1a287d45a7b4398b39d2a564b7"
+    },
+    {
+      "path": "/images/editorial-atelier-rail.jpg",
+      "bytes": 95731,
+      "sha256": "5e57b401581686f6c46f55f7314f5911e7fa42ab2dca87185bf66837afed8868"
+    },
+    {
+      "path": "/images/hero-uniform-flatlay.jpg",
+      "bytes": 1248302,
+      "sha256": "daf3295ac6229b88a88586a0aed18dddf6e3caa71300b2f29664892418a0cc32"
+    },
+    {
+      "path": "/images/product-wool-blazer.jpg",
+      "bytes": 304933,
+      "sha256": "9cb197ca9b047488a424df59970f550a2318d70cbe271ced021592e30cb1c367"
+    },
+    {
+      "path": "/images/product-twill-trouser.jpg",
+      "bytes": 327075,
+      "sha256": "8403d35c2f2c6c5af59f41a7a4e1c8f0f0bffbbb28f1085e97b242ba97dd5f48"
+    }
+  ]
+}

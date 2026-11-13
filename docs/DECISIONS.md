@@ -339,6 +339,75 @@ Phases 0–8. Do not rewrite history; supersede with a new entry.
 - **Approval:** autonomous, recorded 2026-11-11.
 - **Status:** `[APPROVED]`
 
+### D-024 — Nafa v2 supersedes demo/download/user-model instructions
+
+- **Date:** 2026-11-13
+- **Decision:** Treat `nafa-portfolio-adjustment-v2/` as authoritative over the
+  earlier demo/download/user-management brief and the commercial baseline. Keep
+  the existing visual design and all seeded records/photos; remove only
+  prototype labels, download actions and public-user features.
+- **Rationale:** The owner explicitly approved the current layout and data
+  continuity; v1's destructive/reset direction is superseded.
+- **Evidence:** `docs/NAFA_V2_BASELINE.md`, `docs/NAFA_V2_CHANGE_PLAN.md`.
+- **Approval:** autonomous, recorded 2026-11-13.
+- **Status:** `[APPROVED]`
+
+### D-025 — Optional category and stable public identity
+
+- **Date:** 2026-11-13
+- **Decision:** Make category optional on create/edit, keep the existing
+  TK/SD/SMP/SMA grouping for browsing, preserve slugs on edit, and derive cover,
+  photo count and timestamps automatically. Keep `/sekolah` URLs.
+- **Rationale:** Keeps working filters and bookmarks while removing the forced
+  school-only form and URL churn.
+- **Evidence:** `site/src/data/types.ts`, `demo-store.ts`,
+  `AdminSchoolFormPage.tsx`, `App.tsx`; tests for optional category, stable slug
+  and cover recalculation.
+- **Approval:** autonomous, recorded 2026-11-13.
+- **Status:** `[APPROVED]`
+
+### D-026 — Non-destructive copy migration, no reseed/reset
+
+- **Date:** 2026-11-13
+- **Decision:** Migrate only exact known seeded description strings from demo
+  wording to professional copy; increment seed version but never truncate,
+  reseed, reset storage or overwrite administrator-edited descriptions. Remove
+  the reset-data UI.
+- **Rationale:** Removes prototype labels without losing data or user work.
+- **Evidence:** `demo-store.ts` migration, migration unit tests, 12/62/8
+  baseline-vs-after comparison with 0 missing IDs/hashes.
+- **Approval:** autonomous, recorded 2026-11-13.
+- **Status:** `[APPROVED]`
+
+### D-027 — Local-only admin persistence, production backend blocked
+
+- **Date:** 2026-11-13
+- **Decision:** Keep the single admin entry point and browser-local persistence
+  for this build, but state plainly that it is not server authentication or
+  durable object storage. Do not invent provider credentials or claim production
+  write readiness. Record S01/S02 as blocked and document the integration
+  contract for a future backend.
+- **Rationale:** The repository has no backend; faking secure auth or durable
+  storage would violate the honesty rules.
+- **Evidence:** `AdminLoginPage.tsx`, admin status bar, `docs/NAFA_V2_EXECUTION_REPORT.md`
+  §9–§10.
+- **Approval:** autonomous, recorded 2026-11-13.
+- **Status:** `[APPROVED]` with production blocker
+
+### D-028 — Browser dialog effect cleanup
+
+- **Date:** 2026-11-13
+- **Decision:** Do not call `dialog.close()` in the unmount cleanup of
+  `PhotoPreviewDialog` or `ConfirmDialog`. Removing the dialog from the DOM is
+  sufficient. This avoids a late `close` event during React StrictMode's effect
+  replay that dismissed the preview/confirmation immediately in development.
+- **Rationale:** Browser verification found the regression; the fix is minimal
+  and applies to dev and production.
+- **Evidence:** `PhotoPreviewDialog.tsx`, `ConfirmDialog.tsx`; browser lightbox
+  and delete-confirmation checks.
+- **Approval:** autonomous, recorded 2026-11-13.
+- **Status:** `[APPROVED]`
+
 ---
 
 Add new entries above this line, keeping the same fields and a sequential ID.

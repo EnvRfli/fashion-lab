@@ -1,18 +1,12 @@
 import { useCallback, useMemo, useState, type ReactNode } from "react";
 import {
-  addPhotoToData,
-  addSchoolToData,
-  addUserToData,
-  deletePhotoFromData,
+  ADMIN_SESSION_KEY,
   deleteSchoolFromData,
-  deleteUserFromData,
-  DEMO_SESSION_KEY,
   isStorageAvailable,
+  LEGACY_SESSION_KEY,
   loadDemoData,
-  resetDemoData,
   saveDemoData,
-  updateCategoryDescriptionInData,
-  updateSchoolInData,
+  savePortfolioToData,
 } from "./demo-store";
 import {
   DemoDataContext,
@@ -21,14 +15,16 @@ import {
 } from "./demo-context";
 import type {
   DemoData,
-  PhotoInput,
-  SchoolInput,
-  UserInput,
+  PortfolioSaveInput,
+  PortfolioSaveResult,
 } from "./types";
 
 function readSession(): boolean {
   try {
-    return window.localStorage.getItem(DEMO_SESSION_KEY) === "active";
+    return (
+      window.localStorage.getItem(ADMIN_SESSION_KEY) === "active" ||
+      window.localStorage.getItem(LEGACY_SESSION_KEY) === "active"
+    );
   } catch {
     return false;
   }
@@ -39,99 +35,46 @@ export function DemoDataProvider({ children }: { children: ReactNode }) {
   const [persistence, setPersistence] = useState<PersistenceState>(() =>
     isStorageAvailable() ? "saved" : "unavailable",
   );
-  const [isDemoSignedIn, setIsDemoSignedIn] = useState(() => readSession());
+  const [isAdminSignedIn, setIsAdminSignedIn] = useState(() => readSession());
 
-  const apply = useCallback((next: DemoData) => {
+  const apply = useCallback((next: DemoData): boolean => {
     const saved = saveDemoData(next);
     setData(next);
     setPersistence(saved ? "saved" : "unavailable");
+    return saved;
   }, []);
 
-  const addSchool = useCallback(
-    (input: SchoolInput) => {
-      const result = addSchoolToData(data, input);
-      apply(result.data);
-      return result.school;
+  const savePortfolio = useCallback(
+    (input: PortfolioSaveInput): PortfolioSaveResult => {
+      const result = savePortfolioToData(data, input);
+      const persisted = apply(result.data);
+      return { school: result.school, persisted };
     },
     [data, apply],
   );
 
-  const updateSchool = useCallback(
-    (id: string, input: SchoolInput) => {
-      apply(updateSchoolInData(data, id, input));
-    },
+  const deletePortfolio = useCallback(
+    (id: string): boolean => apply(deleteSchoolFromData(data, id)),
     [data, apply],
   );
 
-  const deleteSchool = useCallback(
-    (id: string) => {
-      apply(deleteSchoolFromData(data, id));
-    },
-    [data, apply],
-  );
-
-  const addPhoto = useCallback(
-    (input: PhotoInput) => {
-      const result = addPhotoToData(data, input);
-      apply(result.data);
-      return result.photo;
-    },
-    [data, apply],
-  );
-
-  const deletePhoto = useCallback(
-    (id: string) => {
-      apply(deletePhotoFromData(data, id));
-    },
-    [data, apply],
-  );
-
-  const updateCategoryDescription = useCallback(
-    (levelId: string, description: string) => {
-      apply(updateCategoryDescriptionInData(data, levelId, description));
-    },
-    [data, apply],
-  );
-
-  const addUser = useCallback(
-    (input: UserInput) => {
-      const result = addUserToData(data, input);
-      apply(result.data);
-      return result.user;
-    },
-    [data, apply],
-  );
-
-  const deleteUser = useCallback(
-    (id: string) => {
-      apply(deleteUserFromData(data, id));
-    },
-    [data, apply],
-  );
-
-  const resetData = useCallback(() => {
-    const seed = resetDemoData();
-    const saved = saveDemoData(seed);
-    setData(seed);
-    setPersistence(saved ? "saved" : "unavailable");
-  }, []);
-
-  const signInDemo = useCallback(() => {
+  const signInAdmin = useCallback(() => {
     try {
-      window.localStorage.setItem(DEMO_SESSION_KEY, "active");
+      window.localStorage.setItem(ADMIN_SESSION_KEY, "active");
     } catch {
-      // The visual demo session is optional and never used as a guard.
+      // The session indicator is optional; it never grants server access.
     }
-    setIsDemoSignedIn(true);
+    setIsAdminSignedIn(true);
   }, []);
 
-  const signOutDemo = useCallback(() => {
+  const signOutAdmin = useCallback(() => {
     try {
-      window.localStorage.removeItem(DEMO_SESSION_KEY);
+      window.localStorage.removeItem(ADMIN_SESSION_KEY);
+      window.localStorage.removeItem(LEGACY_SESSION_KEY);
     } catch {
       // Ignore unavailable storage.
     }
-    setIsDemoSignedIn(false);
+    setIsAdminSignedIn(false);
   }, []);
 
   const value = useMemo<DemoDataContextValue>(
@@ -139,37 +82,22 @@ export function DemoDataProvider({ children }: { children: ReactNode }) {
       data,
       schools: data.schools,
       photos: data.photos,
-      users: data.users,
       categoryDescriptions: data.categoryDescriptions,
       persistence,
-      isDemoSignedIn,
-      addSchool,
-      updateSchool,
-      deleteSchool,
-      addPhoto,
-      deletePhoto,
-      updateCategoryDescription,
-      addUser,
-      deleteUser,
-      resetData,
-      signInDemo,
-      signOutDemo,
+      isAdminSignedIn,
+      savePortfolio,
+      deletePortfolio,
+      signInAdmin,
+      signOutAdmin,
     }),
     [
       data,
       persistence,
-      isDemoSignedIn,
-      addSchool,
-      updateSchool,
-      deleteSchool,
-      addPhoto,
-      deletePhoto,
-      updateCategoryDescription,
-      addUser,
-      deleteUser,
-      resetData,
-      signInDemo,
-      signOutDemo,
+      isAdminSignedIn,
+      savePortfolio,
+      deletePortfolio,
+      signInAdmin,
+      signOutAdmin,
     ],
   );
 
