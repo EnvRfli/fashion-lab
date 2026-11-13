@@ -44,3 +44,5 @@ artifacts/tmp/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+hasil_scrape/
